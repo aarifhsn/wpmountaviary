@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./dist/output.css" rel="stylesheet" />
+    <link href=" <?php echo get_stylesheet_directory_uri(). './dist/output.css' ?>" rel="stylesheet" />
     <script
       src="https://kit.fontawesome.com/2aca301534.js"
       crossorigin="anonymous"
@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(  ). '/style.css' ?>">
     <title>MountAviary</title>
   </head>
   <body class="font-montserrat w-full mx-auto text-base transition">
@@ -71,7 +71,7 @@
                   <div class="persons_photo flex items-center justify-start">
                     <img
                       class="rounded border-2 border-solid border-slate-400 h-auto w-32 p-0.5"
-                      src="img/profile.webp"
+                      src="<?php echo get_template_directory_uri(  ); ?>/img/profile.webp"
                       alt=""
                     />
                   </div>
@@ -223,7 +223,7 @@
 
               <div class="about_photo">
                 <img
-                  src="img/persons_id.jpg"
+                  src="<?php echo get_template_directory_uri(  ); ?>/img/persons_id.jpg"
                   class="h-auto w-full hover:grayscale duration-100"
                   alt=""
                 />
@@ -448,7 +448,7 @@
                 class="portfolio_page grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
               >
                 <div class="single_port relative">
-                  <img class="w-full" src="img/project-1.jpg" alt="" />
+                  <img class="w-full" src="<?php echo get_template_directory_uri(  ); ?>/img/project-1.jpg" alt="" />
                   <div
                     class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
                   >
@@ -459,7 +459,7 @@
                 </div>
 
                 <div class="single_port relative">
-                  <img class="w-full" src="img/project-2.jpg" alt="" />
+                  <img class="w-full" src="<?php echo get_template_directory_uri() ;?>/img/project-2.jpg" alt="" />
                   <div
                     class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
                   >
@@ -470,7 +470,7 @@
                 </div>
 
                 <div class="single_port relative">
-                  <img class="w-full" src="img/project-3.jpg" alt="" />
+                  <img class="w-full" src="<?php echo get_template_directory_uri() ;?>/img/project-3.jpg" alt="" />
                   <div
                     class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
                   >
@@ -481,7 +481,7 @@
                 </div>
 
                 <div class="single_port relative">
-                  <img class="w-full" src="img/project-4.jpg" alt="" />
+                  <img class="w-full" src="<?php echo get_template_directory_uri() ;?>/img/project-4.jpg" alt="" />
                   <div
                     class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
                   >
@@ -492,7 +492,7 @@
                 </div>
 
                 <div class="single_port relative">
-                  <img class="w-full" src="img/project-5.jpg" alt="" />
+                  <img class="w-full" src="<?php echo get_template_directory_uri() ;?>/img/project-5.jpg" alt="" />
                   <div
                     class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
                   >
@@ -503,7 +503,7 @@
                 </div>
 
                 <div class="single_port relative">
-                  <img class="w-full" src="img/project-6.jpg" alt="" />
+                  <img class="w-full" src="<?php echo get_template_directory_uri() ;?>/img/project-6.jpg" alt="" />
                   <div
                     class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
                   >
@@ -514,7 +514,7 @@
                 </div>
 
                 <div class="single_port relative">
-                  <img class="w-full" src="img/project-7.jpg" alt="" />
+                  <img class="w-full" src="<?php echo get_template_directory_uri() ;?>/img/project-7.jpg" alt="" />
                   <div
                     class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
                   >
@@ -525,7 +525,7 @@
                 </div>
 
                 <div class="single_port relative">
-                  <img class="w-full" src="img/project-8.jpg" alt="" />
+                  <img class="w-full" src="<?php echo get_template_directory_uri() ;?>/img/project-8.jpg" alt="" />
                   <div
                     class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
                   >
@@ -674,14 +674,14 @@
                 <div class="single_blog bg-white shadow-sm mb-4 rounded-lg">
                   <a class="" href=""
                     ><img
-                      src="img/project-4.jpg"
+                      src="<?php echo get_template_directory_uri() ;?>/img/project-4.jpg"
                       class="w-full h-auto hover:grayscale duration-100"
                       alt=""
                   /></a>
                   <div class="author_info flex items-center px-4 py-2 mt-2">
                     <img
                       class="author_photo h-7 w-7 rounded-full"
-                      src="img/project-7.jpg"
+                      src="<?php echo get_template_directory_uri() ;?>/img/project-7.jpg"
                       alt=""
                     />
                     <h4
@@ -711,14 +711,14 @@
                 <div class="single_blog bg-white shadow-sm mb-4">
                   <a href=""
                     ><img
-                      src="img/project-1.jpg"
+                      src="<?php echo get_template_directory_uri() ;?>/img/project-1.jpg"
                       class="w-full h-auto hover:grayscale duration-100"
                       alt=""
                   /></a>
                   <div class="author_info flex items-center px-4 py-2 mt-2">
                     <img
                       class="author_photo h-7 w-7 rounded-full"
-                      src="img/project-7.jpg"
+                      src="<?php echo get_template_directory_uri() ;?>/img/project-7.jpg"
                       alt=""
                     />
                     <h4
@@ -748,14 +748,14 @@
                 <div class="single_blog bg-white shadow-sm mb-4">
                   <a href=""
                     ><img
-                      src="img/project-2.jpg"
+                      src="<?php echo get_template_directory_uri() ;?>/img/project-2.jpg"
                       class="w-full h-auto hover:grayscale duration-100"
                       alt=""
                   /></a>
                   <div class="author_info flex items-center px-4 py-2 mt-2">
                     <img
                       class="author_photo h-7 w-7 rounded-full"
-                      src="img/project-7.jpg"
+                      src="<?php echo get_template_directory_uri() ;?>/img/project-7.jpg"
                       alt=""
                     />
                     <h4
@@ -785,7 +785,7 @@
                 <div class="single_blog bg-white shadow-sm mb-4">
                   <a href=""
                     ><img
-                      src="img/project-3.jpg"
+                      src="<?php echo get_template_directory_uri() ;?>/img/project-3.jpg"
                       class="w-full h-auto hover:grayscale duration-100"
                       alt=""
                   /></a>
@@ -793,7 +793,7 @@
                     <a href=""
                       ><img
                         class="author_photo h-7 w-7 rounded-full"
-                        src="img/project-7.jpg"
+                        src="<?php echo get_template_directory_uri() ;?>/img/project-7.jpg"
                         alt=""
                     /></a>
                     <h4
@@ -984,6 +984,6 @@
       </span>
     </footer>
 
-    <script src="src/scripts.js"></script>
+    <script src="<?php echo get_template_directory_uri(  ). '/src/scripts.js' ?>"></script>
   </body>
 </html>

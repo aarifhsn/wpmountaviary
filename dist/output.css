@@ -3006,9 +3006,9 @@ video {
   font-weight: 700;
 }
 
-.hover\:text-slate-50:hover {
+.hover\:text-slate-400:hover {
   --tw-text-opacity: 1;
-  color: rgb(248 250 252 / var(--tw-text-opacity));
+  color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
 .hover\:text-slate-500:hover {
@@ -3029,11 +3029,6 @@ video {
 .hover\:text-slate-950:hover {
   --tw-text-opacity: 1;
   color: rgb(2 6 23 / var(--tw-text-opacity));
-}
-
-.hover\:text-slate-400:hover {
-  --tw-text-opacity: 1;
-  color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
 .hover\:opacity-80:hover {
