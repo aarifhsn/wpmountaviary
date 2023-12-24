@@ -60,7 +60,7 @@
       >
         <div class="site_content flex flex-row-reverse relative">
           <div
-            class="sidebar_content hidden lg:block 2xl:block flex-auto h-full overflow-hidden overflow-y-auto z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-sidebar-bg bg-cover bg-no-repeat bg-center"
+            class="sidebar_content hidden lg:block 2xl:block flex-auto h-full overflow-hidden overflow-y-auto z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-sidebar-bg  bg-cover bg-no-repeat bg-center"
           >
             <!-- <div class="border-t-4 border-black border-solid"></div> -->
             <div

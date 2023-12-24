@@ -10,7 +10,7 @@ export const theme = {
     },
     backgroundImage: {
       "home-bg": "url('/img/home_bg.png')",
-      "sidebar-bg": "url('/img/project-8.jpg')",
+      "sidebar-bg": "url('/img/home_bg.png')",
     },
   },
 };
