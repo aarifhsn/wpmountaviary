@@ -1,21 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?> class="no-js">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="<?php bloginfo('charset') ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href=" <?php echo get_stylesheet_directory_uri(). './dist/output.css' ?>" rel="stylesheet" />
-    <script
-      src="https://kit.fontawesome.com/2aca301534.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(  ). '/style.css' ?>">
-    <title>MountAviary</title>
+ 
+    
+    <?php wp_head(); ?>
   </head>
-  <body class="font-montserrat w-full mx-auto text-base transition">
+  <body <?php body_class('font-montserrat w-full mx-auto text-base transition'); ?>>
     <header
       class="flex lg:hidden bg-white relative md:fixed top-0 left-0 min-h-[52px] z-50 w-full overflow-hidden items-center px-12"
     >
@@ -985,5 +977,7 @@
     </footer>
 
     <script src="<?php echo get_template_directory_uri(  ). '/src/scripts.js' ?>"></script>
+
+    <?php wp_footer(); ?>
   </body>
 </html>
