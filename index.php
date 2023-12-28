@@ -52,19 +52,18 @@
       >
         <div class="site_content flex flex-row-reverse relative">
           <div
-            class="sidebar_content hidden lg:block 2xl:block flex-auto h-full overflow-hidden overflow-y-auto z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-sidebar-bg  bg-cover bg-no-repeat bg-center"
+            class="sidebar_content hidden lg:block 2xl:block flex-auto h-full overflow-hidden overflow-y-auto z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-sidebar-bg  bg-cover bg-no-repeat bg-center bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm"
           >
-            <!-- <div class="border-t-4 border-black border-solid"></div> -->
             <div
-              class="sidebar_info bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm rounded h-full"
+              class="sidebar_info  rounded h-full"
             >
               <div class="px-12 pt-12 pb-4">
                 <div class="person_info">
                   <div class="persons_photo flex items-center justify-start">
                     <img
                       class="rounded border-2 border-solid border-slate-400 h-auto w-32 p-0.5"
-                      src="<?php echo get_template_directory_uri(  ); ?>/img/profile.webp"
-                      alt=""
+                      src="<?php echo get_theme_mod('mountaviary_header_logo') ?>"
+                      alt="Mountaviary Logo"
                     />
                   </div>
                   <h3
@@ -80,7 +79,10 @@
                 <div
                   class="left_nav text-left uppercase font-poppins font-bold text-sm text-slate-200 mt-8"
                 >
-                  <ul>
+
+                <?php wp_nav_menu(array('theme_location' => 'screen_menu', 'menu_class' =>'', 'container' => '', 'li_class' => 'mt-4')); ?>
+                 
+                <ul>
                     <li class="mt-4">
                       <a class="hover:text-slate-400" href="#home">Home</a>
                     </li>
@@ -976,7 +978,7 @@
       </span>
     </footer>
 
-    <script src="<?php echo get_template_directory_uri(  ). '/src/scripts.js' ?>"></script>
+    
 
     <?php wp_footer(); ?>
   </body>
