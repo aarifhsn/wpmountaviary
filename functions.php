@@ -56,6 +56,36 @@ function mountaviary_customizer_register ($wp_customize) {
         'section'  => 'mountaviary_header_area',
         'settings' => 'mountaviary_header_logo',
     )));
+
+	// FOOTER BOTTOM TEXT CUSTOMIZE 
+
+	$wp_customize->add_section('mountaviary_footer_area', array(
+        'title'    => __('Footer Area', 'mountaviary'),
+        'description' => 'Change Footer Text.',
+    ));
+
+    $wp_customize->add_setting('mountaviary_footer_text', array(
+        'default'        => 'All Rights Reserved.',
+
+    ));
+	
+    $wp_customize-> add_control('mountaviary_footer_text_control', array(
+        'label'    => __('Footer Text', 'mountaviary'),
+        'section'  => 'mountaviary_footer_area',
+        'settings' => 'mountaviary_footer_text',
+    ));
+
+    $wp_customize->add_setting('mountaviary_footer_selection', array(
+        'default'        => '&copy' . date('Y') ,
+
+    ));
+	
+    $wp_customize-> add_control('mountaviary_footer_selcetion_control', array(
+        'label'    => __('Select Footer Copyright option', 'mountaviary'),
+        'type'     => 'select',
+        'section'  => 'mountaviary_footer_area',
+        'settings' => 'mountaviary_footer_selection',
+    ));
 }
 
 add_action( 'customize_register', 'mountaviary_customizer_register' );
@@ -76,12 +106,34 @@ if ( ! function_exists( 'mountaviary_register_nav_menu' ) ) {
 	add_action( 'after_setup_theme', 'mountaviary_register_nav_menu', 0 );
 }
 
+// adding nav menu li class
+
+function nav_menu_list_class($classes, $item, $args) {
+    if(isset($args->add_li_class)) {
+        $classes[] = $args->add_li_class;
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'nav_menu_list_class', 1, 3);
+
+// Adding nav menu anchor (a) class
+
+function nav_menu_anchor_class($atts, $item, $args) {
+    if(isset($args->nav_anchor_class)) {
+        $atts['class'] = $args->nav_anchor_class;
+    }
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'nav_menu_anchor_class', 1, 3);
 
 
-function mountaviary_nav_classes($classes, $args) {
-	if(isset($args->li_class)) {
-		$classes[] = $args->li_class;
-	}
-	return $classes;
-  }
-add_filter('nav_menu_css_class', 'mountaviary_nav_classes', 10, 3);
+// walker nav menu description 
+
+function mountaviary_nav_description( $item_output, $item, $depth, $args ) {
+    if ( !empty( $item->description ) ) {
+        $item_output = str_replace( $args->link_after . '</a>', '<span class="font-sm text-slate-500 ml-2 lowercase block">' . $item->description . '</span>' . $args->link_after . '</a>', $item_output );
+    }
+ 
+    return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', 'mountaviary_nav_description', 10, 4 );
