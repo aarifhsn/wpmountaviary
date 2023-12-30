@@ -137,3 +137,16 @@ function mountaviary_nav_description( $item_output, $item, $depth, $args ) {
     return $item_output;
 }
 add_filter( 'walker_nav_menu_start_el', 'mountaviary_nav_description', 10, 4 );
+
+// excerpt length
+function mpuntaviary_excerpt_length( $length ) {
+    return 15;
+}
+add_filter( 'excerpt_length', 'mpuntaviary_excerpt_length');
+
+// Post Excerpt Support 
+function mountaviary_post_excerpt() {
+    global $post;
+    return '<a class="block mt-4 text-slate-700 hover:text-slate-900 duration-75" href="'. get_permalink($post->ID). ' ">' . 'Read More...' . '</a>';
+}
+add_filter( 'excerpt_more', 'mountaviary_post_excerpt' );

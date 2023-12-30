@@ -1,4 +1,6 @@
-<?php get_header(); ?>
+<?php /* Template Name: Custom Front Page */
+
+get_header(); ?>
 
 <section
   id="home"
