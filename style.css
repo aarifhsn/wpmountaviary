@@ -40,7 +40,6 @@ body {
 
 img {
   max-width: 100%;
-  width: 100%;
   height: auto;
 }
 
@@ -107,4 +106,137 @@ section#about {
 section#about spanY.aboutID {
   position: absolute;
   font-size: 120px;
+}
+
+/* nav links css */
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-previous a, .nav-next a{
+  font-size: 13px;
+}
+.nav-previous a:hover, .nav-next a:hover{
+  color: #6f3d3d;
+  transition: all .03s;
+}
+ 
+.single_page .single_content p {
+  margin: 10px 0;
+}
+.single_content .wp-caption {
+  max-width: 100%;
+}
+
+/* COMMENT SECTION */
+
+#comments .comment-reply-title {
+  font-weight: 500;
+  margin: 6px 0;
+
+}
+
+#comments .logged-in-as {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+#comments .logged-in-as a{
+  display: block;
+  margin: 6px 0;
+  width: fit-content;
+}
+
+#comments .logged-in-as span.required-field-message {
+  border: 2px solid #ddd;
+  padding: 5px 6px;
+  margin: 9px 0;
+  display: inline-block;
+  color: rgb(160, 4, 4);
+}
+
+#comments form#commentform p {
+  border: 2px solid #d1cbcb;
+  width: 100%;
+  margin: 10px 0;
+  padding: 5px;
+}
+#comments .comment-form-comment textarea {
+  border: 2px solid #d1cbcb;
+  width: 100%;
+}
+
+#comments .comment-form-comment label{
+  display: block;
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#comments input#submit {
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 10px;
+  background: #eee;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+#comments input#submit:hover {
+  transition: all .5s;
+  background: #ddd;
+}
+
+#comments h2.comments-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.comment-author.vcard {
+  display: flex;
+  margin: 10px 0;
+  gap: 15px;
+  align-items: center;
+}
+
+img.avatar.avatar-32.photo {}
+
+.comment-author img.avatar {
+  border-radius: 50%;
+}
+
+.comment-meta.commentmetadata {
+  font-size: 12px;
+  margin: 0;
+}
+
+.comment-meta.commentmetadata a.comment-edit-link {
+  font-weight: bold;
+}
+#comments .reply .comment-reply-link {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+#comments .comment-body p {
+  font-size: 14px;
+  background: #eee;
+  padding: 21px 10px;
+  margin: 10px 0;
+  position: relative;
+}
+
+#comments .comment-body p::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 16px;
+  width: 15px;
+  height: 15px;
+  rotate: 45deg;
+  background: #eee;
+}
+
+#comments ol.children {
+  margin-left: 30px;
 }

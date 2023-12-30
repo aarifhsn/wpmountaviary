@@ -23,23 +23,20 @@
         </a>
 
         <div class="uppercase font-bold text-sm text-slate-500">
-          <ul class="flex flex-wrap items-center">
-            <li class="mr-4 md:mr-6">
-              <a class="hover:text-slate-800" href="#home">Home</a>
-            </li>
-            <li class="mr-4 md:mr-6">
-              <a class="hover:text-slate-800" href="#about">About Me</a>
-            </li>
-            <li class="mr-4 md:mr-6">
-              <a class="hover:text-slate-800" href="#service">What I Do</a>
-            </li>
-            <li class="mr-4 md:mr-6">
-              <a class="hover:text-slate-800" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="mr-4 md:mr-6">
-              <a class="hover:text-slate-800" href="#contact">Contact</a>
-            </li>
-          </ul>
+
+        <!-- FOOTER MENU -->
+        <?php $args = array(
+              'theme_location'=> 'footer_menu',
+              'container'     => '',
+              'menu_class'    => 'flex flex-wrap items-center',
+              'depth'         => 1,
+              'fallback_cb'   => false,
+              'add_li_class'  => 'mr-4 md:mr-6',
+              'nav_anchor_class' => 'hover:text-slate-800'
+            );
+            wp_nav_menu($args);
+        ?>
+          
         </div>
       </div>
 

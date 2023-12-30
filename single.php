@@ -15,11 +15,12 @@
 get_header();
 ?>
 
+
 <!-- BLOG SECTION  -->
-    <section id="blog" class="blog_posts min-h-[100vh] my-24">
+    <section id="blog" class="blog_posts single_page min-h-[100vh] my-4 font-poppins">
     
       <div
-        class="blog_info_area grid gap-4 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3"
+        class="blog_info_area "
       >
       <?php if ( have_posts() ) : ?>
 
@@ -29,39 +30,33 @@ get_header();
         
         <div class="single_blog bg-white shadow-sm mb-4 rounded-lg">
           <?php if ( has_post_thumbnail() ): ?>
-          <a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto hover:grayscale duration-100')); ?></a>
+          <?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto hover:grayscale duration-100')); ?>
           <?php endif; ?>
          
-          <div class="author_info flex items-center px-4 py-2 mt-2">
-            <img
-              class="author_photo h-7 w-7 rounded-full"
-              src="<?php echo get_template_directory_uri() ;?>/img/project-7.jpg"
-              alt=""
-            />
-            <h4
-              class="author_name text-slate-500 hover:text-slate-900 mx-3 text-xs font-bold"
-            >
-              <a href="#">Arif Hassan</a>
-            </h4>
-            <h5 class="post_date text-slate-500 text-xs">
-              Dec 12, 2023
-            </h5>
-          </div>
           <div class="blog_content px-4 py-3">
             <?php
-                      if ( is_singular() ) :
-                        the_title( '<h1 class="entry-title">', '</h1>' );
-                      else :
-                        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-                      endif;
+                if ( is_singular() ) :
+                  the_title( '<h1 class="entry-title text-lg font-semibold">', '</h1>' );
+                else :
+                  the_title( '<h2 class="entry-title text-base font-semibold"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+                endif;
             ?>
-            <h4
-              class="text-sm text-slate-700 hover:text-slate-950 mb-2 font-medium"
+                <div class="author_info flex items-center">
+                  
+                  <h4
+                    class="author_name text-slate-500 hover:text-slate-900 my-3 mr-2 text-xs font-bold"
+                  >
+                    <a href="#">Arif Hassan</a>
+                  </h4>
+                  <h5 class="post_date text-slate-500 text-xs">
+                    Dec 12, 2023
+                  </h5>
+                </div>
+            <div
+              class="single_content text-sm text-slate-800 mb-2 leading-7 overflow-hidden"
             >
-              <a href="<?php echo get_permalink(); ?>"
-                ><?php echo the_content(); ?></a
-              >
-            </h4>
+            <?php the_content(); ?>
+              </div>
         
           </div>
         </div>

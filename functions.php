@@ -100,7 +100,7 @@ if ( ! function_exists( 'mountaviary_register_nav_menu' ) ) {
 	function mountaviary_register_nav_menu(){
 		register_nav_menus( array(
 	    	'screen_menu' => __( 'Screen Menu', 'mountaviary' ),
-	    	'mobile_menu'  => __( 'Mobile Menu', 'mountaviary' ),
+	    	'footer_menu'  => __( 'Footer Menu', 'mountaviary' ),
 		) );
 	}
 	add_action( 'after_setup_theme', 'mountaviary_register_nav_menu', 0 );
