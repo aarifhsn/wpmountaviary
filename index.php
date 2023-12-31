@@ -47,7 +47,7 @@ get_header();
             <h4
               class="author_name text-slate-500 hover:text-slate-900 mx-3 text-xs font-bold"
             >
-              <a href=""><?php the_author_posts_link(); ?></a>
+              <?php the_author_posts_link(); ?>
             </h4>
             <h5 class="post_date text-slate-500 text-xs">
               <?php the_date('M d, Y'); ?>

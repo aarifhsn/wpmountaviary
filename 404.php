@@ -11,26 +11,30 @@ get_header();
 ?>
 
 <!-- BLOG SECTION  -->
-    <section id="blog" class="blog_posts min-h-[100vh] my-24 lg:my-48">
+    <section id="blog" class="blog_posts min-h-[100vh] my-12">
         
-    <section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'mountaviary' ); ?></h1>
-			</header><!-- .page-header -->
+    <section class="error-404 not-found font-poppins">
+		<h1 class="page-title text-center text-lg font-semibold"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'mountaviary' ); ?></h1>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'mountaviary' ); ?></p>
+		<div class="page-content my-6">
+			<p class="text-sm my-4"><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'mountaviary' ); ?></p>
 
-					<?php
-					get_search_form();
+			<div id="search_404" class="search_404 text-center my-12">
+				<?php get_search_form(); ?>
+			</div>
 
+			<div class="widget_404 my-8">
+				<?php
 					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+				?>
+			</div>
+				
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'mountaviary' ); ?></h2>
-						<ul>
-							<?php
+				<div class="widget widget_categories my-8">
+					<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'mountaviary' ); ?></h2>
+
+					<ul>
+						<?php
 							wp_list_categories(
 								array(
 									'orderby'    => 'count',
@@ -40,17 +44,20 @@ get_header();
 									'number'     => 10,
 								)
 							);
-							?>
-						</ul>
+						?>
+					</ul>
+
 					</div><!-- .widget -->
 
-					<?php
+				<?php
 					/* translators: %1$s: smiley */
 					$mountaviary_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'mountaviary' ), convert_smilies( ':)' ) ) . '</p>';
 					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$mountaviary_archive_content" );
+					
 
+					// WP TAG
 					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+				?>
 
 			</div><!-- .page-content -->
 		</section><!-- .error-404 -->

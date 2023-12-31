@@ -156,8 +156,8 @@ section#about spanY.aboutID {
   color: rgb(160, 4, 4);
 }
 
-#comments form#commentform p {
-  border: 2px solid #d1cbcb;
+#comments form#commentform p input{
+  border: 2px solid #e8e6e6;
   width: 100%;
   margin: 10px 0;
   padding: 5px;
@@ -181,6 +181,7 @@ section#about spanY.aboutID {
   background: #eee;
   padding: 10px;
   border: 1px solid #ddd;
+  width: fit-content !important;
 }
 #comments input#submit:hover {
   transition: all .5s;
@@ -239,4 +240,107 @@ img.avatar.avatar-32.photo {}
 
 #comments ol.children {
   margin-left: 30px;
+}
+
+form#commentform input#author {}
+
+form#commentform p label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+form#commentform p {
+    margin-top: 25px;
+}
+
+form#commentform p.comment-form-cookies-consent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    align-content: center;
+}
+
+input#wp-comment-cookies-consent {
+    width: 20px;
+    display: block;
+    height: 13px;
+}
+
+p.comment-form-cookies-consent label {
+    width: fit-content;
+}
+
+
+/* 404 PAGE SEARCH FORM  */
+
+#search_404 form{
+  background-color: #423e3e;
+  padding: 20px 30px;
+}
+
+#search_404 form input[type=text] {
+  padding: 6px 20px;
+  width: 70%;
+  border-radius: 10px;
+  margin-right: 10px;
+  min-width: 350px;
+}
+
+#search_404 form input[type=submit] {
+  padding: 6px 20px;
+  background-color: #efefef;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#search_404 form input[type=submit]:hover {
+  background-color: #ccc;
+  transition: all .3s;
+}
+
+.widget_404 h2.widgettitle,  .widget_categories h2.widget-title, .widget_archive h2.widgettitle, .widget_tag_cloud h2.widgettitle {
+  font-weight: 600;
+  margin: 20px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd ;
+}
+
+.widget_404 ul li, .widget_categories ul li,  .widget_archive ul li{
+  line-height: 31px;
+  color: #444;
+}
+.widget_404 ul li:hover, .widget_categories ul li:hover,  .widget_archive ul li:hover{
+  color: #000;
+  transition: all .3s;
+}
+
+.widget_archive {
+  margin: 2rem 0;
+}
+.widget_archive p{
+  font-size: 14px;
+}
+
+p {
+  font-size: 14px;
+}
+
+.widget_archive select#archives-dropdown--1 {
+  margin: 18px 0;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.widget_archive select option {
+  line-height: 22px;
+}
+.widget_tag_cloud .tagcloud a {
+  color: #444;
+}
+.widget_tag_cloud .tagcloud a:hover {
+  color: #000;
 }

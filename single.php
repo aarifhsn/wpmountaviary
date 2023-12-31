@@ -46,14 +46,14 @@ get_header();
                   <h4
                     class="author_name text-slate-500 hover:text-slate-900 my-3 mr-2 text-xs font-bold"
                   >
-                    <a href="#">Arif Hassan</a>
+                  <?php the_author_posts_link(); ?>
                   </h4>
                   <h5 class="post_date text-slate-500 text-xs">
-                    Dec 12, 2023
+                  <?php the_date('M d, Y'); ?>
                   </h5>
                 </div>
             <div
-              class="single_content text-sm text-slate-800 mb-2 leading-7 overflow-hidden"
+              class="single_content text-sm text-slate-800 mb-2 overflow-hidden leading-6 font-medium"
             >
             <?php the_content(); ?>
               </div>
