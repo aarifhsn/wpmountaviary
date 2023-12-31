@@ -276,7 +276,7 @@ p.comment-form-cookies-consent label {
 /* 404 PAGE SEARCH FORM  */
 
 #search_404 form{
-  background-color: #423e3e;
+  background-color: #f3efef;
   padding: 20px 30px;
 }
 
@@ -284,8 +284,8 @@ p.comment-form-cookies-consent label {
   padding: 6px 20px;
   width: 70%;
   border-radius: 10px;
-  margin-right: 10px;
   min-width: 350px;
+  border: 1px solid #ccc;
 }
 
 #search_404 form input[type=submit] {

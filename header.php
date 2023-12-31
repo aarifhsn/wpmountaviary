@@ -12,7 +12,7 @@
       class="flex lg:hidden bg-white relative md:fixed top-0 left-0 min-h-[52px] z-50 w-full overflow-hidden items-center px-12"
     >
       <div class="site_title w-1/2 flex">
-        <h2><a href="<?php echo home_url(); ?>" class="font-montserrat font-bold">MountAviary</a></h2>
+        <h2><a href="<?php echo home_url(); ?>" class="font-montserrat font-bold">mountAviary</a></h2>
       </div>
       <div class="top_menu w-1/2 z-[15]">
         <div
@@ -47,7 +47,7 @@
       >
         <div class="site_content flex flex-row-reverse relative">
           <div
-            class="sidebar_content hidden lg:block 2xl:block flex-auto h-full overflow-hidden overflow-y-auto z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-sidebar-bg  bg-cover bg-no-repeat bg-center bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm"
+            class="sidebar_content hidden lg:block 2xl:block flex-auto h-full overflow-hidden overflow-y-auto z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-sidebar-bg  bg-cover bg-no-repeat bg-center bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm"
           >
             <div
               class="sidebar_info  rounded h-full"
@@ -62,17 +62,17 @@
                     />
                   </div>
                   <h3
-                    class="person_name text-left xl:text-center text-lg text-slate-200 font-bold my-4 font-poppins"
+                    class="person_name text-left xl:text-center text-lg text-slate-900 font-bold my-4 font-poppins"
                   >
                     <a href="<?php echo home_url(); ?>"
-                      >Mount<span class="text-slate-400">Aviary</span></a
+                      >Mount<span class="text-slate-800">Aviary</span></a
                     >
                   </h3>
                 </div>
                 <!-- end person_info -->
 
                 <div
-                  class="left_nav text-left uppercase font-poppins font-bold text-sm text-slate-200 mt-8"
+                  class="left_nav text-left uppercase font-poppins font-bold text-sm text-slate-600 mt-8"
                 > 
                 <!-- LEFT NAV MENU -->
                   <?php $args = array(
@@ -82,7 +82,7 @@
                         'depth'         => 1,
                         'fallback_cb'   => false,
                         'add_li_class'  => 'mt-4',
-                        'nav_anchor_class' => 'hover:text-slate-400'
+                        'nav_anchor_class' => 'hover:text-slate-950'
                       );
                       wp_nav_menu($args);
                   ?>

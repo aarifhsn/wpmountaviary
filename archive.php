@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- BLOG SECTION  -->
-    <section id="blog" class="blog_posts min-h-[100vh] my-24 lg:my-48">
+    <section id="blog" class="blog_posts min-h-[100vh] my-4 lg:my-8 font-poppins">
     
     <div class="archieve_title my-4 py-4 border-b-2">
 				<?php 
@@ -22,14 +22,14 @@
 					</div>
 				</div>
 				<?php endif; ?>
-				<div class="post_details">
-					<h3 class="post_title mb-2"><a class="text-lg text-blue-600" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+				<div class="post_details my-4 py-4">
+					<h3 class="post_title mb-2"><a class="text-lg text-slate-700 hover:text-slate-950 font-semibold" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					<?php the_excerpt( ); ?>
 				</div>
 			</div>
 
 			<?php endwhile;
-				else : _e('No post Found');
+				else : _e('No post Found', 'mountaviary');
 			endif; ?>
 
     </section>

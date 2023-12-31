@@ -12,15 +12,14 @@ get_header(); ?>
     >
       <span
         class="font-extrabold text-slate-200 absolute -mt-2 md:-mt-6 2xl:-mt-14 left-0 lg:left-10 md:left-0"
-        >HELLO, I'M..</span
+        ><?php echo get_theme_mod('mountaviary_front_span_text'); ?></span
       >
-      <a class="relative" href="">ARIF HASSAN</a>
+      <a class="relative" href=""><?php echo get_theme_mod('mountaviary_front_name_text'); ?></a>
     </h2>
     <p
       class="text-left text-sm 2xl:text-2xl text-gray-500 my-3 md:my-6 font-medium leading-6 font-poppins"
     >
-      I am a Web Developer making a dynamic goal to enrich the web project and
-      working in WordPress, PHP, JavaScript, Lavarel and so on.
+      <?php echo get_theme_mod('mountaviary_front_content'); ?>
     </p>
     <div class="person_social_info mt-8">
       <div class="cont_marge flex my-8 text-slate-600">

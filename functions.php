@@ -41,7 +41,8 @@ add_action( 'wp_enqueue_scripts', 'mountaviary_scripts' );
 
 function mountaviary_customizer_register ($wp_customize) {
 
-	$wp_customize->add_section('mountaviary_header_area', array(
+	// HEADER LOGO 
+    $wp_customize->add_section('mountaviary_header_area', array(
         'title'    => __('Header Area', 'mountaviary'),
         'description' => 'Change your desired logo.',
     ));
@@ -56,6 +57,42 @@ function mountaviary_customizer_register ($wp_customize) {
         'section'  => 'mountaviary_header_area',
         'settings' => 'mountaviary_header_logo',
     )));
+
+    // USER FRONT INFO
+
+    $wp_customize->add_section('mountaviary_front_area', array(
+        'title'    => __('User Front Info', 'mountaviary'),
+    ));
+
+    $wp_customize->add_setting('mountaviary_front_name_text', array(
+        'default'        => 'ARIF HASSAN',
+    ));
+
+	$wp_customize->add_control('mountaviary_front_name', array(
+        'label'    => __('Change Name Text', 'mountaviary'),
+        'section'  => 'mountaviary_front_area',
+        'settings' => 'mountaviary_front_name_text',
+    ));
+
+    $wp_customize->add_setting('mountaviary_front_span_text', array(
+        'default'        => 'HELLO, I AM...',
+    ));
+
+	$wp_customize->add_control('mountaviary_front_span', array(
+        'label'    => __('Change Span Text', 'mountaviary'),
+        'section'  => 'mountaviary_front_area',
+        'settings' => 'mountaviary_front_span_text',
+    ));
+
+    $wp_customize->add_setting('mountaviary_front_content', array(
+        'default'        => 'I am a Web Developer making a dynamic goal to enrich the web project and working in WordPress, PHP, JavaScript, Lavarel and so on.',
+    ));
+
+	$wp_customize->add_control('mountaviary_front_about_content_', array(
+        'label'    => __('Change Front Content', 'mountaviary'),
+        'section'  => 'mountaviary_front_area',
+        'settings' => 'mountaviary_front_content',
+    ));
 
 	// FOOTER BOTTOM TEXT CUSTOMIZE 
 

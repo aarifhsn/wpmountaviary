@@ -14,10 +14,13 @@ get_header();
     <section id="blog" class="blog_posts min-h-[100vh] my-12">
         
     <section class="error-404 not-found font-poppins">
-		<h1 class="page-title text-center text-lg font-semibold"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'mountaviary' ); ?></h1>
+		<div class="error_icon text-3xl text-center">
+			<i class="fa-solid fa-circle-exclamation"></i>
+		</div>
+		<h1 class="page-title text-center text-4xl font-semibold"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'mountaviary' ); ?></h1>
 
 		<div class="page-content my-6">
-			<p class="text-sm my-4"><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'mountaviary' ); ?></p>
+			<p class="text-sm my-4 text-center"><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'mountaviary' ); ?></p>
 
 			<div id="search_404" class="search_404 text-center my-12">
 				<?php get_search_form(); ?>

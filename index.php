@@ -59,7 +59,7 @@ get_header();
               if ( is_singular() ) :
                 the_title( '<h1 class="entry-title">', '</h1>' );
               else :
-                the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+                the_title( '<h2 class="entry-title"><a class="hover:text-slate-950" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
               endif; ?>
 
               <h4
@@ -83,7 +83,7 @@ get_header();
       <?php the_posts_navigation();
                 
                 else : ?>
-                            <h3><?php _e('404 Error&#58; Not Found', 'Mountaviary'); ?></h3>
+                            <h3><?php _e('404 Error&#58; Not Found', 'mountaviary'); ?></h3>
                         <?php endif; ?>
     </section>
 
