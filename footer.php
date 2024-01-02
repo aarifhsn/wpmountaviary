@@ -39,13 +39,16 @@
           
         </div>
       </div>
+      
+      <?php if (get_option('mountaviary_footer_option_setting')) { ?>
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400 font-sm pt-4 md:pt-7"
+          >&copy;<?php the_date('M d, Y'); ?> &nbsp;&nbsp;
+          <a href="<?php echo home_url(); ?>" class="font-semibold hover:text-slate-950"><?php echo bloginfo('name'); ?></a>
+          &nbsp;
+          <?php echo get_theme_mod('mountaviary_footer_text'); ?>
+        </span>
 
-      <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400 font-sm pt-4 md:pt-7"
-        ><?php echo get_theme_mod('mountaviary_footer_selection'); ?>&nbsp;&nbsp;
-        <a href="<?php echo home_url(); ?>" class="font-semibold hover:text-slate-950"><?php echo bloginfo('name'); ?></a>
-        &nbsp;
-        <?php echo get_theme_mod('mountaviary_footer_text'); ?>
-      </span>
+      <?php } ?>
     </footer>
 
     <?php wp_footer(); ?>

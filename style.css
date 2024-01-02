@@ -21,6 +21,11 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 
@@ -36,6 +41,7 @@ body {
     letter-spacing: 0px;
     /* --tw-text-opacity: 1; */
     /* color: rgb(118 118 118 / var(--tw-text-opacity)); */
+    transition: all .5s;
 }
 
 img {

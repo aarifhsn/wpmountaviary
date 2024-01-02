@@ -22,6 +22,8 @@ get_header(); ?>
       <?php echo get_theme_mod('mountaviary_front_content'); ?>
     </p>
     <div class="person_social_info mt-8">
+
+    <?php if(get_option('front_work_portfolio_option')) { ?>
       <div class="cont_marge flex my-8 text-slate-600">
         <h3 class="hello">
           <a
@@ -41,8 +43,48 @@ get_header(); ?>
           </a>
         </h3>
       </div>
+    <?php } ?>
+
+
+    <?php function mountaviary_get_social_sites() {
+
+    $social_sites = mountaviary_get_social_sites();
+
+    foreach( $social_sites as $social_site ) {
+         if ( strlen( get_theme_mod( $social_site ) ) > 0 ) {
+             $active_sites[] = $social_site;
+         }
+     }
+ 
+     // For each active social site, add it as a list item
+     if ( !empty( $active_sites ) ) {
+         echo "<ul class='flex flex-row justify-start space-x-4 text-lg text-slate-600'>";
+ 
+         foreach ( $active_sites as $active_site ) { ?>
+              <li>
+                <a
+                  class="px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid"
+                  href="<?php echo get_theme_mod( $active_site ); ?>"
+                  ><i class="fa-brands fa-facebook-f"></i
+                >
+                <?php if( $active_site == 'vimeo' ) { ?>
+                 <i class="fa fa-<?php echo $active_site; ?>-square"></i> <?php
+                  } else if( $active_site == 'email' ) { ?>
+                      <i class="fa fa-envelope"></i> <?php
+                  } else { ?>
+                      <i class="fa fa-<?php echo $active_site; ?>"></i> <?php
+                  } ?>
+              </a>
+              </li>
+              <?php
+         }
+         echo "</ul>";
+     }
+} ?>
+
+
       <!-- <span class="font-bold capitalize mb-2 block text-sm text-slate-500">Find Me in-</span> -->
-      <ul class="flex flex-row justify-start space-x-4 text-lg text-slate-600">
+      <!-- <ul class="flex flex-row justify-start space-x-4 text-lg text-slate-600">
         <li>
           <a
             class="px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid"
@@ -71,7 +113,9 @@ get_header(); ?>
             ><i class="fa-regular fa-envelope"></i
           ></a>
         </li>
-      </ul>
+      </ul> -->
+
+
     </div>
   </div>
   <!-- <span class="section_border absolute content-[''] w-10 h-1 bottom-0 left-0 bg-gray-600"
@@ -94,12 +138,14 @@ get_header(); ?>
     <h2 class="text-xl sm:text-4xl font-bold capitalize">About Me</h2>
   </div>
 
-  <div class="about_photo">
-    <img
-      src="<?php echo get_template_directory_uri(  ); ?>/img/persons_id.jpg"
-      class="h-auto w-full hover:grayscale duration-100"
-      alt=""
-    />
+  <div class="about_photo overflow-hidden ">
+    <div class="about_photo_single hover:scale-110 duration-300">
+      <img
+        src="<?php echo get_template_directory_uri(  ); ?>/img/persons_id.jpg"
+        class="h-auto w-full hover:grayscale duration-100"
+        alt=""
+      />
+    </div>
   </div>
   <div class="about_info my-4">
     <h3
@@ -278,7 +324,7 @@ get_header(); ?>
   </div>
   <div class="about_content mt-4 mb-6">
     <h2 class="text-xl sm:text-4xl font-bold capitalize">Portfolio</h2>
-    <h5 class="text-sm leading-8 text-slate-500">
+    <h5 class="text-sm leading-8 text-slate-500 font-semibold">
       A few recent design and coding projects
     </h5>
   </div>
@@ -437,7 +483,7 @@ get_header(); ?>
         eveniet.
       </p>
       <a
-        class="font-medium text-sm text-slate-700 hover:text-slate-900"
+        class="font-medium text-sm text-slate-700 hover:font-semibold transition duration-700"
         href="#"
         >Read More</a
       >

@@ -7,7 +7,7 @@
     
     <?php wp_head(); ?>
   </head>
-  <body <?php body_class('font-montserrat w-full mx-auto text-base transition'); ?>>
+  <body <?php body_class('font-montserrat w-full mx-auto text-base transition-all scroll-smooth'); ?>>
     <header
       class="flex lg:hidden bg-white relative md:fixed top-0 left-0 min-h-[52px] z-50 w-full overflow-hidden items-center px-12"
     >
