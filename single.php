@@ -19,6 +19,8 @@ get_header();
 <!-- BLOG SECTION  -->
     <section id="blog" class="blog_posts single_page min-h-[100vh] my-4 font-poppins">
     
+    
+
       <div
         class="blog_info_area "
       >
@@ -29,6 +31,7 @@ get_header();
 				the_post(); ?>
         
         <div class="single_blog bg-white shadow-sm mb-4 rounded-lg">
+
           <?php if ( has_post_thumbnail() ): ?>
           <?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto hover:grayscale duration-100')); ?>
           <?php endif; ?>
@@ -67,13 +70,16 @@ get_header();
  ?>
         <?php endwhile;
 
-        the_posts_navigation();
+
+      // NOT WORKING 
+        posts_nav_link();
                 
         else : ?>
                     <h3><?php _e('404 Error&#58; Not Found', 'Mountaviary'); ?></h3>
                 <?php endif; ?>
 
       </div>
+      <?php the_tags(); ?>
     </section>
 
 <?php get_footer(); ?>

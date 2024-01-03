@@ -116,12 +116,36 @@ function mountaviary_customizer_register ($wp_customize) {
 
     // FRONT SOCIAL ICON SETUP
 
+     /**
+     * Social Media icon helper functions
+     */
+    function mountaviary_get_social_sites() {
+    
+        // Store social site names in array
+        $social_sites = array(
+            'twitter', 
+            'facebook', 
+            'google-plus',
+            'flickr',
+            'pinterest', 
+            'youtube',
+            'vimeo',
+            'tumblr',
+            'dribbble',
+            'rss',
+            'linkedin',
+            'instagram',
+            'email'
+        );
+    return $social_sites;
+    }
+
     $social_sites = mountaviary_get_social_sites();
     $priority = 5;
 
-    foreach($social_sites as $social_site) {
+    foreach( $social_sites as $social_site) {
 
-        $wp_customize->add_setting( $social_site, array(
+        $wp_customize->add_setting($social_site, array(
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'sanitize_callback' => 'esc_url_raw',
@@ -129,12 +153,14 @@ function mountaviary_customizer_register ($wp_customize) {
 
         $wp_customize->add_control( $social_site, array(
             'label' => ucwords( __( "$social_site URL:", 'social_icon' ) ),
-            'section' => 'social_settings',
+            'section' => 'mountaviary_front_area',
             'type' => 'text',
             'priority' => $priority,
         ));
         $priority += 5;
     }
+
+   
 
 
 	// FOOTER BOTTOM TEXT CUSTOMIZE 
@@ -235,3 +261,70 @@ function mountaviary_post_excerpt() {
     return '<a class="block mt-4 text-slate-700 hover:text-slate-900 duration-75" href="'. get_permalink($post->ID). ' ">' . 'Read More...' . '</a>';
 }
 add_filter( 'excerpt_more', 'mountaviary_post_excerpt' );
+
+// REGISTERING WIDGET
+
+function mountaviary_register_widgets() {
+	
+    register_sidebar( array(
+        'name' => __( 'Right Sidebar', 'mountaviary' ),
+        'id' => 'right_sidebar',
+        'before_widget' => '<div class="single_widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<div class="widget_title"><h2>',
+        'after_title' => '</h2></div>',
+    ) );
+    
+    register_widget( 'popular_post' );
+}
+add_action( 'widgets_init', 'mountaviary_register_widgets' );
+
+class popular_post extends WP_Widget {
+    public function __construct() {
+        parent::__construct('popular-post', 'Popular Post');
+    }
+
+    public function widget($one, $two)
+    {
+        ?>
+
+    <?php echo $one['before_widget'] ?>
+        
+        
+        <?php echo $one['before_title'] ?><?php echo $two['title'] ?><?php echo $one['after_title'] ?>
+        <p
+            class="services_content text-sm text-slate-500 font-normal leading-6 mb-4"
+        >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quas
+            molestias beatae ut itaque et iure doloribus voluptates eaque, vitae nam
+            deleniti maiores magni quibusdam corporis adipisci nostrum voluptatibus
+            eveniet.
+        </p>
+        <a
+            class="font-medium text-sm text-slate-700 hover:font-semibold transition duration-700"
+            href="#"
+            >Read More</a
+        >
+    <?php echo $one['after_widget'] ?>
+
+     <?php    
+    }
+    public function form($three){
+        ?>
+            <p>
+                <label for="<?php echo $this->get_field_id('title') ?>">Title</label>
+                <input type="text" value="<?php echo $three['title'] ?>" id="<?php echo $this->get_field_id('title') ?>" class="widefat" name="<?php echo $this->get_field_id('title') ?>">
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id('post_count') ?>">Number of Posts</label>
+                <input type="text" value="<?php echo $three['post_count'] ?>" id="<?php echo $this->get_field_id('post_count') ?>" class="widefat" name="<?php echo $this->get_field_id('post_count') ?>">
+            </p>
+
+
+        <?php 
+    }
+
+
+
+}
+

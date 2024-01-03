@@ -39,11 +39,8 @@ get_header();
        
          
           <div class="author_info flex items-center mt-4 px-4">
-            <img
-              class="author_photo h-7 w-7 rounded-full"
-              src="<?php echo get_template_directory_uri() ;?>/img/project-7.jpg"
-              alt=""
-            />
+            
+            <?php echo get_avatar( get_the_author_meta( 'ID' ), $size = '28', $default = '', $alt = '', $args = array( 'class' => 'author_photo rounded-full' ) );  ?>
             <h4
               class="author_name text-slate-500 hover:text-slate-900 mx-3 text-xs font-bold"
             >
@@ -80,11 +77,16 @@ get_header();
 
       </div>
 
-      <?php the_posts_navigation();
+      <?php the_posts_navigation(array(
+				'mid_size'           => 1,
+				'prev_text'          => _x( '&#8592; Previous Page', 'previous set of posts' ),
+				'next_text'          => _x( 'Next Page &#8594;', 'next set of posts' ),
+		
+			));
                 
-                else : ?>
-                            <h3><?php _e('404 Error&#58; Not Found', 'mountaviary'); ?></h3>
-                        <?php endif; ?>
+          else : ?>
+          <h3><?php _e('404 Error&#58; Not Found', 'mountaviary'); ?></h3>
+      <?php endif; ?>
     </section>
 
 <?php get_footer(); ?>

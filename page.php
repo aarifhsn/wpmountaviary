@@ -34,6 +34,7 @@ get_header();
                 <?php the_content(); ?>
               
               </p>
+
              
             </div>
           </div>

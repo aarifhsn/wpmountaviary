@@ -57,7 +57,7 @@ img {
 /* custom Scroll bar */
 
 /* width */
-.sidebar_content::-webkit-scrollbar {
+  .sidebar_content::-webkit-scrollbar {
     width: 7px;
     top: 5px;
   }

@@ -14,7 +14,7 @@ get_header(); ?>
         class="font-extrabold text-slate-200 absolute -mt-2 md:-mt-6 2xl:-mt-14 left-0 lg:left-10 md:left-0"
         ><?php echo get_theme_mod('mountaviary_front_span_text'); ?></span
       >
-      <a class="relative" href=""><?php echo get_theme_mod('mountaviary_front_name_text'); ?></a>
+      <span class="relative"><?php echo get_theme_mod('mountaviary_front_name_text'); ?></span>
     </h2>
     <p
       class="text-left text-sm 2xl:text-2xl text-gray-500 my-3 md:my-6 font-medium leading-6 font-poppins"
@@ -43,18 +43,20 @@ get_header(); ?>
           </a>
         </h3>
       </div>
+
+
     <?php } ?>
 
 
-    <?php function mountaviary_get_social_sites() {
+    <?php function mountaviary_show_social_sites() {
 
     $social_sites = mountaviary_get_social_sites();
 
-    foreach( $social_sites as $social_site ) {
-         if ( strlen( get_theme_mod( $social_site ) ) > 0 ) {
+    foreach($social_sites as $social_site ) {
+         if (strlen(get_theme_mod( $social_site ) ) > 0 ) {
              $active_sites[] = $social_site;
          }
-     }
+    }
  
      // For each active social site, add it as a list item
      if ( !empty( $active_sites ) ) {
