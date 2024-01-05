@@ -141,26 +141,31 @@ get_header(); ?>
   </div>
 
   <div class="about_photo overflow-hidden ">
-    <div class="about_photo_single hover:scale-110 duration-300">
+    <div class="about_photo_single relative ">
       <img
-        src="<?php echo get_template_directory_uri(  ); ?>/img/persons_id.jpg"
-        class="h-auto w-full hover:grayscale duration-100"
+        src="<?php echo get_template_directory_uri(  ); ?>/img/author_profile.jpg"
+        class="h-auto w-full"
         alt=""
       />
+
+      <div style="background-color: rgba(255,255,255,0.7);" class="designation_overlay absolute top-1/2 left-0 z-2 -translate-x-0 -translate-y-1/2 h-full w-full items-center backdrop-blur-sm shadow-lg rounded-e-lg flex flex-col justify-center pl-5">
+        <h3
+          class="font-bold text-2xl sm:text-4xl text-slate-900  my-2 font-poppins uppercase"
+        >
+          <a href="">Arif Hassan</a>
+        </h3>
+        <p class="designation text-lg text-slate-500 font-semibold">
+          Web Developer
+        </p>
+      </div>
     </div>
-  </div>
+  </div> 
+
+
   <div class="about_info my-4">
-    <h3
-      class="font-bold text-xl sm:text-2xl text-slate-700 hover:text-slate-900 my-2 font-poppins uppercase"
-    >
-      <a href="">Arif Hassan</a>
-    </h3>
-    <p class="designation text-sm text-slate-500 font-semibold">
-      Web Developer
-    </p>
 
     <div
-      class="about_content my-4 md:my-6 py-3 md:py-7 border-t-2 border-slate-300"
+      class="about_content my-4 md:my-6 py-3 md:py-7 border-t-2 border-slate-300 font-poppins"
     >
       <p class="text-slate-600 text-sm font-medium leading-7 mt-2">
         Hi, my name is Arif Hassan and I began using WordPress when it first
@@ -216,7 +221,7 @@ get_header(); ?>
             <li>
               <span class="min-w-[100px] mr-2 inline-block font-bold"
                 >Study: </span
-              ><span class="text-slate-500">Univercity of Dhaka</span>
+              ><span class="text-slate-500">University of Dhaka</span>
             </li>
             <li>
               <span class="min-w-[100px] mr-2 inline-block font-bold"

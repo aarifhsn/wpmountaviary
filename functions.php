@@ -250,17 +250,18 @@ function mountaviary_nav_description( $item_output, $item, $depth, $args ) {
 add_filter( 'walker_nav_menu_start_el', 'mountaviary_nav_description', 10, 4 );
 
 // excerpt length
-function mpuntaviary_excerpt_length( $length ) {
-    return 15;
-}
-add_filter( 'excerpt_length', 'mpuntaviary_excerpt_length');
+// function mpuntaviary_excerpt_length( $length ) {
+//     return 15;
+// }
+// add_filter( 'excerpt_length', 'mpuntaviary_excerpt_length');
 
-// Post Excerpt Support 
+// Post Excerpt (Read More) Support 
 function mountaviary_post_excerpt() {
     global $post;
     return '<a class="block mt-4 text-slate-700 hover:text-slate-900 duration-75" href="'. get_permalink($post->ID). ' ">' . 'Read More...' . '</a>';
 }
 add_filter( 'excerpt_more', 'mountaviary_post_excerpt' );
+
 
 // REGISTERING WIDGET
 
@@ -275,56 +276,69 @@ function mountaviary_register_widgets() {
         'after_title' => '</h2></div>',
     ) );
     
-    register_widget( 'popular_post' );
+    //register_widget( 'popular_post' );
 }
 add_action( 'widgets_init', 'mountaviary_register_widgets' );
 
-class popular_post extends WP_Widget {
-    public function __construct() {
-        parent::__construct('popular-post', 'Popular Post');
-    }
-
-    public function widget($one, $two)
-    {
-        ?>
-
-    <?php echo $one['before_widget'] ?>
-        
-        
-        <?php echo $one['before_title'] ?><?php echo $two['title'] ?><?php echo $one['after_title'] ?>
-        <p
-            class="services_content text-sm text-slate-500 font-normal leading-6 mb-4"
-        >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quas
-            molestias beatae ut itaque et iure doloribus voluptates eaque, vitae nam
-            deleniti maiores magni quibusdam corporis adipisci nostrum voluptatibus
-            eveniet.
-        </p>
-        <a
-            class="font-medium text-sm text-slate-700 hover:font-semibold transition duration-700"
-            href="#"
-            >Read More</a
-        >
-    <?php echo $one['after_widget'] ?>
-
-     <?php    
-    }
-    public function form($three){
-        ?>
-            <p>
-                <label for="<?php echo $this->get_field_id('title') ?>">Title</label>
-                <input type="text" value="<?php echo $three['title'] ?>" id="<?php echo $this->get_field_id('title') ?>" class="widefat" name="<?php echo $this->get_field_id('title') ?>">
-            </p>
-            <p>
-                <label for="<?php echo $this->get_field_id('post_count') ?>">Number of Posts</label>
-                <input type="text" value="<?php echo $three['post_count'] ?>" id="<?php echo $this->get_field_id('post_count') ?>" class="widefat" name="<?php echo $this->get_field_id('post_count') ?>">
-            </p>
 
 
-        <?php 
-    }
+// METABOX CMB2
+
+require_once __DIR__ . '/metabox/init.php';
 
 
+add_action( 'cmb2_admin_init', 'mountaviary_cmb2_metaboxes' );
+/**
+ * Define the metabox and field configurations.
+ */
+function mountaviary_cmb2_metaboxes() {
+
+	/**
+	 * Initiate the metabox
+	 */
+	$cmb = new_cmb2_box( array(
+		'id'            => 'test_metabox',
+		'title'         => __( 'Test Metabox', 'cmb2' ),
+		'object_types'  => array( 'page', 'post' ), // Post type
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // Keep the metabox closed by default
+	) );
+
+	// Regular text field
+	$cmb->add_field( array(
+		'name'       => __( 'Sub Title', 'cmb2' ),
+		'desc'       => __( 'field description (optional)', 'cmb2' ),
+		'id'         => 'subtitle',
+		'type'       => 'text',
+		//'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
+		// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+		// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+		// 'on_front'        => false, // Optionally designate a field to wp-admin only
+		// 'repeatable'      => true,
+	) );
+
+	// URL text field
+	$cmb->add_field( array(
+		'name' => __( 'Website URL', 'cmb2' ),
+		'desc' => __( 'field description (optional)', 'cmb2' ),
+		'id'   => 'web_url',
+		'type' => 'text_url',
+		// 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+		// 'repeatable' => true,
+	) );
+
+	// Email text field
+	$cmb->add_field( array(
+		'name' => __( 'Set Color', 'cmb2' ),
+		'desc' => __( 'field description (optional)', 'cmb2' ),
+		'id'   => 'meta_color',
+		'type' => 'colorpicker',
+		// 'repeatable' => true,
+	) );
+
+	// Add other metaboxes as needed
 
 }
-
