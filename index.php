@@ -16,7 +16,7 @@ get_header();
 ?>
 
 <!-- BLOG SECTION  -->
-    <section id="blog" class="blog_posts min-h-[100vh] my-4 font-poppins">
+    <section id="blog" class="blog_posts min-h-[100vh] my-8 font-poppins">
     
 
     <?php if ( have_posts() ) : ?>
@@ -30,7 +30,6 @@ get_header();
 				the_post(); ?>
         
         <div class="single_blog bg-white shadow-sm mb-4 rounded-lg">
-        
         
           <?php if ( has_post_thumbnail() ): ?>
           <a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto hover:grayscale duration-100')); ?></a>
@@ -78,7 +77,7 @@ get_header();
               <h4
                 class="text-xs text-slate-500 mb-2 py-4 font-medium leading-5"
               >
-                <?php echo wp_trim_words(get_the_content(), 20, '<a class="block mt-4 text-slate-700 hover:text-slate-950 transition-all text-sm" href=" ' .get_permalink() . ' "> Read More </a>'); ?>
+                <?php echo wp_trim_words(get_the_content(), 20, '<a class="block mt-4 text-slate-700 hover:text-slate-950 transition-all text-sm" href=" ' .get_permalink() . ' "> Read More ... </a>'); ?>
               
               </h4>
           </div>

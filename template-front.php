@@ -86,7 +86,7 @@ get_header(); ?>
 
 
       <!-- <span class="font-bold capitalize mb-2 block text-sm text-slate-500">Find Me in-</span> -->
-      <!-- <ul class="flex flex-row justify-start space-x-4 text-lg text-slate-600">
+      <ul class="flex flex-row justify-start space-x-4 text-lg text-slate-600">
         <li>
           <a
             class="px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid"
@@ -115,7 +115,7 @@ get_header(); ?>
             ><i class="fa-regular fa-envelope"></i
           ></a>
         </li>
-      </ul> -->
+      </ul>
 
 
     </div>
@@ -127,35 +127,47 @@ get_header(); ?>
 
 <!--ABOUT SECTION-->
 
+<?php 
+$args= (array('post_type' => 'user_about_profile', 'post_status' => 'publish'));
+$about_query = new WP_Query($args);
+
+if($about_query->have_posts()) :
+
+while ($about_query->have_posts()) : $about_query->the_post(); ?>
+
 <section
   id="about"
   class="devs_about min-h-[100vh] mb-24 lg:mb-48 transition-all"
 >
   <div class="page_title my-4">
-    <h4 class="bg-slate-200 px-4 py-2 inline-block font-bold text-sm uppercase">
-      about
-    </h4>
-  </div>
-  <div class="about_title mt-4 mb-6">
-    <h2 class="text-xl sm:text-4xl font-bold capitalize">About Me</h2>
+    <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-lg uppercase">
+    <?php the_title(); ?>
+    </h3>
   </div>
 
+  
   <div class="about_photo overflow-hidden ">
     <div class="about_photo_single relative ">
-      <img
-        src="<?php echo get_template_directory_uri(  ); ?>/img/author_profile.jpg"
-        class="h-auto w-full"
-        alt=""
-      />
+      
+
+      <?php if ( has_post_thumbnail() ): ?>
+          <?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto')); ?>
+      <?php endif; ?>
 
       <div style="background-color: rgba(255,255,255,0.7);" class="designation_overlay absolute top-1/2 left-0 z-2 -translate-x-0 -translate-y-1/2 h-full w-full items-center backdrop-blur-sm shadow-lg rounded-e-lg flex flex-col justify-center pl-5">
         <h3
           class="font-bold text-2xl sm:text-4xl text-slate-900  my-2 font-poppins uppercase"
         >
-          <a href="">Arif Hassan</a>
+          <?php
+          $username = get_post_meta(get_the_ID(), 'username', true);
+          echo esc_html( $username );
+          ?>
         </h3>
         <p class="designation text-lg text-slate-500 font-semibold">
-          Web Developer
+        <?php
+          $userdesig = get_post_meta(get_the_ID(), 'user_designation', true);
+          echo esc_html( $userdesig );
+          ?>
         </p>
       </div>
     </div>
@@ -168,19 +180,7 @@ get_header(); ?>
       class="about_content my-4 md:my-6 py-3 md:py-7 border-t-2 border-slate-300 font-poppins"
     >
       <p class="text-slate-600 text-sm font-medium leading-7 mt-2">
-        Hi, my name is Arif Hassan and I began using WordPress when it first
-        began. I’ve spent most of my waking hours for the last ten years
-        designing, programming and operating WordPress sites.
-      </p>
-      <p class="text-slate-600 text-sm font-medium leading-7 mt-2">
-        One of my specialties is taking an idea from scratch and creating a
-        full-fledged platform. I go beyond to produce sites with a unique,
-        outstanding, contemporary look-and-feel.
-      </p>
-      <p class="text-slate-600 text-sm font-medium leading-7 mt-2">
-        With extensive knowledge of web mechanics, I'm able to optimize complex
-        integrations to require little-to-no maintenance while running on their
-        own for years.
+        <?php the_content(); ?>
       </p>
 
       <div
@@ -188,56 +188,26 @@ get_header(); ?>
       >
         <div class="left_list mt-8 md:mt-0">
           <ul class="columns-1 sm:columns-2 gap-0 sm:gap-x-6 md:gap-x-12">
-            <li>
-              <span class="min-w-[100px] mr-2 inline-block font-bold"
-                >Birthday:</span
-              ><span class="text-slate-500">01.01.1992</span>
-            </li>
-            <li>
-              <span class="min-w-[100px] mr-2 inline-block font-bold">Age:</span
-              ><span class="text-slate-500">32</span>
-            </li>
-            <li>
-              <span class="min-w-[100px] mr-2 inline-block font-bold"
-                >Address:</span
-              ><span class="text-slate-500">Brahmanbaria, Bangladesh</span>
-            </li>
-            <li>
-              <span class="min-w-[100px] mr-2 inline-block font-bold"
-                >Email:</span
-              ><span class="text-slate-500">aarifhassan02@gmail.com</span>
-            </li>
-            <li>
-              <span class="min-w-[100px] mr-2 inline-block font-bold"
-                >Phone:</span
-              ><span class="text-slate-500">+880-1750-128167</span>
-            </li>
 
-            <li>
-              <span class="min-w-[100px] mr-2 inline-block font-bold"
-                >Nationality:</span
-              ><span class="text-slate-500">Bangladeshi</span>
-            </li>
-            <li>
-              <span class="min-w-[100px] mr-2 inline-block font-bold"
-                >Study: </span
-              ><span class="text-slate-500">University of Dhaka</span>
-            </li>
-            <li>
-              <span class="min-w-[100px] mr-2 inline-block font-bold"
-                >Degree:</span
-              ><span class="text-slate-500">Masters</span>
-            </li>
-            <li>
-              <span class="min-w-[100px] mr-2 inline-block font-bold"
-                >Interest:</span
-              ><span class="text-slate-500">Playing, Reading</span>
-            </li>
-            <li>
-              <span class="min-w-[100px] mr-2 inline-block font-bold"
-                >Freelance:</span
-              ><span class="text-slate-500">Available</span>
-            </li>
+
+          <?php 
+            $user_birthday = get_post_meta(get_the_ID(), 'user_birthday', true);
+            $user_age = get_post_meta(get_the_ID(), 'user_age', true);
+            $user_country = get_post_meta(get_the_ID(), 'user_country', true);
+            $user_phone = get_post_meta(get_the_ID(), 'user_phone', true);
+
+            $items = [
+              'Birthday' => $user_birthday,
+              'Age' => $user_age,
+              'Country' => $user_country,
+              'Phone' => $user_phone,
+            ];
+
+            foreach ($items as $label => $value) {
+              if (!empty($value)) echo "<li><span class=\"min-w-[100px] mr-2 inline-block font-bold\">$label:</span><span class=\"text-slate-500\">$value</span></li>";
+            }
+          ?>
+
           </ul>
         </div>
       </div>
@@ -246,19 +216,33 @@ get_header(); ?>
 
   <div class="knoweledge_section bg-white py-6 px-2 md:p-6 font-poppins">
     <ul class="grid grid-cols-2 gap-y-6 gap-x-6 sm:gap-x-12">
+
+    <?php 
+      $user_degree = get_post_meta(get_the_ID(), 'user_mba', true);
+
+      $items = [
+        'M.B.A' => $institute,
+      ];
+      
+      foreach($items as $degree => $institute) { 
+      if(!empty($degree)) echo "
+      
       <li>
-        <div class="education_list flex gap-8 my-2">
-          <div class="education_subject w-2/3">
-            <h3 class="font-semibold">M.B.A</h3>
-            <span class="text-sm text-slate-400">University of Dhaka</span>
+        <div class=\"education_list flex gap-8 my-2\">
+          <div class=\"education_subject w-2/3\">
+            <h3 class=\"font-semibold\">$degree;</h3>
+            <span class=\"text-sm text-slate-400\"> $institute;</span>
           </div>
           <div
-            class="year w-1/3 text-center md:text-end bg-slate-50 text-slate-400 font-semibold p-2 rounded-sm"
+            class=\"year w-1/3 text-center md:text-end bg-slate-50 text-slate-400 font-semibold p-2 rounded-sm\"
           >
             <span>2015-16</span>
           </div>
         </div>
-      </li>
+      </li>";
+    }
+    ?>
+      
       <li>
         <div class="education_list flex gap-8 my-2">
           <div class="education_subject w-2/3">
@@ -319,6 +303,9 @@ get_header(); ?>
       </li>
     </ul>
   </div>
+
+  <?php endwhile; ?>
+  <?php endif; ?>
 </section>
 
 <!--PORTFOLIO SECTION-->
