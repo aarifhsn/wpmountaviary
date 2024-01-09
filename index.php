@@ -32,7 +32,7 @@ get_header();
         <div class="single_blog bg-white shadow-sm mb-4 rounded-lg">
         
           <?php if ( has_post_thumbnail() ): ?>
-          <a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto hover:grayscale duration-100')); ?></a>
+          <a class="overflow-hidden" href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto hover:scale-110 duration-300 rounded-t-lg')); ?></a>
           <?php endif; ?>
 
        

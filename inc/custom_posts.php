@@ -31,6 +31,27 @@ function mountaviary_custom_posts_init() {
          'supports'           => array( 'title', 'editor', 'author', 'thumbnail' ),
       )
    );
+
+   register_post_type( 'mount_portfolio',
+      array (
+	      'labels' => array(
+            'name'                  => __( 'Portfolio', 'mountaviary' ),
+            'singular_name'         => __( 'Portfolio', 'mountaviary' ),
+            'add_new'               => __( 'Add New', 'mountaviary' ),
+            'add_new_item'          => __( 'Add New Portfolio', 'mountaviary'),
+            'new_item'              => __( 'New Portfolio', 'mountaviary' ),
+            'edit_item'             => __( 'Edit Portfolio', 'mountaviary' ),
+            'view_item'             => __( 'View Portfolio', 'mountaviary' ),
+            'all_items'             => __( 'All Portfolio', 'mountaviary' ),
+            ),
+         'menu_icon'          => 'dashicons-admin-appearance',
+         'public'             => true, 
+         'rewrite'            => array( 'slug' => 'portfolio' ),
+         'capability_type'    => 'post',
+         'menu_position'      => 6,
+         'supports'           => array( '' ),
+      )
+   );
 	
 }
 

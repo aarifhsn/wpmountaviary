@@ -219,18 +219,19 @@ while ($about_query->have_posts()) : $about_query->the_post(); ?>
 
     <?php 
       $user_degree = get_post_meta(get_the_ID(), 'user_mba', true);
+      $institute = get_post_meta(get_the_ID(), 'institute', true);
 
       $items = [
-        'M.B.A' => $institute,
+        $user_degree => $institute,
       ];
       
       foreach($items as $degree => $institute) { 
-      if(!empty($degree)) echo "
+      if(!empty($user_degree)) echo "
       
       <li>
         <div class=\"education_list flex gap-8 my-2\">
           <div class=\"education_subject w-2/3\">
-            <h3 class=\"font-semibold\">$degree;</h3>
+            <h3 class=\"font-semibold\">$user_degree;</h3>
             <span class=\"text-sm text-slate-400\"> $institute;</span>
           </div>
           <div
@@ -242,65 +243,7 @@ while ($about_query->have_posts()) : $about_query->the_post(); ?>
       </li>";
     }
     ?>
-      
-      <li>
-        <div class="education_list flex gap-8 my-2">
-          <div class="education_subject w-2/3">
-            <h3 class="font-semibold">M.S.S</h3>
-            <span class="text-sm text-slate-400">Dhaka College</span>
-          </div>
-          <div
-            class="year w-1/3 text-center md:text-end bg-slate-50 text-slate-400 font-semibold p-2 rounded-sm"
-          >
-            <span>2013-14</span>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="education_list flex gap-8 my-2">
-          <div class="education_subject w-2/3">
-            <h3 class="font-semibold">B.S.S.</h3>
-            <span class="text-sm text-slate-400"
-              >Brahmabaria Govt. College</span
-            >
-          </div>
-          <div
-            class="year w-1/3 text-center flex-initial md:text-end bg-slate-50 text-slate-400 font-semibold p-2 rounded-sm"
-          >
-            <span>2009-13</span>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="education_list flex gap-8 my-2">
-          <div class="education_subject w-2/3">
-            <h3 class="font-semibold">H.S.C</h3>
-            <span class="text-sm text-slate-400"
-              >Brahmabaria Govt. College</span
-            >
-          </div>
-          <div
-            class="year w-1/3 text-center md:text-end bg-slate-50 text-slate-400 font-semibold p-2 rounded-sm"
-          >
-            <span>2006-07</span>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="education_list flex gap-8 my-2">
-          <div class="education_subject w-2/3">
-            <h3 class="font-semibold">S.S.C.</h3>
-            <span class="text-sm text-slate-400"
-              >Annada Govt. High School
-            </span>
-          </div>
-          <div
-            class="year w-1/3 text-center md:text-end bg-slate-50 text-slate-400 font-semibold p-2 rounded-sm"
-          >
-            <span>2004-05</span>
-          </div>
-        </div>
-      </li>
+  
     </ul>
   </div>
 
@@ -310,143 +253,60 @@ while ($about_query->have_posts()) : $about_query->the_post(); ?>
 
 <!--PORTFOLIO SECTION-->
 
+
+
+
+<?php 
+$args= (array('post_type' => 'mount_portfolio', 'post_status' => 'publish','posts_per_page' => -1));
+$portfolio_query = new WP_Query($args);
+
+if($portfolio_query->have_posts()) :
+?>
+
 <section id="portfolio" class="portfolio_area min-h-[100vh] my-24 lg:my-48">
   <div class="portfolio_title my-4">
-    <h4 class="bg-slate-200 px-4 py-2 inline-block font-bold text-sm uppercase">
-      Portfolio
+    <h4 class="bg-slate-200 px-4 py-2 inline-block font-bold text-lg uppercase">
+      <?php echo get_theme_mod('mountaviary_portfolio_title_text'); ?>
     </h4>
   </div>
   <div class="about_content mt-4 mb-6">
-    <h2 class="text-xl sm:text-4xl font-bold capitalize">Portfolio</h2>
     <h5 class="text-sm leading-8 text-slate-500 font-semibold">
-      A few recent design and coding projects
+    <?php echo get_theme_mod('mountaviary_portfolio_subtitle'); ?>
     </h5>
   </div>
 
   <div
     class="portfolio_page grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
   >
+    
+    <?php while ($portfolio_query->have_posts()) : $portfolio_query->the_post(); ?>
     <div class="single_port relative">
-      <img
-        class="w-full"
-        src="<?php echo get_template_directory_uri(  ); ?>/img/project-1.jpg"
-        alt=""
-      />
-      <div
-        class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
-      >
-        <div class="text-slate-200 font-bold">
-          <a href="">Hello World</a>
-        </div>
-      </div>
-    </div>
 
-    <div class="single_port relative">
-      <img
-        class="w-full"
-        src="<?php echo get_template_directory_uri() ;?>/img/project-2.jpg"
-        alt=""
-      />
+      <?php $portfolio_item_link = get_post_meta(get_the_ID(), 'portfolio-image', true); ?>
+      <img class="w-full h-auto" src="<?php echo $portfolio_item_link; ?>" alt="" >
+      
       <div
         class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
       >
         <div class="text-slate-200 font-bold">
-          <a href="">Hello World</a>
+          
+          <?php $portfolio_item_link = get_post_meta(get_the_ID(), 'portfolio-item-link', true); ?>
+          <?php $portfolio_item_title = get_post_meta(get_the_ID(), 'portfolio-item-title', true); ?>
+          <a href="<?php echo $portfolio_item_link; ?>" target="_blank"><?php echo $portfolio_item_title; ?></a>
         </div>
       </div>
     </div>
+    <?php endwhile; ?>
 
-    <div class="single_port relative">
-      <img
-        class="w-full"
-        src="<?php echo get_template_directory_uri() ;?>/img/project-3.jpg"
-        alt=""
-      />
-      <div
-        class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
-      >
-        <div class="text-slate-200 font-bold">
-          <a href="">Hello World</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="single_port relative">
-      <img
-        class="w-full"
-        src="<?php echo get_template_directory_uri() ;?>/img/project-4.jpg"
-        alt=""
-      />
-      <div
-        class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
-      >
-        <div class="text-slate-200 font-bold">
-          <a href="">Hello World</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="single_port relative">
-      <img
-        class="w-full"
-        src="<?php echo get_template_directory_uri() ;?>/img/project-5.jpg"
-        alt=""
-      />
-      <div
-        class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
-      >
-        <div class="text-slate-200 font-bold">
-          <a href="">Hello World</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="single_port relative">
-      <img
-        class="w-full"
-        src="<?php echo get_template_directory_uri() ;?>/img/project-6.jpg"
-        alt=""
-      />
-      <div
-        class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
-      >
-        <div class="text-slate-200 font-bold">
-          <a href="">Hello World</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="single_port relative">
-      <img
-        class="w-full"
-        src="<?php echo get_template_directory_uri() ;?>/img/project-7.jpg"
-        alt=""
-      />
-      <div
-        class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
-      >
-        <div class="text-slate-200 font-bold">
-          <a href="">Hello World</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="single_port relative">
-      <img
-        class="w-full"
-        src="<?php echo get_template_directory_uri() ;?>/img/project-8.jpg"
-        alt=""
-      />
-      <div
-        class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
-      >
-        <div class="text-slate-200 font-bold">
-          <a href="">Hello World</a>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
+
+<?php endif; ?>
+<!-- reset global post variable. After this point, we are back to the Main Query object -->
+<?php wp_reset_postdata(); ?>
+<!-- END OF PORTFOLIO SECTION  -->
+
+
 
 <!-- SERVICES SECTION  -->
 <section id="service" class="services_area min-h-[100vh] my-24 lg:my-48">
@@ -557,7 +417,16 @@ while ($about_query->have_posts()) : $about_query->the_post(); ?>
   </div>
 </section>
 
+
+
 <!-- BLOG SECTION  -->
+
+<?php 
+    $args = array( 'post_type' => 'post', 'posts_per_page' => 6, 'ignore_sticky_posts' =>1 );
+    $the_query = new WP_Query( $args ); 
+
+    if($the_query->have_posts()) : 
+?>
 <section id="blog" class="blog_posts min-h-[100vh] my-24 lg:my-48">
   <div class="blog_area_title my-4">
     <h4 class="bg-slate-200 px-4 py-2 inline-block font-bold text-sm uppercase">
@@ -571,145 +440,40 @@ while ($about_query->have_posts()) : $about_query->the_post(); ?>
   <div
     class="blog_info_area grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
   >
+
+  <?php while ($the_query->have_posts( )) : $the_query->the_post(); ?>
+
     <div class="single_blog bg-white shadow-sm mb-4 rounded-lg">
-      <a class="" href=""
-        ><img
-          src="<?php echo get_template_directory_uri() ;?>/img/project-4.jpg"
-          class="w-full h-auto hover:grayscale duration-100"
-          alt=""
-      /></a>
+      <a href="<?php the_permalink(); ?>"
+        ><?php if ( has_post_thumbnail() ): ?>
+          <?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto hover:grayscale duration-100')); ?>
+      <?php endif; ?></a>
+
       <div class="author_info flex items-center px-4 py-2 mt-2">
-        <img
-          class="author_photo h-7 w-7 rounded-full"
-          src="<?php echo get_template_directory_uri() ;?>/img/project-7.jpg"
-          alt=""
-        />
+        <?php echo get_avatar( get_the_author_meta( 'ID' ), $size = '28', $default = '', $alt = '', $args = array( 'class' => 'author_photo rounded-full' ) );  ?>
         <h4
           class="author_name text-slate-500 hover:text-slate-900 mx-3 text-xs font-bold"
         >
-          <a href="#">Arif Hassan</a>
+        <?php the_author_posts_link(); ?>
         </h4>
-        <h5 class="post_date text-slate-500 text-xs">Dec 12, 2023</h5>
+        <h5 class="post_date text-slate-500 text-xs"><?php the_date('M d, Y'); ?></h5>
       </div>
       <div class="blog_content px-4 py-3">
         <h4
           class="text-sm text-slate-700 hover:text-slate-950 mb-2 font-medium"
         >
-          <a href="#"
-            >Microsoft announces a five-year commitment to create a bigger
-            opportunities..</a
-          >
+        <?php echo wp_trim_words(get_the_content(), 20, '<a class="font-medium text-xs text-slate-500 hover:text-slate-900 block" href=" ' .get_permalink() . ' "> Read More ... </a>'); ?>
         </h4>
-        <span class="font-medium text-xs text-slate-500 hover:text-slate-900"
-          ><a href="#">Read More ...</a></span
-        >
+        
       </div>
     </div>
-    <div class="single_blog bg-white shadow-sm mb-4">
-      <a href=""
-        ><img
-          src="<?php echo get_template_directory_uri() ;?>/img/project-1.jpg"
-          class="w-full h-auto hover:grayscale duration-100"
-          alt=""
-      /></a>
-      <div class="author_info flex items-center px-4 py-2 mt-2">
-        <img
-          class="author_photo h-7 w-7 rounded-full"
-          src="<?php echo get_template_directory_uri() ;?>/img/project-7.jpg"
-          alt=""
-        />
-        <h4
-          class="author_name text-slate-500 hover:text-slate-900 mx-3 text-xs font-bold"
-        >
-          <a href="">Arif Hassan</a>
-        </h4>
-        <h5 class="post_date text-slate-500 text-xs">Dec 12, 2023</h5>
-      </div>
-      <div class="blog_content px-4 py-3">
-        <h4
-          class="text-sm text-slate-700 hover:text-slate-950 mb-2 font-medium"
-        >
-          <a href="#"
-            >Microsoft announces a five-year commitment to create a bigger
-            opportunities..</a
-          >
-        </h4>
-        <span class="font-medium text-xs text-slate-500 hover:text-slate-900"
-          ><a href="#">Read More ...</a></span
-        >
-      </div>
-    </div>
-    <div class="single_blog bg-white shadow-sm mb-4">
-      <a href=""
-        ><img
-          src="<?php echo get_template_directory_uri() ;?>/img/project-2.jpg"
-          class="w-full h-auto hover:grayscale duration-100"
-          alt=""
-      /></a>
-      <div class="author_info flex items-center px-4 py-2 mt-2">
-        <img
-          class="author_photo h-7 w-7 rounded-full"
-          src="<?php echo get_template_directory_uri() ;?>/img/project-7.jpg"
-          alt=""
-        />
-        <h4
-          class="author_name text-slate-500 hover:text-slate-900 mx-3 text-xs font-bold"
-        >
-          <a href="">Arif Hassan</a>
-        </h4>
-        <h5 class="post_date text-slate-500 text-xs">Dec 12, 2023</h5>
-      </div>
-      <div class="blog_content px-4 py-3">
-        <h4
-          class="text-sm text-slate-700 hover:text-slate-950 mb-2 font-medium"
-        >
-          <a href="#"
-            >Microsoft announces a five-year commitment to create a bigger
-            opportunities..</a
-          >
-        </h4>
-        <span class="font-medium text-xs text-slate-500 hover:text-slate-900"
-          ><a href="#">Read More ...</a></span
-        >
-      </div>
-    </div>
-    <div class="single_blog bg-white shadow-sm mb-4">
-      <a href=""
-        ><img
-          src="<?php echo get_template_directory_uri() ;?>/img/project-3.jpg"
-          class="w-full h-auto hover:grayscale duration-100"
-          alt=""
-      /></a>
-      <div class="author_info flex items-center px-4 py-2 mt-2">
-        <a href=""
-          ><img
-            class="author_photo h-7 w-7 rounded-full"
-            src="<?php echo get_template_directory_uri() ;?>/img/project-7.jpg"
-            alt=""
-        /></a>
-        <h4
-          class="author_name text-slate-500 hover:text-slate-900 mx-3 text-xs font-bold"
-        >
-          <a href="">Arif Hassan</a>
-        </h4>
-        <h5 class="post_date text-slate-500 text-xs">Dec 12, 2023</h5>
-      </div>
-      <div class="blog_content px-4 py-3">
-        <h4
-          class="text-sm text-slate-700 hover:text-slate-950 mb-2 font-medium"
-        >
-          <a class="block" href="#"
-            >Microsoft4 announces a five-year commitment to create a bigger
-            opportunities..</a
-          >
-        </h4>
-        <span class="font-medium text-xs text-slate-500 hover:text-slate-900"
-          ><a href="#">Read More ...</a></span
-        >
-      </div>
-    </div>
+  <?php endwhile; ?>
   </div>
 </section>
+
+<?php endif; ?>
+<!-- reset global post variable. After this point, we are back to the Main Query object -->
+<?php wp_reset_postdata(); ?>
 
 <!-- CONTACT SECTION -->
 

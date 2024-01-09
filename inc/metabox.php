@@ -140,4 +140,45 @@ function mountaviary_cmb2_metaboxes() {
 	) );
 
 
+	/**
+	 * Portfilio Custom Post metabox area
+	 */
+	$cmb = new_cmb2_box( array(
+		'id'            => 'mountaviary_portfolio',
+		'title'         => __( 'Portolio Section', 'cmb2' ),
+		'object_types'  => array( 'mount_portfolio' ), // Post type
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // Keep the metabox closed by default
+	) );
+
+	
+	// Portfolio Title
+	$cmb->add_field( array(
+		'name' => __( 'Portfolio Title', 'cmb2' ),
+		'desc' => __( 'field description (optional)', 'cmb2' ),
+		'id'   => 'portfolio-item-title',
+		'type' => 'text',
+		
+	) );
+	
+	// Portfolio Title Link
+	$cmb->add_field( array(
+		'name' => __( 'Portfolio Link', 'cmb2' ),
+		'desc' => __( 'field description (optional)', 'cmb2' ),
+		'id'   => 'portfolio-item-link',
+		'type' => 'text_url',
+		
+	) );
+	// Portfolio Image
+	$cmb->add_field( array(
+		'name' => __( 'Portfolio Image Upload', 'cmb2' ),
+		'desc' => __( 'field description (optional)', 'cmb2' ),
+		'id'   => 'portfolio-image',
+		'type' => 'file',
+		
+	) );
+
 }

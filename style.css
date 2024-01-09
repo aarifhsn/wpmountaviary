@@ -57,24 +57,24 @@ img {
 /* custom Scroll bar */
 
 /* width */
-  .sidebar_content::-webkit-scrollbar {
+  .left_nav_content::-webkit-scrollbar {
     width: 7px;
     top: 5px;
   }
   
   /* Track */
-  .sidebar_content::-webkit-scrollbar-track {
+  .left_nav_content::-webkit-scrollbar-track {
     background: #f1f1f1;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
   }
   
   /* Handle */
-  .sidebar_content::-webkit-scrollbar-thumb {
+  .left_nav_content::-webkit-scrollbar-thumb {
     background: #c3c2c2;
   }
   
   /* Handle on hover */
-  .sidebar_content::-webkit-scrollbar-thumb:hover {
+  .left_nav_content::-webkit-scrollbar-thumb:hover {
     background: #b5b4b4;
   }
 

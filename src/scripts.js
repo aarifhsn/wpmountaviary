@@ -8,4 +8,23 @@ document.addEventListener("DOMContentLoaded", function () {
       mobileMenuButton.classList.toggle("active");
     }
   });
+
+  // Menu and Sidebar Toggle
+
+  const sidebarIcon = document.querySelectorAll(".sidebar_icon");
+  const sidebarToggle = document.querySelectorAll(".sidebar_toggle");
+
+  sidebarIcon.forEach(function (icon, index) {
+    icon.addEventListener("click", function () {
+      sidebarToggle.forEach(function (area) {
+        area.classList.add("hidden");
+      });
+
+      // Show the corresponding area
+      const associatedArea = document.getElementById(`sidebar${index + 1}`);
+      if (associatedArea) {
+        associatedArea.classList.remove("hidden");
+      }
+    });
+  });
 });

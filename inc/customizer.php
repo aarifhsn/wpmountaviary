@@ -162,6 +162,37 @@ function mountaviary_customizer_register ($wp_customize) {
     function sanitize_footer_checkbox($checked) {
         return $checked == 1 ? 1 : '';
     }
+
+
+
+    // PORTFOLIO CUSTOM POSTS TYPE AREA 
+
+    $wp_customize->add_section('mountaviary_portfolio_front_page_area', array(
+        'title'    => __('Front Page Portfolio Section', 'mountaviary'),
+        'description' => 'Change Footer Text.',
+    ));
+
+    $wp_customize->add_setting('mountaviary_portfolio_title_text', array(
+        'default'        => 'PORTFOLIO',
+
+    ));
+	
+    $wp_customize-> add_control('mountaviary_portfolio_title_text', array(
+        'label'    => __('Portfolio Title Text', 'mountaviary'),
+        'section'  => 'mountaviary_portfolio_front_page_area',
+        'settings' => 'mountaviary_portfolio_title_text',
+    ));
+
+    $wp_customize->add_setting('mountaviary_portfolio_subtitle', array(
+        'default'        => 'A few recent design and coding projects',
+
+    ));
+	
+    $wp_customize-> add_control('mountaviary_portfolio_subtitle_control', array(
+        'label'    => __('Portfolio Sub Title', 'mountaviary'),
+        'section'  => 'mountaviary_portfolio_front_page_area',
+        'settings' => 'mountaviary_portfolio_subtitle',
+    ));
 }
 
 add_action( 'customize_register', 'mountaviary_customizer_register' );
