@@ -57,12 +57,12 @@
               <span class="sidebar_icon cursor-pointer"><i class="fa-regular fa-window-restore"></i></span>
             </div>
 
-            <div id="sidebar1" class="sidebar_toggle px-12 pt-4 pb-4 hidden">
+            <div id="sidebar2" class="sidebar_toggle px-12 pt-4 pb-4 hidden">
               <?php get_sidebar(); ?>
             </div>
 
             <div
-              id="sidebar2" class="left_nav_info sidebar_toggle  rounded h-full"
+              id="sidebar1" class="left_nav_info sidebar_toggle  rounded h-full"
             >
               <div class="px-12 pt-4 pb-4">
                 <div class="person_info">

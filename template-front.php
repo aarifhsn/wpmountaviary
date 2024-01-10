@@ -43,8 +43,6 @@ get_header(); ?>
           </a>
         </h3>
       </div>
-
-
     <?php } ?>
 
 
