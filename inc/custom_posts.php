@@ -22,7 +22,7 @@ function mountaviary_custom_posts_init() {
             'view_item'             => __( 'View About', 'mountaviary' ),
             'all_items'             => __( 'All About', 'mountaviary' ),
             ),
-         'menu_icon'          => 'dashicons-admin-appearance',
+         'menu_icon'          => 'dashicons-format-chat',
          'public'             => true, 
          'rewrite'            => array( 'slug' => 'about' ),
          'capability_type'    => 'post',
@@ -44,12 +44,33 @@ function mountaviary_custom_posts_init() {
             'view_item'             => __( 'View Portfolio', 'mountaviary' ),
             'all_items'             => __( 'All Portfolio', 'mountaviary' ),
             ),
-         'menu_icon'          => 'dashicons-admin-appearance',
+         'menu_icon'          => 'dashicons-images-alt',
          'public'             => true, 
          'rewrite'            => array( 'slug' => 'portfolio' ),
          'capability_type'    => 'post',
          'menu_position'      => 6,
          'supports'           => array( '' ),
+      )
+   );
+
+   register_post_type( 'mount_services',
+      array (
+	      'labels' => array(
+            'name'                  => __( 'Services', 'mountaviary' ),
+            'singular_name'         => __( 'Service', 'mountaviary' ),
+            'add_new'               => __( 'Add New', 'mountaviary' ),
+            'add_new_item'          => __( 'Add New Service', 'mountaviary'),
+            'new_item'              => __( 'New Service', 'mountaviary' ),
+            'edit_item'             => __( 'Edit Service', 'mountaviary' ),
+            'view_item'             => __( 'View Service', 'mountaviary' ),
+            'all_items'             => __( 'All Service', 'mountaviary' ),
+            ),
+         'menu_icon'          => 'dashicons-images-alt',
+         'public'             => true, 
+         'rewrite'            => array( 'slug' => 'service' ),
+         'capability_type'    => 'post',
+         'menu_position'      => 7,
+         'supports'           => array( 'title', 'editor' ),
       )
    );
 	

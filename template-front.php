@@ -278,22 +278,19 @@ if($portfolio_query->have_posts()) :
   <div
     class="portfolio_page grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
   >
-    
     <?php while ($portfolio_query->have_posts()) : $portfolio_query->the_post(); ?>
     <div class="single_port relative">
-
       <?php $portfolio_item_link = get_post_meta(get_the_ID(), 'portfolio-image', true); ?>
       <img class="w-full h-auto" src="<?php echo $portfolio_item_link; ?>" alt="" >
-      
       <div
         class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
       >
         <div class="text-slate-200 font-bold">
-          
           <?php $portfolio_item_link = get_post_meta(get_the_ID(), 'portfolio-item-link', true); ?>
           <?php $portfolio_item_title = get_post_meta(get_the_ID(), 'portfolio-item-title', true); ?>
           <a href="<?php echo $portfolio_item_link; ?>" target="_blank"><?php echo $portfolio_item_title; ?></a>
         </div>
+        
       </div>
     </div>
     <?php endwhile; ?>
@@ -309,114 +306,54 @@ if($portfolio_query->have_posts()) :
 
 
 <!-- SERVICES SECTION  -->
+<?php 
+$args= (array('post_type' => 'mount_services', 'post_status' => 'publish','posts_per_page' => -1));
+$services_query = new WP_Query($args);
+
+if($services_query->have_posts()) :
+?>
+
 <section id="service" class="services_area min-h-[100vh] my-24 lg:my-48">
   <div class="services_title my-4">
     <h4 class="bg-slate-200 px-4 py-2 inline-block font-bold text-sm uppercase">
-      Services
+      <?php echo get_theme_mod('mountaviary_service_title_text'); ?>
     </h4>
   </div>
   <div class="about_content mt-4 mb-6">
-    <h2 class="text-xl sm:text-4xl font-bold capitalize">What I can Support</h2>
+    <h2 class="text-xl sm:text-4xl font-bold capitalize"><?php echo get_theme_mod('mountaviary_services_subtitle'); ?></h2>
   </div>
   <div class="services_page grid gap-4 grid-cols-1 md:grid-cols-2">
-    <div
-      class="single_serve group relative mx-2 my-1 sm:my-4 border-2 border-gray-100 hover:border-gray-200 transition-all rounded border-solid p-4"
-    >
-      <span
-        class="service_icon flex justify-center items-center left-0 relative text-center w-10 h-10 bg-slate-200 py-2 px-3 m-4 ml-0 rounded group-hover:bg-slate-300 transition-all"
-      >
-        <i class="fa-brands fa-wordpress"></i>
-      </span>
-      <h3 class="services_title text-xl my-4">Web Development</h3>
-      <p
-        class="services_content text-sm text-slate-500 font-normal leading-6 mb-4"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quas
-        molestias beatae ut itaque et iure doloribus voluptates eaque, vitae nam
-        deleniti maiores magni quibusdam corporis adipisci nostrum voluptatibus
-        eveniet.
-      </p>
-      <a
-        class="font-medium text-sm text-slate-700 hover:font-semibold transition duration-700"
-        href="#"
-        >Read More</a
-      >
-    </div>
 
+    <?php while ($services_query->have_posts()) : $services_query->the_post(); ?>
     <div
       class="single_serve group relative mx-2 my-1 sm:my-4 border-2 border-gray-100 hover:border-gray-200 transition-all rounded border-solid p-4"
     >
+    <!-- IF ADDED SERVICE AREA ICON  -->
+    <?php $services_icon = get_post_meta(get_the_ID(), 'services-icon', true); ?>
+    <?php if($services_icon !== '') { ?>
       <span
         class="service_icon flex justify-center items-center left-0 relative text-center w-10 h-10 bg-slate-200 py-2 px-3 m-4 ml-0 rounded group-hover:bg-slate-300 transition-all"
       >
-        <i class="fa-solid fa-check"></i>
+        
+        <span class="dashicons <?php echo $services_icon; ?>"></span>
       </span>
-      <h3 class="services_title text-xl my-4">Web Development</h3>
-      <p
-        class="services_content text-sm text-slate-500 font-normal leading-6 mb-4"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quas
-        molestias beatae ut itaque et iure doloribus voluptates eaque, vitae nam
-        deleniti maiores magni quibusdam corporis adipisci nostrum voluptatibus
-        eveniet.
-      </p>
-      <a
-        class="font-medium text-sm text-slate-700 hover:text-slate-900"
-        href="#"
-        >Read More</a
-      >
-    </div>
+    <?php  } ?>
 
-    <div
-      class="single_serve group relative mx-2 my-1 sm:my-4 border-2 border-gray-100 hover:border-gray-200 transition-all rounded border-solid p-4"
-    >
-      <span
-        class="service_icon flex justify-center items-center left-0 relative text-center w-10 h-10 bg-slate-200 py-2 px-3 m-4 ml-0 rounded group-hover:bg-slate-300 transition-all"
-      >
-        <i class="fa-brands fa-github"></i>
-      </span>
-      <h3 class="services_title text-xl my-4">Web Development</h3>
+      <h3 class="services_title text-xl my-4"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h3>
       <p
         class="services_content text-sm text-slate-500 font-normal leading-6 mb-4"
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quas
-        molestias beatae ut itaque et iure doloribus voluptates eaque, vitae nam
-        deleniti maiores magni quibusdam corporis adipisci nostrum voluptatibus
-        eveniet.
+      <?php echo wp_trim_words(get_the_content(), 40, '<a class="font-medium text-sm text-slate-700 hover:font-semibold transition duration-700 block" href=" ' .get_permalink() . ' "> Read More ... </a>'); ?>
       </p>
-      <a
-        class="font-medium text-sm text-slate-700 hover:text-slate-900"
-        href="#"
-        >Read More</a
-      >
     </div>
+    <?php endwhile; ?>
+    <!-- END SERVICES AREA  -->
 
-    <div
-      class="single_serve group relative mx-2 my-1 sm:my-4 border-2 border-gray-100 hover:border-gray-200 transition-all rounded border-solid p-4"
-    >
-      <span
-        class="service_icon flex justify-center items-center left-0 relative text-center w-10 h-10 bg-slate-200 py-2 px-3 m-4 ml-0 rounded group-hover:bg-slate-300 transition-all"
-      >
-        <i class="fa-solid fa-bolt"></i>
-      </span>
-      <h3 class="services_title text-xl my-4">Web Development</h3>
-      <p
-        class="services_content text-sm text-slate-500 font-normal leading-6 mb-4"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quas
-        molestias beatae ut itaque et iure doloribus voluptates eaque, vitae nam
-        deleniti maiores magni quibusdam corporis adipisci nostrum voluptatibus
-        eveniet.
-      </p>
-      <a
-        class="font-medium text-sm text-slate-700 hover:text-slate-900"
-        href="#"
-        >Read More</a
-      >
-    </div>
   </div>
 </section>
-
+<?php endif; ?>
+<!-- reset global post variable. After this point, we are back to the Main Query object -->
+<?php wp_reset_postdata(); ?>
 
 
 <!-- BLOG SECTION  -->

@@ -193,6 +193,36 @@ function mountaviary_customizer_register ($wp_customize) {
         'section'  => 'mountaviary_portfolio_front_page_area',
         'settings' => 'mountaviary_portfolio_subtitle',
     ));
+
+
+    // SERVICES CUSTOM POSTS TYPE AREA 
+
+    $wp_customize->add_section('mountaviary_services_front_page_area', array(
+        'title'    => __('Front Page Service Section', 'mountaviary'),
+        'description' => 'Change Services Area Text.',
+    ));
+
+    $wp_customize->add_setting('mountaviary_service_title_text', array(
+        'default'        => 'SERVICES',
+
+    ));
+	
+    $wp_customize-> add_control('mountaviary_service_title_text', array(
+        'label'    => __('Services Title Text', 'mountaviary'),
+        'section'  => 'mountaviary_services_front_page_area',
+        'settings' => 'mountaviary_service_title_text',
+    ));
+
+    $wp_customize->add_setting('mountaviary_services_subtitle', array(
+        'default'        => 'What I can Support',
+
+    ));
+	
+    $wp_customize-> add_control('mountaviary_services_subtitle_control', array(
+        'label'    => __('Services Sub Title', 'mountaviary'),
+        'section'  => 'mountaviary_services_front_page_area',
+        'settings' => 'mountaviary_services_subtitle',
+    ));
 }
 
 add_action( 'customize_register', 'mountaviary_customizer_register' );
