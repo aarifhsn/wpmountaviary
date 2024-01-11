@@ -1,19 +1,16 @@
 <?php
 /**
- * The template for displaying 404 pages (not found)
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package mountaviary
+ * The template for displaying 404 pages (Not Found)
+ * @package Mountaviary
+ * @since Mountaviary 1.0
  */
 
 get_header();
 ?>
 
-<!-- BLOG SECTION  -->
-    <section id="blog" class="blog_posts min-h-[100vh] my-12">
+<section id="blog" class="blog_posts min-h-[100vh] my-12">
         
-    <section class="error-404 not-found font-poppins">
+    <div class="error-404 not-found font-poppins">
 		<div class="error_icon text-3xl text-center">
 			<i class="fa-solid fa-circle-exclamation"></i>
 		</div>
@@ -31,23 +28,20 @@ get_header();
 					the_widget( 'WP_Widget_Recent_Posts' );
 				?>
 			</div>
-				
-
 				<div class="widget widget_categories my-8">
 					<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'mountaviary' ); ?></h2>
-
 					<ul>
-						<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-						?>
+					<?php
+					wp_list_categories(
+						array(
+							'orderby'    => 'count',
+							'order'      => 'DESC',
+							'show_count' => 1,
+							'title_li'   => '',
+							'number'     => 10,
+						)
+					);
+					?>
 					</ul>
 
 					</div><!-- .widget -->
@@ -62,9 +56,9 @@ get_header();
 					the_widget( 'WP_Widget_Tag_Cloud' );
 				?>
 
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
+		</div><!-- .page-content -->
+	</div><!-- .error-404 -->
 
-    </section>
+</section>
 
 <?php get_footer(); ?>

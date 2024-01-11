@@ -470,43 +470,8 @@ if($services_query->have_posts()) :
     <div
       class="contact_form w-full md:w-1/2 overflow-hidden ml-0 mr-0 -mt-6 px-0 text-slate-500"
     >
-      <form action="#" method="post">
-        <div class="my-0 md:my-3">
-          <label for="name">Name:</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            class="block w-full p-4 mt-2.5 rounded-sm border border-slate-400 border-solid"
-          />
-        </div>
-        <div class="my-3">
-          <label for="email">Email:</label>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            class="block w-full p-4 mt-2.5 rounded-sm border border-slate-400 border-solid"
-          />
-        </div>
-        <div class="my-3">
-          <label for="message">Message</label>
-          <textarea
-            name="message"
-            id="message"
-            class="block w-full p-4 mt-2.5 rounded-sm border border-slate-400 border-solid"
-          ></textarea>
-        </div>
-
-        <!-- Submit Button -->
-        <div class="my-3">
-          <button
-            type="submit"
-            class="rounded-sm bg-slate-800 border-2 border-slate-400 py-2 px-4 text-white hover:bg-slate-950 hover:border-slate-600 transition duration-500"
-          >
-            Submit
-          </button>
-        </div>
+         <?php echo do_shortcode('[wpforms id="1938" title="false]'); ?>
+     
       </form>
     </div>
   </div>

@@ -6,7 +6,7 @@
     <?php wp_head(); ?>
   </head>
 
-  <body <?php body_class('font-montserrat w-full mx-auto text-base transition-all scroll-smooth'); ?>>
+  <body <?php body_class('font-poppins w-full mx-auto text-base transition-all scroll-smooth'); ?>>
     <header
       class="flex lg:hidden bg-white relative md:fixed top-0 left-0 min-h-[52px] z-50 w-full overflow-hidden items-center px-12"
     >
@@ -15,7 +15,7 @@
       </div>
       <div class="top_menu w-1/2 z-[15]">
         <div
-          class="navbar uppercase font-poppins font-bold text-sm text-right relative"
+          class="navbar uppercase font-bold text-sm text-right relative"
         >
           <div class="menu-toggle mb-2">
             <span id="mobile-menu" class="cursor-pointer text-lg"
@@ -49,7 +49,7 @@
           
 
           <div
-            class="left_nav_content hidden lg:block 2xl:block flex-auto h-full overflow-hidden overflow-y-auto z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-left_nav-bg  bg-cover bg-no-repeat bg-center bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm"
+            class="left_nav_content hidden lg:block 2xl:block flex-auto h-full z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-left_nav-bg  bg-cover bg-no-repeat bg-center bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm"
           >
 
             <div id="sidebar_icon_area" class="flex gap-8 px-12 pt-12 pb-4 text-lg shadow-sm ">
@@ -57,12 +57,12 @@
               <span class="sidebar_icon cursor-pointer"><i class="fa-regular fa-window-restore"></i></span>
             </div>
 
-            <div id="sidebar2" class="sidebar_toggle px-12 pt-4 pb-4 hidden">
+            <div id="sidebar2" class="sidebar_toggle overflow-hidden overflow-y-auto px-8 pt-4 pb-4 hidden">
               <?php get_sidebar(); ?>
             </div>
 
             <div
-              id="sidebar1" class="left_nav_info sidebar_toggle  rounded h-full"
+              id="sidebar1" class="left_nav_info sidebar_toggle overflow-hidden overflow-y-auto  rounded h-full"
             >
               <div class="px-12 pt-4 pb-4">
                 <div class="person_info">

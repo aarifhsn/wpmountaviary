@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying archive pages
+ * @package Mountaviary
+ * @since Mountaviary 1.0
+ */
+get_header(); ?>
 
 <!-- BLOG SECTION  -->
     <section id="blog" class="blog_posts min-h-[100vh] my-4 lg:my-8 font-poppins">
