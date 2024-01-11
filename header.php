@@ -45,64 +45,64 @@
         class="container px-3 md:px-6 xl:p-0 mx-auto relative overflow-hidden"
       >
         <div class="site_content flex flex-row-reverse relative">
-          
-          
-
           <div
             class="left_nav_content hidden lg:block 2xl:block flex-auto h-full z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-left_nav-bg  bg-cover bg-no-repeat bg-center bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm"
           >
-
+            
             <div id="sidebar_icon_area" class="flex gap-8 px-12 pt-12 pb-4 text-lg shadow-sm ">
               <span class="sidebar_icon cursor-pointer"><i class="fa-solid fa-bars"></i></span>
               <span class="sidebar_icon cursor-pointer"><i class="fa-regular fa-window-restore"></i></span>
             </div>
 
-            <div id="sidebar2" class="sidebar_toggle overflow-hidden overflow-y-auto px-8 pt-4 pb-4 hidden">
-              <?php get_sidebar(); ?>
-            </div>
+            <div class="sidebar_section_front overflow-hidden overflow-y-auto h-full mb-20">
+              <div id="sidebar2" class="sidebar_toggle  px-8 pt-4 pb-4 hidden h-full">
+                <?php get_sidebar(); ?>
+              </div>
 
-            <div
-              id="sidebar1" class="left_nav_info sidebar_toggle overflow-hidden overflow-y-auto  rounded h-full"
-            >
-              <div class="px-12 pt-4 pb-4">
-                <div class="person_info">
-                  <div class="persons_photo flex items-center justify-start">
-                    <img
-                      class="rounded border-2 border-solid border-slate-400 h-auto w-32 p-0.5"
-                      src="<?php echo get_theme_mod('mountaviary_header_logo') ?>"
-                      alt="Mountaviary Logo"
-                    />
-                  </div>
-                  <h3
-                    class="person_name text-left xl:text-center text-lg text-slate-900 font-bold my-4 font-poppins"
-                  >
-                    <a href="<?php echo home_url(); ?>"
-                      >Mount<span class="text-slate-800">Aviary</span></a
+              <div
+                id="sidebar1" class="left_nav_info sidebar_toggle  rounded h-full"
+              >
+                <div class="px-12 pt-4 pb-4">
+                  <div class="person_info">
+                    <div class="persons_photo flex items-center justify-start">
+                      <img
+                        class="rounded border-2 border-solid border-slate-400 h-auto w-32 p-0.5"
+                        src="<?php echo get_theme_mod('mountaviary_header_logo') ?>"
+                        alt="Mountaviary Logo"
+                      />
+                    </div>
+                    <h3
+                      class="person_name text-left xl:text-center text-lg text-slate-900 font-bold my-4 font-poppins"
                     >
-                  </h3>
-                </div>
-                <!-- end person_info -->
+                      <a href="<?php echo home_url(); ?>"
+                        >Mount<span class="text-slate-800">Aviary</span></a
+                      >
+                    </h3>
+                  </div>
+                  <!-- end person_info -->
 
-                <div
-                  class="left_nav text-left uppercase font-poppins font-bold text-sm text-slate-600 mt-8"
-                > 
-                <!-- LEFT NAV MENU -->
-                  <?php $args = array(
-                        'theme_location'=> 'screen_menu',
-                        'container'     => '',
-                        'menu_class'    => '',
-                        'depth'         => 1,
-                        'fallback_cb'   => false,
-                        'add_li_class'  => 'mt-4',
-                        'nav_anchor_class' => 'hover:text-slate-950'
-                      );
-                      wp_nav_menu($args);
-                  ?>
+                  <div
+                    class="left_nav text-left uppercase font-poppins font-bold text-sm text-slate-600 mt-8"
+                  > 
+                  <!-- LEFT NAV MENU -->
+                    <?php $args = array(
+                          'theme_location'=> 'screen_menu',
+                          'container'     => '',
+                          'menu_class'    => '',
+                          'depth'         => 1,
+                          'fallback_cb'   => false,
+                          'add_li_class'  => 'mt-4',
+                          'nav_anchor_class' => 'hover:text-slate-950'
+                        );
+                        wp_nav_menu($args);
+                    ?>
 
+                  </div>
                 </div>
               </div>
+              <!-- end left_nav_info -->
             </div>
-            <!-- end left_nav_info -->
+            <!-- end sidebar_section_front  -->
           </div>
           <!--end left_nav_content-->
 

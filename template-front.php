@@ -471,8 +471,6 @@ if($services_query->have_posts()) :
       class="contact_form w-full md:w-1/2 overflow-hidden ml-0 mr-0 -mt-6 px-0 text-slate-500"
     >
          <?php echo do_shortcode('[wpforms id="1938" title="false]'); ?>
-     
-      </form>
     </div>
   </div>
 </section>
