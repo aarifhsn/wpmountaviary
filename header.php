@@ -48,29 +48,30 @@
           <div
             class="left_nav_content hidden lg:block 2xl:block flex-auto h-full z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-left_nav-bg  bg-cover bg-no-repeat bg-center bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm"
           >
-            
-            <div id="sidebar_icon_area" class="flex gap-8 px-12 pt-12 pb-4 text-lg shadow-sm ">
-              <span class="sidebar_icon cursor-pointer"><i class="fa-solid fa-bars"></i></span>
-              <span class="sidebar_icon cursor-pointer"><i class="fa-regular fa-window-restore"></i></span>
+            <div class="mountaviary_logo px-12 pt-8">
+              <a href="<?php echo home_url(); ?>"><img
+                class="h-auto w-16 p-0.5"
+                src="<?php echo get_theme_mod('mountaviary_sidebar_logo') ?>"
+                alt="Mountaviary Logo"
+              /></a>
             </div>
-
-            <div class="sidebar_section_front overflow-hidden overflow-y-auto h-full mb-20">
-              <div id="sidebar2" class="sidebar_toggle  px-8 pt-4 pb-4 hidden h-full">
+            <div id="sidebar_icon_area" class="flex gap-8 flex-row-reverse pl-12 pr-4 pt-4 pb-2 text-lg shadow-sm ">
+              <span class="sidebar_icon cursor-pointer text-slate-600" title="Menu"><i class="fa-solid fa-bars"></i></span>
+              <span class="sidebar_icon cursor-pointer" title="Show Sidebar Widget"><i class="fa-regular fa-window-restore"></i></span>
+            </div>
+ 
+            <div class="sidebar_section_front overflow-hidden overflow-y-auto max-h-96  mb-20">
+              
+              <div id="sidebar2" class="sidebar_toggle  px-8 pt-4 pb-4 hidden ">
                 <?php get_sidebar(); ?>
               </div>
 
               <div
-                id="sidebar1" class="left_nav_info sidebar_toggle  rounded h-full"
+                id="sidebar1" class="left_nav_info sidebar_toggle"
               >
                 <div class="px-12 pt-4 pb-4">
                   <div class="person_info">
-                    <div class="persons_photo flex items-center justify-start">
-                      <img
-                        class="rounded border-2 border-solid border-slate-400 h-auto w-32 p-0.5"
-                        src="<?php echo get_theme_mod('mountaviary_header_logo') ?>"
-                        alt="Mountaviary Logo"
-                      />
-                    </div>
+                    
                     <h3
                       class="person_name text-left xl:text-center text-lg text-slate-900 font-bold my-4 font-poppins"
                     >

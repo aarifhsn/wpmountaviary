@@ -7,21 +7,20 @@
  * and that other 'pages' on your WordPress site may use a
  * different template.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package mountaviary
+ * @package Mountaviary
+ * 
+ * @since Mountaviary 1.0
  */
 
 get_header();
 ?>
-
-      <!-- BLOG SECTION  -->
+      <!-- PAGE SECTION  -->
       <section id="blog" class="blog_posts min-h-[100vh] my-4 text-sm text-slate-800 mb-2 leading-7 font-poppins">
 
         <div
           class="blog_info_area"
         >
-        
+        <?php if(have_posts()) : ?>
 		    <?php while(have_posts())  : the_post(); ?>
           <div class="single_blog bg-white shadow-sm mb-4 rounded-lg">
             
@@ -46,10 +45,8 @@ get_header();
           
           <?php 
           endwhile; ?>
+          <?php endif; ?>
         
         </div>
       </section>
-
-    
-
 <?php get_footer(); ?>

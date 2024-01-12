@@ -373,3 +373,30 @@ code {
   border: 1px solid rgba(0,0,0,.1);
   padding: 2px 4px;
 }
+
+/* WIDGET CALENDAR  */
+
+.wp-block-calendar #wp-calendar td#today {
+    font-weight: bold;
+    border: 2px solid #ddd;
+}
+.wp-block-calendar #wp-calendar td a {
+    color: #348feb;
+    font-weight: bold;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    padding: 2px 4px;
+}
+
+/* WIDGET SEARCH BAR  */
+
+.wp-block-search__inside-wrapper {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px;
+}
+.wp-block-search__inside-wrapper button.wp-block-search__button {
+    background-color: #eee;
+    padding: 2px;
+    border-radius: 50%;
+}

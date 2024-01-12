@@ -1,26 +1,16 @@
 <?php
 /**
- * The main template file
+ * The Template for displaying all single posts
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package mountaviary
+ * @package Mountaviary
+ * 
+ * @since Mountaviary 1.0.0
  */
 
 get_header();
 ?>
-
-
 <!-- BLOG SECTION  -->
     <section id="blog" class="blog_posts single_page min-h-[100vh] my-4 font-poppins">
-    
-    
-
       <div
         class="blog_info_area "
       >
@@ -29,13 +19,10 @@ get_header();
       <?php 
 			while ( have_posts() ) :
 				the_post(); ?>
-        
         <div class="single_blog bg-white shadow-sm mb-4 rounded-lg">
-
           <?php if ( has_post_thumbnail() ): ?>
           <?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto hover:grayscale duration-100')); ?>
           <?php endif; ?>
-         
           <div class="blog_content px-4 py-3">
             <?php
                 if ( is_singular() ) :
@@ -45,7 +32,6 @@ get_header();
                 endif;
             ?>
                 <div class="author_info flex items-center">
-                  
                   <h4
                     class="author_name text-slate-500 hover:text-slate-900 my-3 mr-2 text-xs font-bold"
                   >
@@ -60,16 +46,18 @@ get_header();
             >
             <?php the_content(); ?>
               </div>
-        
           </div>
         </div>
+
+    <!-- Displaying post pagination links in case we have multiple page posts -->
+    <?php wp_link_pages('before=<div class="post-pagination">&after=</div>&pagelink=Page %'); ?>
+
 		<?php // If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
  ?>
         <?php endwhile;
-
 
       // NOT WORKING 
         posts_nav_link();

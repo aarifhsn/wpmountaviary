@@ -2,14 +2,11 @@
 /**
  * The main template file
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
  * It is used to display a page when nothing more specific matches a query.
  * E.g., it puts together the home page when no home.php file exists.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package mountaviary
+ * @package Mountaviary
+ * @since Mountaviary 1.0
  */
 
 get_header();
@@ -35,8 +32,6 @@ get_header();
           <a class="overflow-hidden" href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto hover:scale-110 duration-300 rounded-t-lg')); ?></a>
           <?php endif; ?>
 
-       
-         
           <div class="author_info flex items-center mt-4 px-4">
             
             <?php echo get_avatar( get_the_author_meta( 'ID' ), $size = '28', $default = '', $alt = '', $args = array( 'class' => 'author_photo rounded-full' ) );  ?>
@@ -84,12 +79,7 @@ get_header();
           
 
         </div>
-
-
         <?php endwhile; ?>
-
-        
-
       </div>
 
       <?php the_posts_navigation(array(
@@ -100,7 +90,7 @@ get_header();
 			));
                 
           else : ?>
-          <h3><?php _e('404 Error&#58; Not Found', 'mountaviary'); ?></h3>
+          <?php get_template_part('404'); ?>
       <?php endif; ?>
     </section>
 
