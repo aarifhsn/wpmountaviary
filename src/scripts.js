@@ -27,4 +27,22 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // MENU- ADD ICON IN LI (PARENT) IF SUMENU CLASS EXISTS
+
+  // Get all parent elements with a class of "parent"
+  var parentItems = document.querySelectorAll("li.menu-item");
+
+  // Loop through each parent element
+  parentItems.forEach(function (parentItem) {
+    // Check if the parent has a submenu (ul element)
+    var submenu = parentItem.querySelector("ul.sub-menu");
+
+    if (submenu) {
+      // Add a class to the parent if a submenu exists
+      let menu_icon = document.createElement("i");
+      menu_icon.className = "fa-solid fa-chevron-down";
+      parentItem.appendChild(menu_icon);
+    }
+  });
 });

@@ -12,14 +12,14 @@ get_header(); ?>
     >
       <span
         class="font-extrabold text-slate-200 absolute -mt-2 md:-mt-6 2xl:-mt-14 left-0 lg:left-10 md:left-0"
-        ><?php echo get_theme_mod('mountaviary_front_span_text'); ?></span
+        ><?php echo esc_html(get_theme_mod('mountaviary_front_span_text')); ?></span
       >
-      <span class="relative"><?php echo get_theme_mod('mountaviary_front_name_text'); ?></span>
+      <span class="relative"><?php echo esc_html(get_theme_mod('mountaviary_front_name_text')); ?></span>
     </h2>
     <p
       class="text-left text-sm 2xl:text-2xl text-gray-500 my-3 md:my-6 font-medium leading-6 font-poppins"
     >
-      <?php echo get_theme_mod('mountaviary_front_content'); ?>
+      <?php echo esc_html(get_theme_mod('mountaviary_front_content')); ?>
     </p>
     <div class="person_social_info mt-8">
 
@@ -64,7 +64,7 @@ get_header(); ?>
               <li>
                 <a
                   class="px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid"
-                  href="<?php echo get_theme_mod( $active_site ); ?>"
+                  href="<?php echo esc_html(get_theme_mod( $active_site )); ?>"
                   ><i class="fa-brands fa-facebook-f"></i
                 >
                 <?php if( $active_site == 'vimeo' ) { ?>
@@ -264,12 +264,12 @@ if($portfolio_query->have_posts()) :
 <section id="portfolio" class="portfolio_area min-h-[100vh] my-24 lg:my-48">
   <div class="portfolio_title my-4">
     <h4 class="bg-slate-200 px-4 py-2 inline-block font-bold text-lg uppercase">
-      <?php echo get_theme_mod('mountaviary_portfolio_title_text'); ?>
+      <?php echo esc_html(get_theme_mod('mountaviary_portfolio_title_text')); ?>
     </h4>
   </div>
   <div class="about_content mt-4 mb-6">
     <h5 class="text-sm leading-8 text-slate-500 font-semibold">
-    <?php echo get_theme_mod('mountaviary_portfolio_subtitle'); ?>
+    <?php echo esc_html(get_theme_mod('mountaviary_portfolio_subtitle')); ?>
     </h5>
   </div>
 
@@ -314,11 +314,11 @@ if($services_query->have_posts()) :
 <section id="service" class="services_area min-h-[100vh] my-24 lg:my-48">
   <div class="services_title my-4">
     <h4 class="bg-slate-200 px-4 py-2 inline-block font-bold text-sm uppercase">
-      <?php echo get_theme_mod('mountaviary_service_title_text'); ?>
+      <?php echo esc_html(get_theme_mod('mountaviary_service_title_text')); ?>
     </h4>
   </div>
   <div class="about_content mt-4 mb-6">
-    <h2 class="text-xl sm:text-4xl font-bold capitalize"><?php echo get_theme_mod('mountaviary_services_subtitle'); ?></h2>
+    <h2 class="text-xl sm:text-4xl font-bold capitalize"><?php echo esc_html(get_theme_mod('mountaviary_services_subtitle')); ?></h2>
   </div>
   <div class="services_page grid gap-4 grid-cols-1 md:grid-cols-2">
 

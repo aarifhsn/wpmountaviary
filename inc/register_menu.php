@@ -4,7 +4,7 @@
 * Register Menus
 */
 
-if ( ! function_exists( 'mountaviary_register_nav_menu' ) ) {
+if (! function_exists( 'mountaviary_register_nav_menu' ) ) {
 
 	function mountaviary_register_nav_menu(){
 		register_nav_menus( array(
@@ -14,6 +14,8 @@ if ( ! function_exists( 'mountaviary_register_nav_menu' ) ) {
 	}
 	add_action( 'after_setup_theme', 'mountaviary_register_nav_menu', 0 );
 }
+
+
 
 // adding nav menu li class
 

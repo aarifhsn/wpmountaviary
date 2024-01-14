@@ -34,8 +34,6 @@ body {
     overflow-x: hidden;
     /* --tw-bg-opacity: 1; */
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-
-    font-size: 15px;
     font-weight: 400;
     line-height: 30px;
     letter-spacing: 0px;
@@ -76,6 +74,12 @@ img {
   /* Handle on hover */
   .sidebar_section_front::-webkit-scrollbar-thumb:hover {
     background: #b5b4b4;
+  }
+
+  /* SUB MENU  */
+
+  .left_nav ul li ul {
+    display: block;
   }
 
   /* mobile menu css */
@@ -399,4 +403,70 @@ code {
     background-color: #eee;
     padding: 2px;
     border-radius: 50%;
+}
+
+/* WP BLOG QUESTY POSTS  */
+
+.wp-block-query {
+  margin: 16px 0;
+}
+
+.wp-block-query ul.wp-block-post-template {
+  margin: 20px 0;
+}
+
+.wp-block-query li.wp-block-post {
+  margin: 31px 0px;
+}
+
+.wp-block-query h2.wp-block-post-title {
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+.wp-block-page-list li {
+  margin-right: 20px;
+}
+.wp-block-page-list li ul {
+  padding: 4px 0 4px 8px;
+}
+.wp-block-page-list li ul li {
+  margin: 5px 0;
+}
+
+
+/* NAV MENU  */
+
+.left_nav ul li ul {
+  visibility: hidden;
+  position: absolute;
+  opacity: 1;
+  background-color: #fff;
+  text-align: left;
+  margin-top: 4px;
+  -webkit-transition: all .1s;
+  -moz-transition: all .1s;
+  -o-transition: all .1s;
+  transition: all .1s;
+  display: block;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+  
+.left_nav ul li:hover>ul{ visibility: visible;}
+.left_nav ul ul li {float: none; margin:0px; padding:0px; display: block; border-bottom: 1px solid rgba(0,0,0,.1);}
+/* .left_nav ul ul li:last-child {border-bottom: 0px solid #ddd;} */
+.left_nav ul ul li:hover {background: none repeat scroll 0 0 rgba(0, 0, 0, .1); border-bottom: 0px; }
+.left_nav ul li:hover ul {display: block;}
+.left_nav ul ul li a{padding: 10px 15px; display: block; font-size: 11px; font-weight:bold;}
+
+.left_nav ul ul li svg {
+  padding-left: 10px;
+}
+/* .left_nav ul li ul ul li {height: 40px;}  */
+.left_nav ul li ul ul li a{font-weight: bold;}
+li.menu-item svg {
+  margin-left: 5px;
+  font-size: 12px;
+  color: #444;
 }

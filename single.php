@@ -26,9 +26,9 @@ get_header();
           <div class="blog_content px-4 py-3">
             <?php
                 if ( is_singular() ) :
-                  the_title( '<h1 class="entry-title text-lg font-semibold">', '</h1>' );
+                  the_title( '<h1 class="entry-title text-xl font-semibold">', '</h1>' );
                 else :
-                  the_title( '<h2 class="entry-title text-base font-semibold"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+                  the_title( '<h2 class="entry-title text-lg font-semibold"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
                 endif;
             ?>
                 <div class="author_info flex items-center">
@@ -42,7 +42,7 @@ get_header();
                   </h5>
                 </div>
             <div
-              class="single_content text-sm text-slate-800 mb-2 overflow-hidden leading-6 font-medium"
+              class="single_content text-slate-800 mb-2 overflow-hidden leading-6 font-medium"
             >
             <?php the_content(); ?>
               </div>

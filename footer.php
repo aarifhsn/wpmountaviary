@@ -32,22 +32,16 @@
             ><?php echo bloginfo('name'); ?> <span class="flex flex-row-reverse -mt-8 -mr-3">&copy</span></span
           >
         </a>
-
         <div class="uppercase font-bold text-sm text-slate-500">
-
         <!-- FOOTER MENU -->
-        <?php $args = array(
+            <?php $args = array(
               'theme_location'=> 'footer_menu',
               'container'     => '',
               'menu_class'    => 'flex flex-wrap items-center',
-              'depth'         => 1,
-              'fallback_cb'   => false,
               'add_li_class'  => 'mr-4 md:mr-6',
-              'nav_anchor_class' => 'hover:text-slate-800'
-            );
-            wp_nav_menu($args);
-        ?>
-          
+              'nav_anchor_class' => 'hover:text-slate-950'
+            );         
+            wp_nav_menu($args); ?>
         </div>
       </div>
       

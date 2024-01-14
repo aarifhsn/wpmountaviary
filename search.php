@@ -42,8 +42,8 @@ get_header();
 
         <?php the_posts_navigation(array(
           'mid_size'           => 1,
-          'prev_text'          => _x( '&#8592; Previous Page', 'previous set of posts' ),
-          'next_text'          => _x( 'Next Page &#8594;', 'next set of posts' ),
+          'prev_text'          => _x( '&#8592; Previous Page', 'mountaviary' ),
+          'next_text'          => _x( 'Next Page &#8594;', 'mountaviary' ),
 
         )); ?>
         
