@@ -34,14 +34,13 @@
         </a>
         <div class="uppercase font-bold text-sm text-slate-500">
         <!-- FOOTER MENU -->
-            <?php $args = array(
+            <?php wp_nav_menu( array(
               'theme_location'=> 'footer_menu',
               'container'     => '',
               'menu_class'    => 'flex flex-wrap items-center',
               'add_li_class'  => 'mr-4 md:mr-6',
               'nav_anchor_class' => 'hover:text-slate-950'
-            );         
-            wp_nav_menu($args); ?>
+            ));  ?>
         </div>
       </div>
       
@@ -50,7 +49,7 @@
           >&copy;<?php echo date( 'Y' ); ?> &nbsp;&nbsp;
           <a href="<?php echo site_url(); ?>" class="font-semibold hover:text-slate-950"><?php echo bloginfo('name'); ?></a>
           &nbsp;
-          <?php echo get_theme_mod('mountaviary_footer_text'); ?>
+          <?php echo esc_html(get_theme_mod('mountaviary_footer_text')); ?>
         </span>
 
       <?php } ?>

@@ -4,17 +4,14 @@
 * Register Menus
 */
 
-if (! function_exists( 'mountaviary_register_nav_menu' ) ) {
 
-	function mountaviary_register_nav_menu(){
-		register_nav_menus( array(
-	    	'screen_menu' => __( 'Screen Menu', 'mountaviary' ),
-	    	'footer_menu'  => __( 'Footer Menu', 'mountaviary' ),
-		) );
-	}
-	add_action( 'after_setup_theme', 'mountaviary_register_nav_menu', 0 );
+function mountaviary_register_nav_menu(){
+    register_nav_menus( array(
+        'screen_menu' => __( 'Screen Menu', 'mountaviary' ),
+        'footer_menu'  => __( 'Footer Menu', 'mountaviary' ),
+    ) );
 }
-
+add_action( 'after_setup_theme', 'mountaviary_register_nav_menu', 0 );
 
 
 // adding nav menu li class

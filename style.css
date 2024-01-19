@@ -11,7 +11,7 @@ Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mountaviary
-Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images,  block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
 */
 
 
@@ -454,7 +454,7 @@ code {
 }
   
 .left_nav ul li:hover>ul{ visibility: visible;}
-.left_nav ul ul li {float: none; margin:0px; padding:0px; display: block; border-bottom: 1px solid rgba(0,0,0,.1);}
+.left_nav ul ul li {margin:0px; padding:0px; display: block;}
 /* .left_nav ul ul li:last-child {border-bottom: 0px solid #ddd;} */
 .left_nav ul ul li:hover {background: none repeat scroll 0 0 rgba(0, 0, 0, .1); border-bottom: 0px; }
 .left_nav ul li:hover ul {display: block;}

@@ -22,9 +22,8 @@ get_header();
         >
         <?php if(have_posts()) : ?>
 		    <?php while(have_posts())  : the_post(); ?>
-          <div class="single_blog bg-white shadow-sm mb-4 rounded-lg">
+          <div <?php post_class( 'single_blog bg-white shadow-sm mb-4 rounded-lg' );?>>
             
-         
             <div class="blog_content px-4 py-3">
               <h2 class="font-bold text-lg my-4 capitalize"><?php the_title(); ?></h2>
               <p

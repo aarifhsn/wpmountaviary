@@ -19,7 +19,7 @@ get_header();
       <?php 
 			while ( have_posts() ) :
 				the_post(); ?>
-        <div class="single_blog bg-white shadow-sm mb-4 rounded-lg">
+        <div <?php post_class( 'single_blog bg-white shadow-sm mb-4 rounded-lg' ); ?>>
           <?php if ( has_post_thumbnail() ): ?>
           <?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto hover:grayscale duration-100')); ?>
           <?php endif; ?>
@@ -42,7 +42,7 @@ get_header();
                   </h5>
                 </div>
             <div
-              class="single_content text-slate-800 mb-2 overflow-hidden leading-6 font-medium"
+              class="single_content text-slate-800 mb-2 overflow-hidden leading-6"
             >
             <?php the_content(); ?>
               </div>
@@ -63,7 +63,7 @@ get_header();
         posts_nav_link();
                 
         else : ?>
-                    <h3><?php _e('404 Error&#58; Not Found', 'Mountaviary'); ?></h3>
+                    <h3><?php _e('404 Error&#58; Not Found', 'mountaviary'); ?></h3>
                 <?php endif; ?>
 
       </div>

@@ -23,7 +23,7 @@ get_header();
 			<?php if (have_posts( )) :
 			while (have_posts( )) : the_post(); ?>
 
-			<div class="single_post border-b-2 w-full mb-8 pb-4">
+			<div <?php post_class( 'single_post border-b-2 w-full mb-8 pb-4' ); ?>>
 
 				<?php if ( has_post_thumbnail() ): ?>
 				<div class="post_thumb overflow-hidden mb-4">
@@ -42,8 +42,8 @@ get_header();
 
         <?php the_posts_navigation(array(
           'mid_size'           => 1,
-          'prev_text'          => _x( '&#8592; Previous Page', 'mountaviary' ),
-          'next_text'          => _x( 'Next Page &#8594;', 'mountaviary' ),
+          'prev_text'          => _e( '&#8592; Previous Page', 'mountaviary' ),
+          'next_text'          => _e( 'Next Page &#8594;', 'mountaviary' ),
 
         )); ?>
         

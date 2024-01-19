@@ -26,11 +26,13 @@ get_header();
 			while ( have_posts() ) :
 				the_post(); ?>
         
-        <div class="single_blog bg-white shadow-sm mb-4 rounded-lg">
+        <div <?php post_class( 'single_blog bg-white shadow-sm mb-4 rounded-lg' ); ?>>
         
-          <?php if ( has_post_thumbnail() ): ?>
-          <a class="overflow-hidden" href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto hover:scale-110 duration-300 rounded-t-lg')); ?></a>
-          <?php endif; ?>
+          <div class="thumbnail overflow-hidden">
+            <?php if ( has_post_thumbnail() ): ?>
+            <a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto hover:scale-110 duration-300 rounded-t-lg')); ?></a>
+            <?php endif; ?>
+          </div>
 
           <div class="author_info flex items-center mt-4 px-4">
             
@@ -84,8 +86,8 @@ get_header();
 
       <?php the_posts_navigation(array(
 				'mid_size'           => 1,
-				'prev_text'          => _x( '&#8592; Previous Page', 'mountaviary' ),
-				'next_text'          => _x( 'Next Page &#8594;', 'mountaviary' ),
+        'prev_text'          => _x( '&#8592 Previous Page', 'Navigation previous page', 'mountaviary' ),
+        'next_text'          => _x( 'Next Page &#8594', 'Navigation Next page', 'mountaviary' ),
 		
 			));
                 

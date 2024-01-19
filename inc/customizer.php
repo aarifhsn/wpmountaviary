@@ -13,7 +13,8 @@ function mountaviary_customizer_register ($wp_customize) {
     ));
 
     $wp_customize->add_setting('mountaviary_sidebar_logo', array(
-        'default'        => get_bloginfo('template_directory').'/img/profile.webp',
+        'default'        => get_bloginfo('name'),
+        'sanitize_callback' => 'mountaviary_sanitize_file',
     ));
 
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'mountaviary_sidebar_logo', array(
@@ -21,6 +22,23 @@ function mountaviary_customizer_register ($wp_customize) {
         'section'  => 'mountaviary_sidebar_area',
         'settings' => 'mountaviary_sidebar_logo',
     )));
+
+    //file input sanitization function
+    function mountaviary_sanitize_file( $file, $setting ) {
+          
+        //allowed file types
+        $mimes = array(
+            'jpg|jpeg|jpe' => 'image/jpeg',
+            'gif'          => 'image/gif',
+            'png'          => 'image/png'
+        );
+          
+        //check file type from file name
+        $file_ext = wp_check_filetype( $file, $mimes );
+          
+        //if file has a valid mime type return it, otherwise return default
+        return ( $file_ext['ext'] ? $file : $setting->default );
+    }
 
     // USER FRONT INFO
 
@@ -30,32 +48,38 @@ function mountaviary_customizer_register ($wp_customize) {
 
     $wp_customize->add_setting('mountaviary_front_name_text', array(
         'default'        => 'ARIF HASSAN',
+        'sanitize_callback' => 'sanitize_text_field',
     ));
 
 	$wp_customize->add_control('mountaviary_front_name', array(
         'label'    => __('Change Name Text', 'mountaviary'),
         'section'  => 'mountaviary_front_area',
         'settings' => 'mountaviary_front_name_text',
+        'type'      => 'text',
     ));
 
     $wp_customize->add_setting('mountaviary_front_span_text', array(
         'default'        => 'HELLO, I AM...',
+        'sanitize_callback' => 'sanitize_text_field',
     ));
 
 	$wp_customize->add_control('mountaviary_front_span', array(
         'label'    => __('Change Span Text', 'mountaviary'),
         'section'  => 'mountaviary_front_area',
         'settings' => 'mountaviary_front_span_text',
+        'type'      => 'text',
     ));
 
     $wp_customize->add_setting('mountaviary_front_content', array(
         'default'        => 'I am a Web Developer making a dynamic goal to enrich the web project and working in WordPress, PHP, JavaScript, Lavarel and so on.',
+        'sanitize_callback' => 'sanitize_text_field',
     ));
 
 	$wp_customize->add_control('mountaviary_front_about_content_', array(
         'label'    => __('Change Front Content', 'mountaviary'),
         'section'  => 'mountaviary_front_area',
         'settings' => 'mountaviary_front_content',
+        'type'      => 'text',
     ));
 
 
@@ -64,10 +88,9 @@ function mountaviary_customizer_register ($wp_customize) {
         'type'  => 'option',
         'default'   => 1,
         'sanitize_callback' => 'sanitize_front_checkbox',
-        
     ));
  
-    $wp_customize->add_control( 'front_work_portfolio_option',
+    $wp_customize->add_control('front_work_portfolio_option',
     array(
         'label' => __( 'Show Front Page Work and Portfolio Option', 'mountaviary' ),
         'settings'  => 'front_work_portfolio_option',
@@ -117,16 +140,13 @@ function mountaviary_customizer_register ($wp_customize) {
         ));
 
         $wp_customize->add_control( $social_site, array(
-            'label' => ucwords( __( "$social_site URL:", 'social_icon' ) ),
+            'label' => ucwords( sprintf( __( '%s URL:', 'mountaviary' ), esc_html( '$social_site' ) ) ),
             'section' => 'mountaviary_front_area',
             'type' => 'text',
             'priority' => $priority,
         ));
         $priority += 5;
     }
-
-   
-
 
 	// FOOTER BOTTOM TEXT CUSTOMIZE 
 
@@ -137,6 +157,7 @@ function mountaviary_customizer_register ($wp_customize) {
 
     $wp_customize->add_setting('mountaviary_footer_text', array(
         'default'        => 'All Rights Reserved.',
+        'sanitize_callback' => 'sanitize_text_field',
 
     ));
 	
@@ -144,6 +165,7 @@ function mountaviary_customizer_register ($wp_customize) {
         'label'    => __('Footer Text', 'mountaviary'),
         'section'  => 'mountaviary_footer_area',
         'settings' => 'mountaviary_footer_text',
+        'type'      => 'text',
     ));
 
     $wp_customize->add_setting('mountaviary_footer_option_setting', array(
@@ -174,17 +196,19 @@ function mountaviary_customizer_register ($wp_customize) {
 
     $wp_customize->add_setting('mountaviary_portfolio_title_text', array(
         'default'        => 'PORTFOLIO',
-
+        'sanitize_callback' => 'sanitize_text_field',
     ));
 	
     $wp_customize-> add_control('mountaviary_portfolio_title_text', array(
         'label'    => __('Portfolio Title Text', 'mountaviary'),
         'section'  => 'mountaviary_portfolio_front_page_area',
         'settings' => 'mountaviary_portfolio_title_text',
+        'type'      => 'text',
     ));
 
     $wp_customize->add_setting('mountaviary_portfolio_subtitle', array(
         'default'        => 'A few recent design and coding projects',
+        'sanitize_callback' => 'sanitize_text_field',
 
     ));
 	
@@ -192,6 +216,7 @@ function mountaviary_customizer_register ($wp_customize) {
         'label'    => __('Portfolio Sub Title', 'mountaviary'),
         'section'  => 'mountaviary_portfolio_front_page_area',
         'settings' => 'mountaviary_portfolio_subtitle',
+        'type'      => 'text',
     ));
 
 
@@ -204,6 +229,7 @@ function mountaviary_customizer_register ($wp_customize) {
 
     $wp_customize->add_setting('mountaviary_service_title_text', array(
         'default'        => 'SERVICES',
+        'sanitize_callback' => 'sanitize_text_field',
 
     ));
 	
@@ -211,10 +237,12 @@ function mountaviary_customizer_register ($wp_customize) {
         'label'    => __('Services Title Text', 'mountaviary'),
         'section'  => 'mountaviary_services_front_page_area',
         'settings' => 'mountaviary_service_title_text',
+        'type'      => 'text',
     ));
 
     $wp_customize->add_setting('mountaviary_services_subtitle', array(
         'default'        => 'What I can Support',
+        'sanitize_callback' => 'sanitize_text_field',
 
     ));
 	
@@ -222,6 +250,7 @@ function mountaviary_customizer_register ($wp_customize) {
         'label'    => __('Services Sub Title', 'mountaviary'),
         'section'  => 'mountaviary_services_front_page_area',
         'settings' => 'mountaviary_services_subtitle',
+        'type'      => 'text',
     ));
 }
 

@@ -12,7 +12,7 @@
       class="flex lg:hidden bg-white relative md:fixed top-0 left-0 min-h-[52px] z-50 w-full overflow-hidden items-center px-12"
     >
       <div class="site_title w-1/2 flex">
-        <h2><a href="<?php echo home_url(); ?>" class="font-montserrat font-bold">mountAviary</a></h2>
+        <h2><a href="<?php echo esc_url(home_url()); ?>" class="font-montserrat font-bold"><?php echo esc_html(get_bloginfo('name')); ?></a></h2>
       </div>
       <div class="top_menu w-1/2 z-[15]">
         <div
@@ -25,7 +25,7 @@
           </div>
 
           <!-- TOP MOBILE MENU - AS SCREEN MENU -->
-          <?php $args = array(
+          <?php wp_nav_menu( array(
                 'theme_location'=> 'screen_menu',
                 'container'     => '',
                 'menu_class'    => 'nav-list text-right hidden p-6 pr-2 border border-slate-200 text-slate-700',
@@ -33,8 +33,7 @@
                 'fallback_cb'   => false,
                 'add_li_class'  => 'mb-5 hover:text-slate-500',
                 //'nav_anchor_class' => 'hover:text-slate-400'
-              );
-              wp_nav_menu($args);
+              ));
           ?>
        
         </div>

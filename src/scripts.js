@@ -31,12 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // MENU- ADD ICON IN LI (PARENT) IF SUMENU CLASS EXISTS
 
   // Get all parent elements with a class of "parent"
-  var parentItems = document.querySelectorAll("li.menu-item");
+  let parentItems = document.querySelectorAll("li.menu-item");
 
   // Loop through each parent element
   parentItems.forEach(function (parentItem) {
     // Check if the parent has a submenu (ul element)
-    var submenu = parentItem.querySelector("ul.sub-menu");
+    let submenu = parentItem.querySelector("ul.sub-menu");
 
     if (submenu) {
       // Add a class to the parent if a submenu exists
@@ -45,4 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       parentItem.appendChild(menu_icon);
     }
   });
+
+  let wpForms = document.getElementsByClassName("wpforms-field");
+  console.log(wpForms);
 });

@@ -6,20 +6,20 @@
  */
 get_header(); ?>
 
-<!-- BLOG SECTION  -->
+<!-- BLOG SECTION -->
     <section id="blog" class="blog_posts min-h-[100vh] my-4 lg:my-8 font-poppins">
-    
+
     <div class="archieve_title my-4 py-4 border-b-2">
 				<?php 
 					the_archive_title( '<h1 class="page_title font-bold my-4">', '</h1>' );
 					the_archive_description( '<div class="italic">', '</div>' ); 
 				?>
-					
+
 			</div>
 			<?php if (have_posts( )) :
 			while (have_posts( )) : the_post(); ?>
 
-			<div class="single_post border-b-2 w-full mb-8 pb-4">
+			<div class="single_post border-b-2 last:border-b-0 w-full mb-8 pb-4">
 
 				<?php if ( has_post_thumbnail() ): ?>
 				<div class="post_thumb overflow-hidden mb-4">
