@@ -641,6 +641,10 @@ video {
   inset: -0.25rem;
 }
 
+.-left-2 {
+  left: -0.5rem;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -659,6 +663,14 @@ video {
 
 .top-1\/2 {
   top: 50%;
+}
+
+.-left-4 {
+  left: -1rem;
+}
+
+.-left-8 {
+  left: -2rem;
 }
 
 .isolate {
@@ -994,10 +1006,6 @@ video {
 
 .w-10 {
   width: 2.5rem;
-}
-
-.w-16 {
-  width: 4rem;
 }
 
 .w-2\/3 {
@@ -2045,6 +2053,10 @@ video {
   border-top-width: 2px;
 }
 
+.border-t-4 {
+  border-top-width: 4px;
+}
+
 .border-solid {
   border-style: solid;
 }
@@ -2074,11 +2086,6 @@ video {
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
 
-.border-slate-100 {
-  --tw-border-opacity: 1;
-  border-color: rgb(241 245 249 / var(--tw-border-opacity));
-}
-
 .border-slate-200 {
   --tw-border-opacity: 1;
   border-color: rgb(226 232 240 / var(--tw-border-opacity));
@@ -2092,6 +2099,11 @@ video {
 .border-b-slate-300 {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(203 213 225 / var(--tw-border-opacity));
+}
+
+.border-t-red-600 {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(220 38 38 / var(--tw-border-opacity));
 }
 
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
@@ -2437,10 +2449,6 @@ video {
   vertical-align: super;
 }
 
-.font-montserrat {
-  font-family: Montserrat, sans-serif;
-}
-
 .font-poppins {
   font-family: Poppins, sans-serif;
 }
@@ -2458,11 +2466,6 @@ video {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .text-lg {
@@ -3064,24 +3067,19 @@ video {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
-.hover\:border-slate-300:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(203 213 225 / var(--tw-border-opacity));
-}
-
 .hover\:border-slate-400:hover {
   --tw-border-opacity: 1;
   border-color: rgb(148 163 184 / var(--tw-border-opacity));
 }
 
-.hover\:border-slate-600:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(71 85 105 / var(--tw-border-opacity));
-}
-
 .hover\:border-slate-500:hover {
   --tw-border-opacity: 1;
   border-color: rgb(100 116 139 / var(--tw-border-opacity));
+}
+
+.hover\:border-slate-600:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(71 85 105 / var(--tw-border-opacity));
 }
 
 .hover\:font-bold:hover {
@@ -3216,10 +3214,6 @@ video {
     position: fixed;
   }
 
-  .md\:left-0 {
-    left: 0px;
-  }
-
   .md\:my-20 {
     margin-top: 5rem;
     margin-bottom: 5rem;
@@ -3334,10 +3328,6 @@ video {
 }
 
 @media (min-width: 1024px) {
-  .lg\:left-10 {
-    left: 2.5rem;
-  }
-
   .lg\:my-36 {
     margin-top: 9rem;
     margin-bottom: 9rem;

@@ -8,10 +8,10 @@ get_header(); ?>
 >
   <div class="devs_top_content">
     <h2
-      class="text-3xl md:text-5xl 2xl:text-8xl text-slate-700 font-extrabold capitalize"
+      class="relative text-3xl md:text-5xl 2xl:text-8xl text-slate-700 font-extrabold capitalize"
     >
       <span
-        class="font-extrabold text-slate-200 absolute -mt-2 md:-mt-6 2xl:-mt-14 left-0 lg:left-10 md:left-0"
+        class="font-extrabold text-slate-200 absolute -mt-2 md:-mt-6 2xl:-mt-14 -left-8"
         ><?php echo esc_html(get_theme_mod('mountaviary_front_span_text')); ?></span
       >
       <span class="relative"><?php echo esc_html(get_theme_mod('mountaviary_front_name_text')); ?></span>
@@ -46,76 +46,39 @@ get_header(); ?>
     <?php } ?>
 
 
-    <?php function mountaviary_show_social_sites() {
+    <!-- FRONT-PAGE SOCIAL ICONS  -->
 
-    $social_sites = mountaviary_get_social_sites();
+    <ul class="social-icons flex flex-row justify-start space-x-4 text-lg text-slate-600">
+      <?php
+        $social_platforms = array(
+            'facebook' => 'fa-brands fa-facebook-f',
+            'github' => 'fa-brands fa-github',
+            'instagram' => 'fab fa-instagram',
+            'linkedin' => 'fa-brands fa-linkedin-in',
+            'youtube' => 'fa-brands fa-youtube',
+            'whatsapp' => 'fa-brands fa-whatsapp',
+            'telegram' => 'fa-brands fa-telegram',
+            'twitter' => 'fa-brands fa-x-twitter',
+            'discord' => 'fa-brands fa-discord',
+            'email' => 'fa-regular fa-envelope',
+            // Add more social platforms as needed
+        );
 
-    foreach($social_sites as $social_site ) {
-         if (strlen(get_theme_mod( $social_site ) ) > 0 ) {
-             $active_sites[] = $social_site;
-         }
-    }
- 
-     // For each active social site, add it as a list item
-     if ( !empty( $active_sites ) ) {
-         echo "<ul class='flex flex-row justify-start space-x-4 text-lg text-slate-600'>";
- 
-         foreach ( $active_sites as $active_site ) { ?>
-              <li>
-                <a
-                  class="px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid"
-                  href="<?php echo esc_html(get_theme_mod( $active_site )); ?>"
-                  ><i class="fa-brands fa-facebook-f"></i
-                >
-                <?php if( $active_site == 'vimeo' ) { ?>
-                 <i class="fa fa-<?php echo $active_site; ?>-square"></i> <?php
-                  } else if( $active_site == 'email' ) { ?>
-                      <i class="fa fa-envelope"></i> <?php
-                  } else { ?>
-                      <i class="fa fa-<?php echo $active_site; ?>"></i> <?php
-                  } ?>
-              </a>
-              </li>
-              <?php
-         }
-         echo "</ul>";
-     }
-} ?>
-
-
-      <!-- <span class="font-bold capitalize mb-2 block text-sm text-slate-500">Find Me in-</span> -->
-      <ul class="flex flex-row justify-start space-x-4 text-lg text-slate-600">
-        <li>
-          <a
-            class="px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid"
-            href=""
-            ><i class="fa-brands fa-facebook-f"></i
-          ></a>
-        </li>
-        <li>
-          <a
-            class="px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid"
-            href=""
-            ><i class="fa-brands fa-github"></i
-          ></a>
-        </li>
-        <li>
-          <a
-            class="px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid"
-            href=""
-            ><i class="fa-brands fa-linkedin-in"></i
-          ></a>
-        </li>
-        <li>
-          <a
-            class="px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid"
-            href=""
-            ><i class="fa-regular fa-envelope"></i
-          ></a>
-        </li>
-      </ul>
-
-
+        foreach ($social_platforms as $platform => $icon_class) {
+            $url = get_theme_mod("{$platform}_url");
+            if($platform !== 'email') {
+              if ($url) {
+                  echo "<li><a class='px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid' href='" . esc_url($url) . "' target='_blank'><i class='$icon_class'></i></a></li>";
+              }
+            }
+            if($platform == 'email') {
+              if ($url) {
+                  echo "<li><a class='px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid' href='mailto:" . esc_attr($url) . "'' target='_blank'><i class='$icon_class'></i></a></li>";
+              }
+            }
+          }
+      ?>
+    </ul>
     </div>
   </div>
   <!-- <span class="section_border absolute content-[''] w-10 h-1 bottom-0 left-0 bg-gray-600"

@@ -82,7 +82,6 @@ function mountaviary_customizer_register ($wp_customize) {
         'type'      => 'text',
     ));
 
-
     $wp_customize->add_setting( 'front_work_portfolio_option',
     array(
         'type'  => 'option',
@@ -104,48 +103,55 @@ function mountaviary_customizer_register ($wp_customize) {
 
     // FRONT SOCIAL ICON SETUP
 
-     /**
-     * Social Media icon helper functions
-     */
-    function mountaviary_get_social_sites() {
-    
-        // Store social site names in array
-        $social_sites = array(
-            'twitter', 
-            'facebook', 
-            'google-plus',
-            'flickr',
-            'pinterest', 
-            'youtube',
-            'vimeo',
-            'tumblr',
-            'dribbble',
-            'rss',
-            'linkedin',
-            'instagram',
-            'email'
-        );
-    return $social_sites;
-    }
+    // Define an array of social media platforms and their corresponding labels
+    $social_platforms = array(
+        'facebook' => 'Facebook',
+        'github' => 'Github',
+        'instagram' => 'Instagram',
+        'linkedin' => 'linked-in',
+        'youtube' => 'Youtube',
+        'whatsapp' => 'whatsApp',
+        'telegram' => 'Telegram',
+        'twitter' => 'Twitter',
+        'discord' => 'Discord',
+        'email' => 'Email',
+        // Add more social platforms as needed
+    );
 
-    $social_sites = mountaviary_get_social_sites();
-    $priority = 5;
+    // Loop through the social platforms and add settings and controls
+    foreach ($social_platforms as $platform => $label) {
+        $setting_id = "{$platform}_url";
 
-    foreach( $social_sites as $social_site) {
-
-        $wp_customize->add_setting($social_site, array(
-            'type' => 'theme_mod',
-            'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_url_raw',
+        
+        $wp_customize->add_setting($setting_id, array(
+            'default' => '',
         ));
 
-        $wp_customize->add_control( $social_site, array(
-            'label' => ucwords( sprintf( __( '%s URL:', 'mountaviary' ), esc_html( '$social_site' ) ) ),
+        if($platform !== 'whatsapp') {
+        $wp_customize->add_control($setting_id, array(
+            'label' => sprintf(__('Enter %s URL', 'mountaviary'), $label),
             'section' => 'mountaviary_front_area',
             'type' => 'text',
-            'priority' => $priority,
         ));
-        $priority += 5;
+        }
+
+        if($platform == 'whatsapp') {
+           
+        $wp_customize->add_control($setting_id, array(
+            'label' => sprintf(__('Enter %s URL', 'mountaviary'), $label),
+            'section' => 'mountaviary_front_area',
+            'type' => 'text',
+            'description'   => 'Copy the below example & change the number with your number. <span class"block">https://wa.me/01712123456</span>',
+        ));
+        }
+
+        if($platform == 'email') {
+        $wp_customize->add_control($setting_id, array(
+            'label' => sprintf(__('Enter your %s Address', 'mountaviary'), $label),
+            'section' => 'mountaviary_front_area',
+            'type' => 'text',
+        ));
+        }
     }
 
 	// FOOTER BOTTOM TEXT CUSTOMIZE 
