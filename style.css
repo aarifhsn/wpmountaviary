@@ -117,6 +117,7 @@ section#about spanY.aboutID {
   position: absolute;
   font-size: 120px;
 }
+.author_info_text p {font-size: 12px; text-align: justify;}
 
 /* nav links css */
 
@@ -134,6 +135,11 @@ section#about spanY.aboutID {
  
 .single_page .single_content p {
   margin: 10px 0;
+  line-height: 40px;
+}
+.single_blog .single_content h2 {
+  margin: 15px 0;
+  line-height: 40px;
 }
 .single_content .wp-caption {
   max-width: 100%;

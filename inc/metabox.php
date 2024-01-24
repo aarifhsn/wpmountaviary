@@ -153,16 +153,6 @@ function mountaviary_cmb2_metaboxes() {
 		// 'cmb_styles' => false, // false to disable the CMB stylesheet
 		// 'closed'     => true, // Keep the metabox closed by default
 	) );
-
-	
-	// Portfolio Title
-	$cmb->add_field( array(
-		'name' => __( 'Portfolio Title', 'cmb2' ),
-		'desc' => __( 'field description (optional)', 'cmb2' ),
-		'id'   => 'portfolio-item-title',
-		'type' => 'text',
-		
-	) );
 	
 	// Portfolio Title Link
 	$cmb->add_field( array(
@@ -172,16 +162,6 @@ function mountaviary_cmb2_metaboxes() {
 		'type' => 'text_url',
 		
 	) );
-	// Portfolio Image
-	$cmb->add_field( array(
-		'name' => __( 'Portfolio Image Upload', 'cmb2' ),
-		'desc' => __( 'field description (optional)', 'cmb2' ),
-		'id'   => 'portfolio-image',
-		'type' => 'file',
-		
-	) );
-
-
 
 	/**
 	 * Setvices Custom Post metabox area

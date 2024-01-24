@@ -7,8 +7,8 @@
 
 function mountaviary_register_nav_menu(){
     register_nav_menus( array(
-        'screen_menu' => __( 'Screen Menu', 'mountaviary' ),
-        'footer_menu'  => __( 'Footer Menu', 'mountaviary' ),
+        'screen_menu' => esc_html__( 'Screen Menu', 'mountaviary' ),
+        'footer_menu'  => esc_html__( 'Footer Menu', 'mountaviary' ),
     ) );
 }
 add_action( 'after_setup_theme', 'mountaviary_register_nav_menu', 0 );

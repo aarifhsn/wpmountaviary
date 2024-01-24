@@ -32,7 +32,7 @@
             ><?php echo bloginfo('name'); ?> <span class="flex flex-row-reverse -mt-8 -mr-3">&copy</span></span
           >
         </a>
-        <div class="uppercase font-bold text-sm text-slate-500">
+        <div class="uppercase font-bold text-sm text-slate-500 overflow-hidden">
         <!-- FOOTER MENU -->
             <?php wp_nav_menu( array(
               'theme_location'=> 'footer_menu',

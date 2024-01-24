@@ -8,10 +8,11 @@ export const theme = {
       poppins: ["Poppins", "sans-serif"],
       kanit: ["Kanit", "sans-serif"],
     },
-    backgroundImage: {
-      "home-bg": "url('/img/home_bg.png')",
-      "bg-left-nav": "url('/img/home_bg.png')",
-    },
+    backgroundImage: (theme) => ({
+      "home-bg": "url('../img/home_bg.png')",
+      "bg-left-nav": "url('../img/home_bg.png')",
+      "bg-about": "url('../img/redBackground.png')",
+    }),
   },
 };
 export const plugins = [];

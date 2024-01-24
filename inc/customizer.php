@@ -6,46 +6,32 @@
 
 function mountaviary_customizer_register ($wp_customize) {
 
-	// HEADER LOGO 
-    $wp_customize->add_section('mountaviary_sidebar_area', array(
-        'title'    => __('Sidebar Area', 'mountaviary'),
-        'description' => 'Change your desired logo.',
-    ));
-
-    $wp_customize->add_setting('mountaviary_sidebar_logo', array(
-        'default'        => get_bloginfo('name'),
-        'sanitize_callback' => 'mountaviary_sanitize_file',
-    ));
-
-	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'mountaviary_sidebar_logo', array(
-        'label'    => __('Logo Upload', 'mountaviary'),
-        'section'  => 'mountaviary_sidebar_area',
-        'settings' => 'mountaviary_sidebar_logo',
-    )));
-
-    //file input sanitization function
-    function mountaviary_sanitize_file( $file, $setting ) {
-          
-        //allowed file types
-        $mimes = array(
-            'jpg|jpeg|jpe' => 'image/jpeg',
-            'gif'          => 'image/gif',
-            'png'          => 'image/png'
-        );
-          
-        //check file type from file name
-        $file_ext = wp_check_filetype( $file, $mimes );
-          
-        //if file has a valid mime type return it, otherwise return default
-        return ( $file_ext['ext'] ? $file : $setting->default );
-    }
-
     // USER FRONT INFO
-
-    $wp_customize->add_section('mountaviary_front_area', array(
-        'title'    => __('User Front Info', 'mountaviary'),
+    $wp_customize->add_panel('front_page_theme_option', array(
+        'title' => __(' Custom Front Page Template', 'mountaviary'),
+        'description' => __('User Front Page Template description', 'mountaviary'),
+        'priority' => 100,
     ));
-
+    $wp_customize->add_section('mountaviary_front_area', array(
+        'title'    => __('Front Page User Info', 'mountaviary'),
+        'panel'     => 'front_page_theme_option',
+    ));
+    $wp_customize->add_setting( 'front_page_user_info',
+    array(
+        'type'  => 'option',
+        'default'   => 1,
+        'sanitize_callback' => 'sanitize_userinfo_checkbox',
+    ));
+    $wp_customize->add_control('front_page_user_info',
+    array(
+        'label' => __( 'Show Front User Info Area', 'mountaviary' ),
+        'settings'  => 'front_page_user_info',
+        'section'  => 'mountaviary_front_area',
+        'type'=> 'checkbox'
+    ));
+    function sanitize_userinfo_checkbox($checked) {
+        return $checked == 1 ? 1 : '';
+    }
     $wp_customize->add_setting('mountaviary_front_name_text', array(
         'default'        => 'ARIF HASSAN',
         'sanitize_callback' => 'sanitize_text_field',
@@ -86,7 +72,7 @@ function mountaviary_customizer_register ($wp_customize) {
     array(
         'type'  => 'option',
         'default'   => 1,
-        'sanitize_callback' => 'sanitize_front_checkbox',
+        'sanitize_callback' => 'sanitize_front_work_portfolio_option',
     ));
  
     $wp_customize->add_control('front_work_portfolio_option',
@@ -97,7 +83,7 @@ function mountaviary_customizer_register ($wp_customize) {
         'type'=> 'checkbox'
     ));
 
-    function sanitize_front_checkbox($checked) {
+    function sanitize_front_work_portfolio_option($checked) {
         return $checked == 1 ? 1 : '';
     }
 
@@ -121,8 +107,6 @@ function mountaviary_customizer_register ($wp_customize) {
     // Loop through the social platforms and add settings and controls
     foreach ($social_platforms as $platform => $label) {
         $setting_id = "{$platform}_url";
-
-        
         $wp_customize->add_setting($setting_id, array(
             'default' => '',
         ));
@@ -134,9 +118,7 @@ function mountaviary_customizer_register ($wp_customize) {
             'type' => 'text',
         ));
         }
-
         if($platform == 'whatsapp') {
-           
         $wp_customize->add_control($setting_id, array(
             'label' => sprintf(__('Enter %s URL', 'mountaviary'), $label),
             'section' => 'mountaviary_front_area',
@@ -154,6 +136,75 @@ function mountaviary_customizer_register ($wp_customize) {
         }
     }
 
+    // FRONT PAGE USER ABOUT PAGE SECTION
+
+    $wp_customize->add_section('mountaviary_front_about_area', array(
+        'title'    => __('User About Section', 'mountaviary'),
+        'panel'     => 'front_page_theme_option',
+    ));
+    $wp_customize->add_setting( 'mountaviary_about_username_text',
+    array(
+        'default'   => 'I\'m Arif',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('mountaviary_about_username_text',
+    array(
+        'label' => __( 'User Name', 'mountaviary' ),
+        'settings'  => 'mountaviary_about_username_text',
+        'section'  => 'mountaviary_front_about_area',
+        'type'=> 'text'
+    ));
+
+    $wp_customize->add_setting( 'mountaviary_about_user_designation',
+    array(
+        'default'   => 'A Freelance Web Developer. From Bangladesh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('mountaviary_about_user_designation',
+    array(
+        'label' => __( 'User Designation', 'mountaviary' ),
+        'settings'  => 'mountaviary_about_user_designation',
+        'section'  => 'mountaviary_front_about_area',
+        'type'=> 'text'
+    ));
+    $wp_customize->add_setting( 'mountaviary_about_user_content',
+    array(
+        'default'   => 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('mountaviary_about_user_content',
+    array(
+        'label' => __( 'Input Your Content', 'mountaviary' ),
+        'settings'  => 'mountaviary_about_user_content',
+        'section'  => 'mountaviary_front_about_area',
+        'type'=> 'text'
+    ));
+
+    $wp_customize->add_setting( 
+        'mountavaiary_about_profile', 
+        array(
+            'sanitize_callback' => 'esc_url_raw',
+            'default'           => 'https://pixabay.com/get/g5d98e04901ad7b021a34314a0d48208c294242157632fc16dcd54a7f63dc784f3526f53aaa2668ed249f1fcca1912a3b50c6e2e55434a7159df6946739d2faf9_1280.png'
+        )
+    );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'mountavaiary_about_profile',
+	array(
+		'label'    => __( 'Upload your desired Profile Photo', 'mountaviary' ),
+		'section'  => 'mountaviary_front_about_area',
+		'settings' => 'mountavaiary_about_profile',
+	)
+    ));
+
+    $wp_customize->add_setting( 'mountaviary_about_resume_link',
+    array(
+        'default'   => '',
+    ));
+    $wp_customize->add_control( new WP_Customize_Upload_Control( $wp_customize, 'mountaviary_about_resume_link', array(
+        'label'             => __('PDF Upload', 'mountaviary'),
+        'section'           => 'mountaviary_front_about_area',
+        'settings'          => 'mountaviary_about_resume_link'
+    )));
+
 	// FOOTER BOTTOM TEXT CUSTOMIZE 
 
 	$wp_customize->add_section('mountaviary_footer_area', array(
@@ -164,7 +215,6 @@ function mountaviary_customizer_register ($wp_customize) {
     $wp_customize->add_setting('mountaviary_footer_text', array(
         'default'        => 'All Rights Reserved.',
         'sanitize_callback' => 'sanitize_text_field',
-
     ));
 	
     $wp_customize-> add_control('mountaviary_footer_text_control', array(

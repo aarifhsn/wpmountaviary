@@ -2,6 +2,7 @@
 
 get_header(); ?>
 
+<?php if(get_option('front_page_user_info', 1)) { ?>
 <section
   id="home"
   class="devs_top_info min-h-screen md:min-h-[100vh] mb-24 lg:mb-48 flex justify-center items-center text-start px-4 lg:px-16 xl:px-36 py-10 md:py-0 bg-home-bg bg-contain bg-center bg-no-repeat relative"
@@ -23,7 +24,7 @@ get_header(); ?>
     </p>
     <div class="person_social_info mt-8">
 
-    <?php if(get_option('front_work_portfolio_option')) { ?>
+    <?php if(get_option('front_work_portfolio_option', 1)) { ?>
       <div class="cont_marge flex my-8 text-slate-600">
         <h3 class="hello">
           <a
@@ -84,6 +85,8 @@ get_header(); ?>
   <!-- <span class="section_border absolute content-[''] w-10 h-1 bottom-0 left-0 bg-gray-600"
                           ></span> -->
 </section>
+
+<?php } ?>
 <!--end devs_top_info-->
 
 <!--ABOUT SECTION-->
@@ -101,49 +104,44 @@ while ($about_query->have_posts()) : $about_query->the_post(); ?>
   class="devs_about min-h-[100vh] mb-24 lg:mb-48 transition-all"
 >
   <div class="page_title my-4">
-    <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-lg uppercase">
+    <h3 class="bg-slate-200  px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider uppercase">
     <?php the_title(); ?>
     </h3>
   </div>
 
   
   <div class="about_photo overflow-hidden ">
-    <div class="about_photo_single relative ">
-      
-
-      <?php if ( has_post_thumbnail() ): ?>
-          <?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto')); ?>
-      <?php endif; ?>
-
-      <div style="background-color: rgba(255,255,255,0.7);" class="designation_overlay absolute top-1/2 left-0 z-2 -translate-x-0 -translate-y-1/2 h-full w-full items-center backdrop-blur-sm shadow-lg rounded-e-lg flex flex-col justify-center pl-5">
-        <h3
-          class="font-bold text-2xl sm:text-4xl text-slate-900  my-2 font-poppins uppercase"
-        >
-          <?php
-          $username = get_post_meta(get_the_ID(), 'username', true);
-          echo esc_html( $username );
-          ?>
-        </h3>
-        <p class="designation text-lg text-slate-500 font-semibold">
-        <?php
-          $userdesig = get_post_meta(get_the_ID(), 'user_designation', true);
-          echo esc_html( $userdesig );
-          ?>
-        </p>
+    <div class="about_photo_single grid grid-cols-2 relative ">
+       
+      <div class="flex justify-center items-center bg-bg-about bg-cover h-full ">
+        <div
+          class="my-2 font-poppins pl-10"
+        ><span class="block text-sm font-bold text-slate-400  uppercase ">Hello</span>
+            <h3 class="-mr-10 font-bold text-8xl text-slate-100 z-40 relative tracking-wide block max-w-max ">
+            <?php echo esc_html(get_theme_mod('mountaviary_about_username_text', 'I\'m Arif')); ?>
+            </h3>
+            <h5 class="text-slate-100 w-4/5">
+              <?php echo esc_html(get_theme_mod('mountaviary_about_user_designation', 'A Freelance Web Developer. From Bangladesh')); ?>
+            </h5>
+        </div>
+        
+      </div>
+      <div class="about_content">
+        <img class="w-full h-auto" src="<?php echo esc_url(get_theme_mod('mountavaiary_about_profile', 'https://pixabay.com/get/g5d98e04901ad7b021a34314a0d48208c294242157632fc16dcd54a7f63dc784f3526f53aaa2668ed249f1fcca1912a3b50c6e2e55434a7159df6946739d2faf9_1280.png')); ?>" alt="Google"/>
+        <div class="author_info_text text-slate-600 font-medium leading-7 mt-2 p-4">
+          <p><?php echo esc_html(get_theme_mod('mountaviary_about_user_content', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.')); ?></p>
+          <h5 class="text-xs text-slate-100 font-semibold  mt-8 uppercase"><a class="p-4 inline-block bg-slate-800 hover:text-red-500 transition-all" href="<?php echo esc_url(get_theme_mod('mountaviary_about_resume_link')); ?>" target="_blank">View Resume</a></h5>
+        </div>
       </div>
     </div>
+
   </div> 
 
 
   <div class="about_info my-4">
-
     <div
       class="about_content my-4 md:my-6 py-3 md:py-7 border-t-2 border-slate-300 font-poppins"
     >
-      <p class="text-slate-600 text-sm font-medium leading-7 mt-2">
-        <?php the_content(); ?>
-      </p>
-
       <div
         class="about_content_list mt-8 border-t-2 border-slate-300 p-0 sm:p-1 md:p-9 pt-12 leading-8 text-sm"
       >
@@ -175,6 +173,7 @@ while ($about_query->have_posts()) : $about_query->the_post(); ?>
     </div>
   </div>
 
+  <?php if(!empty($user_degree)) { ?>
   <div class="knoweledge_section bg-white py-6 px-2 md:p-6 font-poppins">
     <ul class="grid grid-cols-2 gap-y-6 gap-x-6 sm:gap-x-12">
 
@@ -208,13 +207,13 @@ while ($about_query->have_posts()) : $about_query->the_post(); ?>
     </ul>
   </div>
 
+  <?php } ?>
+
   <?php endwhile; ?>
   <?php endif; ?>
 </section>
 
 <!--PORTFOLIO SECTION-->
-
-
 
 
 <?php 
@@ -226,9 +225,9 @@ if($portfolio_query->have_posts()) :
 
 <section id="portfolio" class="portfolio_area min-h-[100vh] my-24 lg:my-48">
   <div class="portfolio_title my-4">
-    <h4 class="bg-slate-200 px-4 py-2 inline-block font-bold text-lg uppercase">
+    <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase">
       <?php echo esc_html(get_theme_mod('mountaviary_portfolio_title_text')); ?>
-    </h4>
+    </h3>
   </div>
   <div class="about_content mt-4 mb-6">
     <h5 class="text-sm leading-8 text-slate-500 font-semibold">
@@ -241,17 +240,16 @@ if($portfolio_query->have_posts()) :
   >
     <?php while ($portfolio_query->have_posts()) : $portfolio_query->the_post(); ?>
     <div class="single_port relative">
-      <?php $portfolio_item_link = get_post_meta(get_the_ID(), 'portfolio-image', true); ?>
-      <img class="w-full h-auto" src="<?php echo $portfolio_item_link; ?>" alt="" >
+        <?php if ( has_post_thumbnail() ): ?>
+          <a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('portfolio_thumb', array('class' => 'w-full h-auto')); ?></a>
+        <?php endif; ?>
       <div
         class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
       >
         <div class="text-slate-200 font-bold">
           <?php $portfolio_item_link = get_post_meta(get_the_ID(), 'portfolio-item-link', true); ?>
-          <?php $portfolio_item_title = get_post_meta(get_the_ID(), 'portfolio-item-title', true); ?>
-          <a href="<?php echo $portfolio_item_link; ?>" target="_blank"><?php echo $portfolio_item_title; ?></a>
+          <a href="<?php echo $portfolio_item_link; ?>" target="_blank"><?php echo the_title(); ?></a>
         </div>
-        
       </div>
     </div>
     <?php endwhile; ?>
@@ -276,9 +274,9 @@ if($services_query->have_posts()) :
 
 <section id="service" class="services_area min-h-[100vh] my-24 lg:my-48">
   <div class="services_title my-4">
-    <h4 class="bg-slate-200 px-4 py-2 inline-block font-bold text-sm uppercase">
+    <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase">
       <?php echo esc_html(get_theme_mod('mountaviary_service_title_text')); ?>
-    </h4>
+    </h3>
   </div>
   <div class="about_content mt-4 mb-6">
     <h2 class="text-xl sm:text-4xl font-bold capitalize"><?php echo esc_html(get_theme_mod('mountaviary_services_subtitle')); ?></h2>
@@ -327,16 +325,16 @@ if($services_query->have_posts()) :
 ?>
 <section id="blog" class="blog_posts min-h-[100vh] my-24 lg:my-48">
   <div class="blog_area_title my-4">
-    <h4 class="bg-slate-200 px-4 py-2 inline-block font-bold text-sm uppercase">
+    <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase">
       Blog
-    </h4>
+    </h3>
   </div>
   <div class="about_content mt-4 mb-6">
-    <h2 class="text-xl sm:text-4xl font-bold capitalize">Recent Web Topics</h2>
+    <h2 class="text-lg sm:text-4xl font-bold capitalize">Recent Web Topics</h2>
   </div>
 
   <div
-    class="blog_info_area grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+    class="blog_info_area grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3"
   >
 
   <?php while ($the_query->have_posts( )) : $the_query->the_post(); ?>
@@ -380,7 +378,7 @@ if($services_query->have_posts()) :
   class="contact_section min-h-[100vh] my-10 md:my-20 lg:my-36"
 >
   <div class="contact_area_title my-4">
-    <h4 class="bg-slate-200 px-4 py-2 inline-block font-bold text-sm uppercase">
+    <h4 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase">
       Find Me here
     </h4>
   </div>
@@ -433,7 +431,7 @@ if($services_query->have_posts()) :
     <div
       class="contact_form w-full md:w-1/2 overflow-hidden ml-0 mr-0 -mt-6 px-0 text-slate-500"
     >
-         <?php echo do_shortcode('[wpforms id="1938" title="false]'); ?>
+        <?php echo do_shortcode('[wpforms id="1938" title="false]'); ?>
     </div>
   </div>
 </section>

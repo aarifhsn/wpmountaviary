@@ -5,14 +5,10 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
-
-/**
- * Theme Title
- */
 /**
  * Essential theme supports
  * */
-function theme_setup(){
+function mountaviary_theme_setup(){
     /** automatic feed link*/
     add_theme_support( 'automatic-feed-links' );
 
@@ -23,8 +19,20 @@ function theme_setup(){
     $post_formats = array('aside','image','gallery','video','audio','link','quote','status');
     add_theme_support( 'post-formats', $post_formats);
 
-    /** post thumbnail **/
-    add_theme_support( 'post-thumbnails' );
+    /**
+     * Enable support for Post Thumbnails on posts and pages
+     *
+     * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+     *
+     * Enable support for Post Formats
+     */
+    add_theme_support( 'post-thumbnails', array( 'post', 'page', 'mount_portfolio') );
+	
+	set_post_thumbnail_size( 200, 200, true ); // Normal post thumbnails, hard crop mode
+	
+	add_image_size( 'portfolio_thumb', 420, 420, true );
+	//add_image_size( 'post-thumb', 420, 350, true );
+	//add_image_size( 'post-full-image', 9999, 500, false);
 
     /** HTML5 support **/
     add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
@@ -55,7 +63,7 @@ function theme_setup(){
     );
     add_theme_support( 'custom-header', $header_defaults );
 
-    /** custom log **/
+    /** custom logo **/
     add_theme_support( 'custom-logo', array(
         'height'      => 60,
         'width'       => 400,
@@ -69,9 +77,7 @@ function theme_setup(){
 	add_theme_support( "align-wide" );
 
 }
-add_action('after_setup_theme','theme_setup');
-
-
+add_action('after_setup_theme','mountaviary_theme_setup');
 
 include_once ('inc/enqueue_scripts.php');
 include_once ('inc/customizer.php');
@@ -80,3 +86,7 @@ include_once ('inc/widget.php');
 include_once ('inc/metabox.php');
 include_once ('inc/hook.php');
 include_once ('inc/custom_posts.php');
+
+//--------- All CPT ---------------- //
+
+require_once get_template_directory() . '/inc/plugins/index.php';

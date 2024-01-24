@@ -25,7 +25,7 @@ get_header();
           <div <?php post_class( 'single_blog bg-white shadow-sm mb-4 rounded-lg' );?>>
             
             <div class="blog_content px-4 py-3">
-              <h2 class="font-bold text-lg my-4 capitalize"><?php the_title(); ?></h2>
+              <h2 class="font-bold text-lg my-4 capitalize"><?php single_post_title(); ?></h2>
               <p
                 class="text-sm text-slate-700 hover:text-slate-950 mb-2 font-medium"
               >

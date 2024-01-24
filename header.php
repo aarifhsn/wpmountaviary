@@ -10,55 +10,54 @@
 
     <?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
     <header
-      class="flex lg:hidden bg-white relative md:fixed top-0 left-0 min-h-[52px] z-50 w-full overflow-hidden items-center px-12"
+      class=" lg:hidden bg-white relative md:fixed top-0 left-0 min-h-[40px] z-50 w-full overflow-hidden items-center"
     >
-      <div class="site_title w-1/2 font-poppins">
-          <?php if ( get_header_image() ) : ?>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" /></a>
-							
-					<?php else : ?>
-
-            <?php if ( display_header_text() ) : // If user chooses to display header text. ?>
-              
-              <h1 class="site-title"><a href="<?php echo esc_url(home_url( '/' )); ?>" class="font-bold" rel="home"><?php echo get_bloginfo('name'); ?></a></h1>
-          
-              <?php
-              $description = get_bloginfo( 'description', 'display' );
-              if ( $description || is_customize_preview() ) : ?>
-              <h4 class="text-xs my-2 text-slate-500"><?php echo $description; ?></h4>
-              <?php endif; ?>
+      <div class="header_container flex container px-3 md:px-6 mx-auto py-1">
+        <div class="site_title w-1/2 font-poppins">
+            <?php if ( function_exists( 'the_custom_logo' ) ) : 
             
+            the_custom_logo();
+                
+            else : ?>
+
+              <?php if ( display_header_text() ) : // If user chooses to display header text. ?>
+                
+                <h1 class="site-title"><a href="<?php echo esc_url(home_url( '/' )); ?>" class="font-bold" rel="home"><?php echo get_bloginfo('name'); ?></a></h1>
+            
+                <?php
+                $description = get_bloginfo( 'description', 'display' );
+                if ( $description || is_customize_preview() ) : ?>
+                <h4 class="text-xs my-2 text-slate-500"><?php echo $description; ?></h4>
+                <?php endif; ?>
+              <?php endif; ?>
             <?php endif; ?>
-
-          <?php endif; ?>
-
-        
-      </div>
-      <div class="top_menu w-1/2 z-[15]">
-        <div
-          class="navbar uppercase font-bold text-sm text-right relative"
-        >
-          <div class="menu-toggle mb-2">
-            <span id="mobile-menu" class="cursor-pointer text-lg"
-              ><i class="fa-solid fa-bars"></i
-            ></span>
-          </div>
-
-          <!-- TOP MOBILE MENU - AS SCREEN MENU -->
-          <?php wp_nav_menu(array(
-                'theme_location'=> 'screen_menu',
-                'container'     => '',
-                'menu_class'    => 'nav-list text-right hidden p-6 pr-2 border border-slate-200 text-slate-700',
-                'depth'         => 1,
-                'fallback_cb'   => false,
-                'items_wrap'    => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                'add_li_class'  => 'mb-5 hover:text-slate-500',
-                //'nav_anchor_class' => 'hover:text-slate-400'
-              ));
-          ?>
-       
         </div>
-      </div>
+        <div class="top_menu w-1/2 z-[15]">
+          <div
+            class="navbar uppercase font-bold text-sm text-right relative"
+          >
+            <div class="menu-toggle pt-4">
+              <span id="mobile-menu" class="cursor-pointer text-lg"
+                ><i class="fa-solid fa-bars"></i
+              ></span>
+            </div>
+
+            <!-- TOP MOBILE MENU - AS SCREEN MENU -->
+            <?php wp_nav_menu(array(
+                  'theme_location'=> 'screen_menu',
+                  'container'     => '',
+                  'menu_class'    => 'nav-list text-right hidden p-6 pr-2 border border-slate-200 text-slate-700',
+                  'depth'         => 1,
+                  'fallback_cb'   => false,
+                  'items_wrap'    => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                  'add_li_class'  => 'mb-5 hover:text-slate-500',
+                  //'nav_anchor_class' => 'hover:text-slate-400'
+                ));
+            ?>
+        
+          </div>
+        </div>
+      </div><!--end header_container-->
     </header>
 
     <div class="mount_body bg-slate-50">
@@ -70,18 +69,18 @@
             class="left_nav_content hidden lg:block 2xl:block flex-auto h-full z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-left_nav-bg  bg-cover bg-no-repeat bg-center bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm"
           >
             <div class="mountaviary_logo px-12 py-8 border-t-4 border-solid border-t-red-600">
-            <?php if ( get_header_image() ) : ?>
-              <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>" class="h-auto p-0.5" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" />
-              </a>
-            <?php else : ?>
-            <?php if ( display_header_text() ) : // If user chooses to display header text. ?>
-              <h1 class="site-title"><a href="<?php echo esc_url(home_url( '/' )); ?>" class="font-bold" rel="home"><?php echo get_bloginfo('name'); ?></a></h1>
-              <?php
-              $description = get_bloginfo( 'description', 'display' );
-              if ( $description || is_customize_preview() ) : ?>
-              <h4 class="text-xs my-2 text-slate-500"><?php echo $description; ?></h4>
+            <?php if ( function_exists( 'the_custom_logo' ) ) : 
+           
+           the_custom_logo();
+           else : ?>
+              <?php if ( display_header_text() ) : // If user chooses to display header text. ?>
+                <h1 class="site-title"><a href="<?php echo esc_url(home_url( '/' )); ?>" class="font-bold" rel="home"><?php echo get_bloginfo('name'); ?></a></h1>
+                <?php
+                $description = get_bloginfo( 'description', 'display' );
+                if ( $description || is_customize_preview() ) : ?>
+                  <h4 class="text-xs my-2 text-slate-500"><?php echo $description; ?></h4>
+                <?php endif; ?>
               <?php endif; ?>
-            <?php endif; ?>
 
             <?php endif; ?>
               
