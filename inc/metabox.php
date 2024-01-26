@@ -146,7 +146,7 @@ function mountaviary_cmb2_metaboxes() {
 	$cmb = new_cmb2_box( array(
 		'id'            => 'mountaviary_portfolio',
 		'title'         => __( 'Portolio Section', 'cmb2' ),
-		'object_types'  => array( 'mount_portfolio' ), // Post type
+		'object_types'  => array( 'portfolio' ), // Post type
 		'context'       => 'normal',
 		'priority'      => 'high',
 		'show_names'    => true, // Show field names on the left
@@ -169,7 +169,7 @@ function mountaviary_cmb2_metaboxes() {
 	$cmb = new_cmb2_box( array(
 		'id'            => 'mountaviary_services',
 		'title'         => __( 'Service post Icon', 'cmb2' ),
-		'object_types'  => array( 'mount_services' ), // Post type
+		'object_types'  => array( 'service' ), // Post type
 		'context'       => 'normal',
 		'priority'      => 'high',
 		'show_names'    => true, // Show field names on the left
@@ -181,7 +181,7 @@ function mountaviary_cmb2_metaboxes() {
 	// Service Section
 	$cmb->add_field( array(
 		'name' => __( 'Service Post Icon', 'cmb2' ),
-		'desc' => __('To add your favourite icon, <a href="https://developer.wordpress.org/resource/dashicons/">Follow this Link</a> and copy the icon name clicking on it. and paste the name here. For Example: <i>dashicons-index-card</i>', 'cmb2' ),
+		'desc' => __('To add your favourite icon, <a target="_blank" href="https://developer.wordpress.org/resource/dashicons/">Follow this Link</a> and copy the icon name clicking on it. and paste the name here. For Example: <i>dashicons-index-card</i>', 'cmb2' ),
 		'id'   => 'services-icon',
 		'type' => 'text',
 	) );

@@ -205,6 +205,113 @@ function mountaviary_customizer_register ($wp_customize) {
         'settings'          => 'mountaviary_about_resume_link'
     )));
 
+    // USER BASIC INFO CUSTOMIZE
+
+    $wp_customize->add_section('mountaviary_user_info_section', array(
+        'title'    => __('User Basic Info', 'mountaviary'),
+        'panel'     => 'front_page_theme_option',
+    ));
+    $wp_customize->add_setting('user_birthday',
+    array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('user_birthday',
+    array(
+        'label' => __('Add your Birthday', 'mountaviary'),
+        'section'  => 'mountaviary_user_info_section',
+        'type'=> 'text'
+    ));
+    $wp_customize->add_setting('user_age',
+    array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('user_age',
+    array(
+        'label' => __('Add your Age', 'mountaviary'),
+        'section'  => 'mountaviary_user_info_section',
+        'type'=> 'text'
+    ));
+    $wp_customize->add_setting('user_address',
+    array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('user_address',
+    array(
+        'label' => __('Add your Address', 'mountaviary'),
+        'section'  => 'mountaviary_user_info_section',
+        'type'=> 'text'
+    ));
+    $wp_customize->add_setting('user_email',
+    array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('user_email',
+    array(
+        'label' => __('Add your Email Address', 'mountaviary'),
+        'section'  => 'mountaviary_user_info_section',
+        'type'=> 'text'
+    ));
+    $wp_customize->add_setting('user_phone',
+    array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('user_phone',
+    array(
+        'label' => __('Add your Phone Number', 'mountaviary'),
+        'section'  => 'mountaviary_user_info_section',
+        'type'=> 'text'
+    ));
+    $wp_customize->add_setting('user_nationality',
+    array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('user_nationality',
+    array(
+        'label' => __('Add your Nationality', 'mountaviary'),
+        'section'  => 'mountaviary_user_info_section',
+        'type'=> 'text'
+    ));
+    $wp_customize->add_setting('user_study',
+    array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('user_study',
+    array(
+        'label' => __('Add your Study', 'mountaviary'),
+        'section'  => 'mountaviary_user_info_section',
+        'type'=> 'text'
+    ));
+    $wp_customize->add_setting('user_degree',
+    array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('user_degree',
+    array(
+        'label' => __('Add your Education', 'mountaviary'),
+        'section'  => 'mountaviary_user_info_section',
+        'type'=> 'text'
+    ));
+    $wp_customize->add_setting('user_interest',
+    array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('user_interest',
+    array(
+        'label' => __('Add your Interest', 'mountaviary'),
+        'section'  => 'mountaviary_user_info_section',
+        'type'=> 'text'
+    ));
+    $wp_customize->add_setting('user_freelance',
+    array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('user_freelance',
+    array(
+        'label' => __('Add Freelance. Available or Not', 'mountaviary'),
+        'section'  => 'mountaviary_user_info_section',
+        'type'=> 'text'
+    ));
+
 	// FOOTER BOTTOM TEXT CUSTOMIZE 
 
 	$wp_customize->add_section('mountaviary_footer_area', array(
@@ -217,7 +324,7 @@ function mountaviary_customizer_register ($wp_customize) {
         'sanitize_callback' => 'sanitize_text_field',
     ));
 	
-    $wp_customize-> add_control('mountaviary_footer_text_control', array(
+    $wp_customize-> add_control('mountaviary_footer_text', array(
         'label'    => __('Footer Text', 'mountaviary'),
         'section'  => 'mountaviary_footer_area',
         'settings' => 'mountaviary_footer_text',
@@ -248,6 +355,7 @@ function mountaviary_customizer_register ($wp_customize) {
     $wp_customize->add_section('mountaviary_portfolio_front_page_area', array(
         'title'    => __('Front Page Portfolio Section', 'mountaviary'),
         'description' => 'Change Footer Text.',
+        'panel'     => 'front_page_theme_option',
     ));
 
     $wp_customize->add_setting('mountaviary_portfolio_title_text', array(
@@ -281,6 +389,7 @@ function mountaviary_customizer_register ($wp_customize) {
     $wp_customize->add_section('mountaviary_services_front_page_area', array(
         'title'    => __('Front Page Service Section', 'mountaviary'),
         'description' => 'Change Services Area Text.',
+        'panel'     => 'front_page_theme_option',
     ));
 
     $wp_customize->add_setting('mountaviary_service_title_text', array(
@@ -308,6 +417,69 @@ function mountaviary_customizer_register ($wp_customize) {
         'settings' => 'mountaviary_services_subtitle',
         'type'      => 'text',
     ));
+
+    // CUSTOM FRONT PAGE CONTACT AREA CUSTOMIZE
+
+    $wp_customize->add_section('mountaviary_front_contact_area', array(
+        'title'    => __('User Contact Section', 'mountaviary'),
+        'panel'     => 'front_page_theme_option',
+    ));
+    $wp_customize->add_setting( 'mountaviary_front_contact_page_title',
+    array(
+        'default'   => 'Find Me Here',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('mountaviary_front_contact_page_title',
+    array(
+        'label' => __( 'Contact Area Title', 'mountaviary' ),
+        'section'  => 'mountaviary_front_contact_area',
+        'type'=> 'text'
+    ));
+    $wp_customize->add_setting( 'mountaviary_frontpage_map_url',
+    array(
+        'default'   => 'https://www.google.com/maps/embed/v1/place?q=Dhaka,+Bangladesh&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    $wp_customize->add_control('mountaviary_frontpage_map_url',
+    array(
+        'label' => __( 'Paste your embeded-map source code', 'mountaviary' ),
+        'description' => __('Paste only the src code here', 'mountaviary'),
+        'section'  => 'mountaviary_front_contact_area',
+        'type'=> 'url'
+    ));
+
+    // USER CONTACT INFO 
+    $wp_customize->add_setting( 'mountaviary_front_contact_page_phone',
+    array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('mountaviary_front_contact_page_phone',
+    array(
+        'label' => __( 'Add your Contact Number', 'mountaviary' ),
+        'section'  => 'mountaviary_front_contact_area',
+        'type'=> 'text'
+    ));
+    $wp_customize->add_setting( 'mountaviary_front_contact_page_email',
+    array(
+        'sanitize_callback' => 'sanitize_email',
+    ));
+    $wp_customize->add_control('mountaviary_front_contact_page_email',
+    array(
+        'label' => __( 'Add your email', 'mountaviary' ),
+        'section'  => 'mountaviary_front_contact_area',
+        'type'=> 'email'
+    ));
+    $wp_customize->add_setting( 'mountaviary_front_contact_page_location_text',
+    array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('mountaviary_front_contact_page_location_text',
+    array(
+        'label' => __( 'Add Address', 'mountaviary' ),
+        'section'  => 'mountaviary_front_contact_area',
+        'type'=> 'text'
+    ));
+
 }
 
 add_action( 'customize_register', 'mountaviary_customizer_register' );

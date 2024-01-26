@@ -47,7 +47,7 @@
        )
     );
  
-    register_post_type( 'mount_portfolio',
+    register_post_type( 'portfolio',
        array (
            'labels' => array(
              'name'                  => __( 'Portfolio', 'mountaviary' ),
@@ -68,7 +68,7 @@
        )
     );
  
-    register_post_type( 'mount_services',
+    register_post_type( 'service',
        array (
            'labels' => array(
              'name'                  => __( 'Services', 'mountaviary' ),

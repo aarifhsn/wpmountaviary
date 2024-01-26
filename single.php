@@ -21,7 +21,7 @@ get_header();
 				the_post(); ?>
         <div <?php post_class( 'single_blog bg-white shadow-sm mb-4 rounded-lg' ); ?>>
           <?php if ( has_post_thumbnail() ): ?>
-          <?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto hover:grayscale duration-100')); ?>
+          <?php echo the_post_thumbnail('large', array('class' => 'w-full h-auto hover:grayscale duration-100')); ?>
           <?php endif; ?>
           <div class="blog_content px-4 py-3">
             <?php

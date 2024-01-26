@@ -23,7 +23,6 @@ get_header(); ?>
       <?php echo esc_html(get_theme_mod('mountaviary_front_content')); ?>
     </p>
     <div class="person_social_info mt-8">
-
     <?php if(get_option('front_work_portfolio_option', 1)) { ?>
       <div class="cont_marge flex my-8 text-slate-600">
         <h3 class="hello">
@@ -45,7 +44,6 @@ get_header(); ?>
         </h3>
       </div>
     <?php } ?>
-
 
     <!-- FRONT-PAGE SOCIAL ICONS  -->
 
@@ -72,7 +70,7 @@ get_header(); ?>
                   echo "<li><a class='px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid' href='" . esc_url($url) . "' target='_blank'><i class='$icon_class'></i></a></li>";
               }
             }
-            if($platform == 'email') {
+            else {
               if ($url) {
                   echo "<li><a class='px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid' href='mailto:" . esc_attr($url) . "'' target='_blank'><i class='$icon_class'></i></a></li>";
               }
@@ -82,37 +80,28 @@ get_header(); ?>
     </ul>
     </div>
   </div>
-  <!-- <span class="section_border absolute content-[''] w-10 h-1 bottom-0 left-0 bg-gray-600"
-                          ></span> -->
 </section>
-
 <?php } ?>
 <!--end devs_top_info-->
 
 <!--ABOUT SECTION-->
-
 <?php 
 $args= (array('post_type' => 'user_about_profile', 'post_status' => 'publish'));
 $about_query = new WP_Query($args);
-
 if($about_query->have_posts()) :
-
 while ($about_query->have_posts()) : $about_query->the_post(); ?>
-
 <section
   id="about"
   class="devs_about min-h-[100vh] mb-24 lg:mb-48 transition-all"
 >
   <div class="page_title my-4">
-    <h3 class="bg-slate-200  px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider uppercase">
+    <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">
     <?php the_title(); ?>
     </h3>
   </div>
 
-  
   <div class="about_photo overflow-hidden ">
     <div class="about_photo_single grid grid-cols-2 relative ">
-       
       <div class="flex justify-center items-center bg-bg-about bg-cover h-full ">
         <div
           class="my-2 font-poppins pl-10"
@@ -124,90 +113,50 @@ while ($about_query->have_posts()) : $about_query->the_post(); ?>
               <?php echo esc_html(get_theme_mod('mountaviary_about_user_designation', 'A Freelance Web Developer. From Bangladesh')); ?>
             </h5>
         </div>
-        
       </div>
       <div class="about_content">
-        <img class="w-full h-auto" src="<?php echo esc_url(get_theme_mod('mountavaiary_about_profile', 'https://pixabay.com/get/g5d98e04901ad7b021a34314a0d48208c294242157632fc16dcd54a7f63dc784f3526f53aaa2668ed249f1fcca1912a3b50c6e2e55434a7159df6946739d2faf9_1280.png')); ?>" alt="Google"/>
+        <img class="w-full h-auto" src="<?php echo esc_url(get_theme_mod('mountavaiary_about_profile', 'https://pixabay.com/get/g5d98e04901ad7b021a34314a0d48208c294242157632fc16dcd54a7f63dc784f3526f53aaa2668ed249f1fcca1912a3b50c6e2e55434a7159df6946739d2faf9_1280.png')); ?>" alt="pixabay"/>
         <div class="author_info_text text-slate-600 font-medium leading-7 mt-2 p-4">
           <p><?php echo esc_html(get_theme_mod('mountaviary_about_user_content', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.')); ?></p>
           <h5 class="text-xs text-slate-100 font-semibold  mt-8 uppercase"><a class="p-4 inline-block bg-slate-800 hover:text-red-500 transition-all" href="<?php echo esc_url(get_theme_mod('mountaviary_about_resume_link')); ?>" target="_blank">View Resume</a></h5>
         </div>
       </div>
     </div>
-
   </div> 
-
 
   <div class="about_info my-4">
     <div
-      class="about_content my-4 md:my-6 py-3 md:py-7 border-t-2 border-slate-300 font-poppins"
+      class="about_content my-4 md:my-6 py-3 md:py-7 font-poppins"
     >
       <div
         class="about_content_list mt-8 border-t-2 border-slate-300 p-0 sm:p-1 md:p-9 pt-12 leading-8 text-sm"
       >
         <div class="left_list mt-8 md:mt-0">
           <ul class="columns-1 sm:columns-2 gap-0 sm:gap-x-6 md:gap-x-12">
-
-
           <?php 
-            $user_birthday = get_post_meta(get_the_ID(), 'user_birthday', true);
-            $user_age = get_post_meta(get_the_ID(), 'user_age', true);
-            $user_country = get_post_meta(get_the_ID(), 'user_country', true);
-            $user_phone = get_post_meta(get_the_ID(), 'user_phone', true);
+            $user_birthday = get_theme_mod('user_birthday');
+            $user_age = get_theme_mod('user_age');
+            $user_address = get_theme_mod('user_address');
+            $user_email = get_theme_mod('user_email');
+            $user_phone = get_theme_mod('user_phone');
+            $user_nationality = get_theme_mod('user_nationality');
+            $user_study = get_theme_mod('user_study');
+            $user_degree = get_theme_mod('user_degree');
+            $user_interest = get_theme_mod('user_interest');
+            $user_freelance = get_theme_mod('user_freelance');
 
             $items = [
-              'Birthday' => $user_birthday,
-              'Age' => $user_age,
-              'Country' => $user_country,
-              'Phone' => $user_phone,
+              'Birthday' => $user_birthday,'Age' => $user_age,'Address' => $user_address,'Email' => $user_email,'Phone' => $user_phone,'Nationality' => $user_nationality,'Study' => $user_study,'Degree' => $user_degree,'Interest' => $user_interest,'Freelance' => $user_freelance,
             ];
-
             foreach ($items as $label => $value) {
               if (!empty($value)) echo "<li><span class=\"min-w-[100px] mr-2 inline-block font-bold\">$label:</span><span class=\"text-slate-500\">$value</span></li>";
             }
           ?>
-
           </ul>
         </div>
       </div>
     </div>
   </div>
-
-  <?php if(!empty($user_degree)) { ?>
-  <div class="knoweledge_section bg-white py-6 px-2 md:p-6 font-poppins">
-    <ul class="grid grid-cols-2 gap-y-6 gap-x-6 sm:gap-x-12">
-
-    <?php 
-      $user_degree = get_post_meta(get_the_ID(), 'user_mba', true);
-      $institute = get_post_meta(get_the_ID(), 'institute', true);
-
-      $items = [
-        $user_degree => $institute,
-      ];
-      
-      foreach($items as $degree => $institute) { 
-      if(!empty($user_degree)) echo "
-      
-      <li>
-        <div class=\"education_list flex gap-8 my-2\">
-          <div class=\"education_subject w-2/3\">
-            <h3 class=\"font-semibold\">$user_degree;</h3>
-            <span class=\"text-sm text-slate-400\"> $institute;</span>
-          </div>
-          <div
-            class=\"year w-1/3 text-center md:text-end bg-slate-50 text-slate-400 font-semibold p-2 rounded-sm\"
-          >
-            <span>2015-16</span>
-          </div>
-        </div>
-      </li>";
-    }
-    ?>
-  
-    </ul>
-  </div>
-
-  <?php } ?>
 
   <?php endwhile; ?>
   <?php endif; ?>
@@ -215,45 +164,43 @@ while ($about_query->have_posts()) : $about_query->the_post(); ?>
 
 <!--PORTFOLIO SECTION-->
 
-
 <?php 
-$args= (array('post_type' => 'mount_portfolio', 'post_status' => 'publish','posts_per_page' => -1));
+$args= (array('post_type' => 'portfolio', 'post_status' => 'publish','posts_per_page' => -1));
 $portfolio_query = new WP_Query($args);
-
 if($portfolio_query->have_posts()) :
 ?>
-
 <section id="portfolio" class="portfolio_area min-h-[100vh] my-24 lg:my-48">
   <div class="portfolio_title my-4">
-    <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase">
-      <?php echo esc_html(get_theme_mod('mountaviary_portfolio_title_text')); ?>
+    <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">
+      <?php echo esc_html(get_theme_mod('mountaviary_portfolio_title_text','PORTFOLIO')); ?>
     </h3>
   </div>
   <div class="about_content mt-4 mb-6">
     <h5 class="text-sm leading-8 text-slate-500 font-semibold">
-    <?php echo esc_html(get_theme_mod('mountaviary_portfolio_subtitle')); ?>
+    <?php echo esc_html(get_theme_mod('mountaviary_portfolio_subtitle','A few recent design and coding projects')); ?>
     </h5>
   </div>
-
   <div
     class="portfolio_page grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
   >
     <?php while ($portfolio_query->have_posts()) : $portfolio_query->the_post(); ?>
     <div class="single_port relative">
-        <?php if ( has_post_thumbnail() ): ?>
-          <a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('portfolio_thumb', array('class' => 'w-full h-auto')); ?></a>
-        <?php endif; ?>
+        <?php if ( has_post_thumbnail() ) { ?>
+          <a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('post_temp', array('class' => 'w-full h-auto')); ?></a>
+        <?php } else {?>
+          <a href="<?php the_permalink(); ?>"><img class="w-full h-auto wp-post-image" src="<?php echo get_template_directory_uri(); ?>/img/redBackground_port.png" alt="Portfolio Default"></a>
+        <?php } ?>
+        
       <div
         class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
       >
-        <div class="text-slate-200 font-bold">
+        <div class="text-slate-100 font-bold text-center">
           <?php $portfolio_item_link = get_post_meta(get_the_ID(), 'portfolio-item-link', true); ?>
           <a href="<?php echo $portfolio_item_link; ?>" target="_blank"><?php echo the_title(); ?></a>
         </div>
       </div>
     </div>
     <?php endwhile; ?>
-
   </div>
 </section>
 
@@ -266,7 +213,7 @@ if($portfolio_query->have_posts()) :
 
 <!-- SERVICES SECTION  -->
 <?php 
-$args= (array('post_type' => 'mount_services', 'post_status' => 'publish','posts_per_page' => -1));
+$args= (array('post_type' => 'service', 'post_status' => 'publish','posts_per_page' => -1));
 $services_query = new WP_Query($args);
 
 if($services_query->have_posts()) :
@@ -274,39 +221,37 @@ if($services_query->have_posts()) :
 
 <section id="service" class="services_area min-h-[100vh] my-24 lg:my-48">
   <div class="services_title my-4">
-    <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase">
-      <?php echo esc_html(get_theme_mod('mountaviary_service_title_text')); ?>
+    <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">
+      <?php echo esc_html(get_theme_mod('mountaviary_service_title_text','SERVICES')); ?>
     </h3>
   </div>
   <div class="about_content mt-4 mb-6">
-    <h2 class="text-xl sm:text-4xl font-bold capitalize"><?php echo esc_html(get_theme_mod('mountaviary_services_subtitle')); ?></h2>
+  <h5 class="text-sm leading-8 text-slate-500 font-semibold"><?php echo esc_html(get_theme_mod('mountaviary_services_subtitle', 'What I can Support')); ?></h5>
   </div>
   <div class="services_page grid gap-4 grid-cols-1 md:grid-cols-2">
 
     <?php while ($services_query->have_posts()) : $services_query->the_post(); ?>
     <div
-      class="single_serve group relative mx-2 my-1 sm:my-4 border-2 border-gray-100 hover:border-gray-200 transition-all rounded border-solid p-4"
+      class="single_serve group relative mr-2 my-1 sm:my-4 border-2 border-gray-100 hover:border-gray-200 transition-all rounded border-solid p-4"
     >
-    <!-- IF ADDED SERVICE AREA ICON  -->
+    <!-- IF ADDED SERVICE AREA ICON -->
     <?php $services_icon = get_post_meta(get_the_ID(), 'services-icon', true); ?>
     <?php if($services_icon !== '') { ?>
       <span
         class="service_icon flex justify-center items-center left-0 relative text-center w-10 h-10 bg-slate-200 py-2 px-3 m-4 ml-0 rounded group-hover:bg-slate-300 transition-all"
       >
-        
         <span class="dashicons <?php echo $services_icon; ?>"></span>
       </span>
-    <?php  } ?>
-
-      <h3 class="services_title text-xl my-4"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h3>
+    <?php } ?>
+      <h3 class="services_title text-xl font-medium text-slate-600 hover:text-slate-900 my-4"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h3>
       <p
         class="services_content text-sm text-slate-500 font-normal leading-6 mb-4"
       >
-      <?php echo wp_trim_words(get_the_content(), 40, '<a class="font-medium text-sm text-slate-700 hover:font-semibold transition duration-700 block" href=" ' .get_permalink() . ' "> Read More ... </a>'); ?>
+      <?php echo wp_trim_words(get_the_content(), 40, '<a class="font-medium text-sm text-slate-500 hover:font-semibold transition duration-700 block mt-4" href=" ' .get_permalink() . ' "> Read More ... </a>'); ?>
       </p>
     </div>
     <?php endwhile; ?>
-    <!-- END SERVICES AREA  -->
+    <!-- END SERVICES AREA -->
 
   </div>
 </section>
@@ -320,31 +265,31 @@ if($services_query->have_posts()) :
 <?php 
     $args = array( 'post_type' => 'post', 'posts_per_page' => 6, 'ignore_sticky_posts' =>1 );
     $the_query = new WP_Query( $args ); 
-
     if($the_query->have_posts()) : 
 ?>
 <section id="blog" class="blog_posts min-h-[100vh] my-24 lg:my-48">
-  <div class="blog_area_title my-4">
-    <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase">
-      Blog
+  <div class="blog_area_title my-6">
+    <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">
+      Blog Posts
     </h3>
   </div>
-  <div class="about_content mt-4 mb-6">
-    <h2 class="text-lg sm:text-4xl font-bold capitalize">Recent Web Topics</h2>
-  </div>
-
   <div
     class="blog_info_area grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3"
   >
-
   <?php while ($the_query->have_posts( )) : $the_query->the_post(); ?>
 
     <div class="single_blog bg-white shadow-sm mb-4 rounded-lg">
-      <a href="<?php the_permalink(); ?>"
-        ><?php if ( has_post_thumbnail() ): ?>
-          <?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto hover:grayscale duration-100')); ?>
-      <?php endif; ?></a>
-
+        <div class="thumbnail overflow-hidden">  
+          <a href="<?php the_permalink(); ?>"
+              ><?php if ( has_post_thumbnail() ): ?>
+                <?php echo the_post_thumbnail('media_thumb', array('class' => 'w-full h-auto hover:scale-110 duration-300 rounded-t-lg')); ?>
+            <?php endif; ?>
+          </a>
+        </div>
+        <div class="post_title px-4 pt-2 mt-2">
+            <?php
+              the_title( '<h2 class="entry-title"><a class="font-semibold text-slate-600 hover:text-slate-900" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+        </div>
       <div class="author_info flex items-center px-4 py-2 mt-2">
         <?php echo get_avatar( get_the_author_meta( 'ID' ), $size = '28', $default = '', $alt = '', $args = array( 'class' => 'author_photo rounded-full' ) );  ?>
         <h4
@@ -356,9 +301,9 @@ if($services_query->have_posts()) :
       </div>
       <div class="blog_content px-4 py-3">
         <h4
-          class="text-sm text-slate-700 hover:text-slate-950 mb-2 font-medium"
+          class="text-sm text-slate-700 hover:text-slate-950 mb-2 font-medium leading-6"
         >
-        <?php echo wp_trim_words(get_the_content(), 20, '<a class="font-medium text-xs text-slate-500 hover:text-slate-900 block" href=" ' .get_permalink() . ' "> Read More ... </a>'); ?>
+        <?php echo wp_trim_words(get_the_content(), 20, '<a class="font-medium text-xs mt-4 text-slate-500 hover:text-slate-900 block transition-all" href=" ' .get_permalink() . ' "> Read More ... </a>'); ?>
         </h4>
         
       </div>
@@ -371,21 +316,21 @@ if($services_query->have_posts()) :
 <!-- reset global post variable. After this point, we are back to the Main Query object -->
 <?php wp_reset_postdata(); ?>
 
-<!-- CONTACT SECTION -->
 
+<!-- CONTACT SECTION -->
 <section
   id="contact"
   class="contact_section min-h-[100vh] my-10 md:my-20 lg:my-36"
 >
   <div class="contact_area_title my-4">
-    <h4 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase">
-      Find Me here
-    </h4>
+    <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">
+      <?php echo esc_html(get_theme_mod('mountaviary_front_contact_page_title', 'Find Me Here')); ?>
+    </h3>
   </div>
   <div class="map w-full h-full overflow-hidden">
     <iframe
       class="w-full"
-      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14586.561258390391!2d91.1065283!3d23.937787600000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1702454074289!5m2!1sen!2sbd"
+      src="<?php echo esc_url(get_theme_mod('mountaviary_frontpage_map_url', 'https://www.google.com/maps/embed/v1/place?q=Dhaka,+Bangladesh&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8')); ?>"
       height="450"
       style="border: 0"
       allowfullscreen=""
@@ -399,33 +344,26 @@ if($services_query->have_posts()) :
   >
     <div
       class="contact_info w-full md:w-1/2 mb-20 md:mb-0 overflow-hidden text-slate-800"
-    >
-      <ul>
-        <li
-          class="grid grid-cols-2 p-4 border border-slate-300 border-solid my-3"
-        >
-          <div class="text-slate-500">Phone:</div>
-          <div>+880-1916-014030</div>
-        </li>
-        <li
-          class="grid grid-cols-2 p-4 border border-slate-300 border-solid my-3"
-        >
-          <div class="text-slate-500">Email:</div>
-          <div class="lowercase">aarifhassan02@gmail.com</div>
-        </li>
-        <li
-          class="grid grid-cols-2 p-4 border border-slate-300 border-solid my-3"
-        >
-          <div class="text-slate-500">Location:</div>
-          <div class="capitalize">Banasree, Dhaka, Bangladesh</div>
-        </li>
-        <li
-          class="grid grid-cols-2 p-4 my-3 border border-slate-300 border-solid"
-        >
-          <div class="text-slate-500">Working:</div>
-          <div>Sun-Thu, 8AM-6PM</div>
-        </li>
-      </ul>
+    >   <ul>
+          <?php 
+            $user_cont_phone = get_theme_mod('mountaviary_front_contact_page_phone');
+            $user_cont_email = get_theme_mod('mountaviary_front_contact_page_email');
+            $user_cont_address = get_theme_mod('mountaviary_front_contact_page_location_text');
+            $items = [
+              'Phone' => $user_cont_phone,
+              'Email' => $user_cont_email,
+              'Address' => $user_cont_address,
+            ];
+            foreach ($items as $label => $value) {
+              if(!empty($value)) echo" <li
+                class=\"grid grid-cols-2 p-4 border border-slate-300 border-solid my-3\"
+              >
+                <div class=\"text-slate-500\">$label</div>
+                <div>$value</div>
+              </li>";
+            }
+          ?>
+        </ul>
     </div>
 
     <div

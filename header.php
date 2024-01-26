@@ -85,12 +85,12 @@
             <?php endif; ?>
               
             </div>
-            <div id="sidebar_icon_area" class="flex bg-gray dark:bg-dark-3 rounded text-xs font-medium gap-2 justify-between pl-12 pt-4 pb-2 shadow-sm">
-              <span class="sidebar_icon cursor-pointer  border boder-solid border-slate-200 p-1 rounded text-slate-900 hover:text-slate-900 hover:border-slate-500" title="Menu"><i class="fa-solid fa-bars mr-2"></i>Menu Bar</span>
+            <div id="sidebar_icon_area" class="flex bg-gray dark:bg-dark-3 rounded text-xs font-medium gap-2 justify-between pl-8 pt-4 pb-2 shadow-sm">
+              <span class="sidebar_icon cursor-pointer  border boder-solid border-slate-200 px-2 py-1 rounded text-slate-900 hover:text-slate-900 hover:border-slate-500" title="Menu"><i class="fa-solid fa-bars mr-2"></i>Menu Bar</span>
               <span class="sidebar_icon cursor-pointer text-slate-600 border boder-solid border-slate-200 p-1 rounded hover:text-slate-900 hover:border-slate-500 mr-2" title="Show Sidebar Widget"><i class="fa-regular fa-window-restore mr-2"></i>Sidebar Widgets</span>
             </div>
  
-            <div class="sidebar_section_front overflow-y-auto max-h-96  mb-20">
+            <div class="sidebar_section_front overflow-y-auto max-h-80  mb-20">
               
               <div id="sidebar2" class="sidebar_toggle  px-8 pt-4 pb-4 hidden ">
                 <?php get_sidebar(); ?>
@@ -99,7 +99,7 @@
               <div
                 id="sidebar1" class="left_nav_info sidebar_toggle"
               >
-                <div class="px-12 pt-4 pb-4">
+                <div class="pl-8 pr-4 pt-4 pb-4">
                   <div class="person_info">
                     <h3
                       class="person_name text-left xl:text-center text-lg text-slate-900 font-bold font-poppins"

@@ -645,10 +645,6 @@ video {
   left: -2rem;
 }
 
-.bottom-0 {
-  bottom: 0px;
-}
-
 .end-1 {
   inset-inline-end: 0.25rem;
 }
@@ -711,11 +707,6 @@ video {
 
 .m-4 {
   margin: 1rem;
-}
-
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
 }
 
 .mx-3 {
@@ -956,10 +947,6 @@ video {
   display: none;
 }
 
-.h-1 {
-  height: 0.25rem;
-}
-
 .h-10 {
   height: 2.5rem;
 }
@@ -972,16 +959,16 @@ video {
   height: 100%;
 }
 
-.max-h-96 {
-  max-height: 24rem;
+.max-h-80 {
+  max-height: 20rem;
 }
 
 .min-h-\[100vh\] {
   min-height: 100vh;
 }
 
-.min-h-\[52px\] {
-  min-height: 52px;
+.min-h-\[40px\] {
+  min-height: 40px;
 }
 
 .min-h-screen {
@@ -992,16 +979,8 @@ video {
   width: 50%;
 }
 
-.w-1\/3 {
-  width: 33.333333%;
-}
-
 .w-10 {
   width: 2.5rem;
-}
-
-.w-2\/3 {
-  width: 66.666667%;
 }
 
 .w-3\/12 {
@@ -1591,15 +1570,6 @@ video {
   gap: 2rem;
 }
 
-.gap-x-6 {
-  -moz-column-gap: 1.5rem;
-       column-gap: 1.5rem;
-}
-
-.gap-y-6 {
-  row-gap: 1.5rem;
-}
-
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -1914,10 +1884,6 @@ video {
   border-radius: 0.5rem;
 }
 
-.rounded-sm {
-  border-radius: 0.125rem;
-}
-
 .rounded-b {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
@@ -2019,6 +1985,10 @@ video {
   border-left-width: 1px;
 }
 
+.border-l-4 {
+  border-left-width: 4px;
+}
+
 .border-r {
   border-right-width: 1px;
 }
@@ -2087,6 +2057,11 @@ video {
   border-bottom-color: rgb(203 213 225 / var(--tw-border-opacity));
 }
 
+.border-l-red-500 {
+  --tw-border-opacity: 1;
+  border-left-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
 .border-t-red-600 {
   --tw-border-opacity: 1;
   border-top-color: rgb(220 38 38 / var(--tw-border-opacity));
@@ -2095,11 +2070,6 @@ video {
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
-}
-
-.bg-gray-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
 .bg-slate-200 {
@@ -2265,16 +2235,8 @@ video {
   padding: 0px;
 }
 
-.p-0\.5 {
-  padding: 0.125rem;
-}
-
 .p-1 {
   padding: 0.25rem;
-}
-
-.p-2 {
-  padding: 0.5rem;
 }
 
 .p-4 {
@@ -2345,11 +2307,6 @@ video {
   padding-bottom: 1rem;
 }
 
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -2372,16 +2329,24 @@ video {
   padding-left: 2.5rem;
 }
 
-.pl-12 {
-  padding-left: 3rem;
+.pl-8 {
+  padding-left: 2rem;
 }
 
 .pr-2 {
   padding-right: 0.5rem;
 }
 
+.pr-4 {
+  padding-right: 1rem;
+}
+
 .pt-12 {
   padding-top: 3rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
 }
 
 .pt-4 {
@@ -3013,11 +2978,6 @@ video {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
-.content-\[\'\'\] {
-  --tw-content: '';
-  content: var(--tw-content);
-}
-
 .content-\[\'this-is-also-valid\]-weirdly-enough\'\] {
   --tw-content: 'this-is-also-valid]-weirdly-enough';
   content: var(--tw-content);
@@ -3097,6 +3057,11 @@ video {
   font-weight: 600;
 }
 
+.hover\:text-red-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
 .hover\:text-slate-400:hover {
   --tw-text-opacity: 1;
   color: rgb(148 163 184 / var(--tw-text-opacity));
@@ -3120,21 +3085,6 @@ video {
 .hover\:text-slate-950:hover {
   --tw-text-opacity: 1;
   color: rgb(2 6 23 / var(--tw-text-opacity));
-}
-
-.hover\:text-red-800:hover {
-  --tw-text-opacity: 1;
-  color: rgb(153 27 27 / var(--tw-text-opacity));
-}
-
-.hover\:text-red-700:hover {
-  --tw-text-opacity: 1;
-  color: rgb(185 28 28 / var(--tw-text-opacity));
-}
-
-.hover\:text-red-500:hover {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .hover\:opacity-80:hover {
@@ -3203,11 +3153,6 @@ video {
     justify-content: space-between;
   }
 
-  .sm\:gap-x-12 {
-    -moz-column-gap: 3rem;
-         column-gap: 3rem;
-  }
-
   .sm\:gap-x-6 {
     -moz-column-gap: 1.5rem;
          column-gap: 1.5rem;
@@ -3219,11 +3164,6 @@ video {
 
   .sm\:text-center {
     text-align: center;
-  }
-
-  .sm\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .sm\:underline {
@@ -3283,10 +3223,6 @@ video {
          column-gap: 3rem;
   }
 
-  .md\:p-6 {
-    padding: 1.5rem;
-  }
-
   .md\:p-9 {
     padding: 2.25rem;
   }
@@ -3337,10 +3273,6 @@ video {
 
   .md\:pt-7 {
     padding-top: 1.75rem;
-  }
-
-  .md\:text-end {
-    text-align: end;
   }
 
   .md\:text-5xl {

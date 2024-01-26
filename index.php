@@ -30,7 +30,7 @@ get_header();
         
           <div class="thumbnail overflow-hidden">
             <?php if ( has_post_thumbnail() ): ?>
-            <a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('thumbnail', array('class' => 'w-full h-auto hover:scale-110 duration-300 rounded-t-lg')); ?></a>
+            <a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('media_thumb', array('class' => 'w-full h-auto hover:scale-110 duration-300 rounded-t-lg')); ?></a>
             <?php endif; ?>
           </div>
 
@@ -55,26 +55,10 @@ get_header();
                 the_title( '<h2 class="entry-title"><a class="hover:text-slate-950" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
               endif; ?>
 
-              <div class="subtitle text-xs">
-              <?php
-                  // Grab the metadata from the database
-                  $text = get_post_meta( get_the_ID(), 'subtitle', true );
-
-                  // Echo the metadata
-                  echo esc_html( $text );
-                  
-                  // Grab the metadata from the database
-                  $meta_color = get_post_meta( get_the_ID(), 'meta_color', true );
-
-                  // Echo the metadata
-                  echo esc_html( $meta_color );
-                  ?>
-              </div>
-
               <h4
                 class="text-xs text-slate-500 mb-2 py-4 font-medium leading-5"
               >
-                <?php echo wp_trim_words(get_the_content(), 20, '<a class="block mt-4 text-slate-700 hover:text-slate-950 transition-all text-sm" href=" ' .get_permalink() . ' "> Read More ... </a>'); ?>
+                <?php echo wp_trim_words(get_the_content(), 20, '<a class="font-medium text-sm mt-4 text-slate-500 hover:text-slate-900 block transition-all" href=" ' .get_permalink() . ' "> Read More ... </a>'); ?>
               
               </h4>
           </div>

@@ -26,12 +26,12 @@ function mountaviary_theme_setup(){
      *
      * Enable support for Post Formats
      */
-    add_theme_support( 'post-thumbnails', array( 'post', 'page', 'mount_portfolio') );
+    add_theme_support( 'post-thumbnails', array( 'post', 'page', 'portfolio') );
 	
-	set_post_thumbnail_size( 200, 200, true ); // Normal post thumbnails, hard crop mode
+	//set_post_thumbnail_size( 200, 200, true ); // Normal post thumbnails, hard crop mode
 	
-	add_image_size( 'portfolio_thumb', 420, 420, true );
-	//add_image_size( 'post-thumb', 420, 350, true );
+	add_image_size( 'media_thumb', 420, 420, true );
+	add_image_size( 'post_temp', 420, 380, true );
 	//add_image_size( 'post-full-image', 9999, 500, false);
 
     /** HTML5 support **/

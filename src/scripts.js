@@ -28,24 +28,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // MENU- ADD ICON IN LI (PARENT) IF SUMENU CLASS EXISTS
+  let parentItems = document.querySelectorAll("li.menu-item-has-children");
 
-  // Get all parent elements with a class of "parent"
-  let parentItems = document.querySelectorAll("li.menu-item");
-
-  // Loop through each parent element
   parentItems.forEach(function (parentItem) {
-    // Check if the parent has a submenu (ul element)
-    let submenu = parentItem.querySelector("ul.sub-menu");
+    let menu_icon = document.createElement("i");
+    menu_icon.className = "fa-solid fa-chevron-up";
 
-    if (submenu) {
-      // Add a class to the parent if a submenu exists
-      let menu_icon = document.createElement("i");
-      menu_icon.className = "fa-solid fa-chevron-down";
-      parentItem.appendChild(menu_icon);
-    }
+    // Get the first child of parentItem
+    let firstChild = parentItem.firstChild;
+
+    // Insert menu_icon just after the first child
+    parentItem.insertBefore(menu_icon, firstChild.nextSibling);
   });
-
-  let wpForms = document.getElementsByClassName("wpforms-field");
-  console.log(wpForms);
 });

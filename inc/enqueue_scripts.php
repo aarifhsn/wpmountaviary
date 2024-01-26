@@ -19,6 +19,8 @@ function mountaviary_scripts() {
 	wp_enqueue_style( 'mountaviary_google_fonts');
 
 	wp_enqueue_script( 'mountaviary_script', get_template_directory_uri(  ). '/src/scripts.js', array(), _S_VERSION, true );
+
+	wp_enqueue_style( 'dashicons' );
 	
 	if ( is_singular() && comments_open() && ( get_option( 'thread_comments' ) ) ) {
 		wp_enqueue_script( 'comment-reply' );
