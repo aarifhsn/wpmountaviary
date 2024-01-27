@@ -340,10 +340,10 @@ if($services_query->have_posts()) :
   </div>
 
   <div
-    class="contact_area block md:flex gap-8 my-8 py-9 px-8 md:px-0 font-poppins font-bold uppercase text-xs"
+    class="contact_area gap-8 py-9 px-8 md:px-0 font-poppins font-bold uppercase text-xs"
   >
     <div
-      class="contact_info w-full md:w-1/2 mb-20 md:mb-0 overflow-hidden text-slate-800"
+      class="contact_info mb-10 overflow-hidden text-slate-800 mx-auto w-2/3"
     >   <ul>
           <?php 
             $user_cont_phone = get_theme_mod('mountaviary_front_contact_page_phone');
@@ -356,9 +356,9 @@ if($services_query->have_posts()) :
             ];
             foreach ($items as $label => $value) {
               if(!empty($value)) echo" <li
-                class=\"grid grid-cols-2 p-4 border border-slate-300 border-solid my-3\"
+                class=\"grid grid-cols-2 p-4 border border-slate-200 border-solid my-3\"
               >
-                <div class=\"text-slate-500\">$label</div>
+                <div class=\"text-slate-600\">$label</div>
                 <div>$value</div>
               </li>";
             }
@@ -367,9 +367,11 @@ if($services_query->have_posts()) :
     </div>
 
     <div
-      class="contact_form w-full md:w-1/2 overflow-hidden ml-0 mr-0 -mt-6 px-0 text-slate-500"
+      class="contact_form overflow-hidden ml-0 mr-0 -mt-6 px-0 text-slate-500 leading-8"
     >
         <?php echo do_shortcode('[wpforms id="1938" title="false]'); ?>
+        <!-- submit css class  -->
+        <!-- class= "rounded-sm bg-slate-100 border-2 border-slate-200 py-2 px-4 text-slate-600 hover:bg-slate-400 hover:border-slate-600 transition duration-500"  -->
     </div>
   </div>
 </section>

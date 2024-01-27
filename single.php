@@ -42,9 +42,9 @@ get_header();
                   </h5>
                 </div>
             <div
-              class="single_content text-slate-800 mb-2 overflow-hidden leading-6"
+              class="single_content text-slate-800 mb-2 overflow-hidden"
             >
-            <?php the_content(); ?>
+              <?php the_content(); ?>
               </div>
           </div>
         </div>

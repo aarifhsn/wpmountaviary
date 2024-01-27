@@ -323,7 +323,6 @@ p.comment-form-cookies-consent label {
   padding-bottom: 5px;
   border-bottom: 1px solid #ddd ;
 }
-
 .widget_404 ul li, .widget_categories ul li,  .widget_archive ul li{
   line-height: 31px;
   color: #444;
@@ -332,25 +331,18 @@ p.comment-form-cookies-consent label {
   color: #000;
   transition: all .3s;
 }
-
 .widget_archive {
   margin: 2rem 0;
 }
 .widget_archive p{
   font-size: 14px;
 }
-
-p {
-  font-size: 14px;
-}
-
 .widget_archive select#archives-dropdown--1 {
   margin: 18px 0;
   padding: 10px 20px;
   border: 1px solid #ddd;
   font-size: 14px;
 }
-
 .widget_archive select option {
   line-height: 22px;
 }
@@ -360,7 +352,6 @@ p {
 .widget_tag_cloud .tagcloud a:hover {
   color: #000;
 }
-
 .single_widget ul {
   text-align: left; text-transform: uppercase; font-weight: 600; font-size: 12px; margin-top: 8px;
 }
@@ -476,3 +467,5 @@ code {
 }
 .left_nav ul ul ul li a{font-weight: bold;}
 li.menu-item svg {margin-left: 5px;font-size: 12px;color: #444;}
+.contact_form input, .contact_form textarea {border: 1px solid rgba(255,255,255,0.3);}
+.blog_content input, .blog_content textarea {border: 1px solid rgba(255,255,255,0.3);}
