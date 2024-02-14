@@ -24,7 +24,7 @@ function mountaviary_customizer_register ($wp_customize) {
     ));
     $wp_customize->add_control('front_page_user_info',
     array(
-        'label' => __( 'Show Front User Info Area', 'mountaviary' ),
+        'label' => __( 'Display User Info Area', 'mountaviary' ),
         'settings'  => 'front_page_user_info',
         'section'  => 'mountaviary_front_area',
         'type'=> 'checkbox'
@@ -109,6 +109,7 @@ function mountaviary_customizer_register ($wp_customize) {
         $setting_id = "{$platform}_url";
         $wp_customize->add_setting($setting_id, array(
             'default' => '',
+            'sanitize_callback' => 'sanitize_text_field',
         ));
 
         if($platform !== 'whatsapp') {
@@ -142,6 +143,23 @@ function mountaviary_customizer_register ($wp_customize) {
         'title'    => __('User About Section', 'mountaviary'),
         'panel'     => 'front_page_theme_option',
     ));
+
+    $wp_customize->add_setting('mountaviary_show_about_option', array(
+        'default'        => 1,
+        'type'           => 'option',
+        'sanitize_callback' => 'sanitize_about_section_checkbox',
+    ));
+	
+    $wp_customize-> add_control('mountaviary_show_about_option', array(
+        'label'    => __('Show About Section', 'mountaviary'),
+        'section'  => 'mountaviary_front_about_area',
+        'type'     => 'checkbox'
+    ));
+
+    function sanitize_about_section_checkbox($checked) {
+        return $checked == 1 ? 1 : '';
+    }
+
     $wp_customize->add_setting( 'mountaviary_about_username_text',
     array(
         'default'   => 'I\'m Arif',
@@ -195,9 +213,27 @@ function mountaviary_customizer_register ($wp_customize) {
 	)
     ));
 
+    //file input sanitization function
+    function mountaviary_sanitize_file( $file, $setting ) {
+          
+        //allowed file types
+        $mimes = array(
+            'jpg|jpeg|jpe' => 'image/jpeg',
+            'gif'          => 'image/gif',
+            'png'          => 'image/png'
+        );
+          
+        //check file type from file name
+        $file_ext = wp_check_filetype( $file, $mimes );
+          
+        //if file has a valid mime type return it, otherwise return default
+        return ( $file_ext['ext'] ? $file : $setting->default );
+    }
+
     $wp_customize->add_setting( 'mountaviary_about_resume_link',
     array(
         'default'   => '',
+        'sanitize_callback' => 'mountaviary_sanitize_file'
     ));
     $wp_customize->add_control( new WP_Customize_Upload_Control( $wp_customize, 'mountaviary_about_resume_link', array(
         'label'             => __('PDF Upload', 'mountaviary'),
@@ -312,8 +348,8 @@ function mountaviary_customizer_register ($wp_customize) {
         'type'=> 'text'
     ));
 
-	// FOOTER BOTTOM TEXT CUSTOMIZE 
 
+	// FOOTER BOTTOM TEXT CUSTOMIZE 
 	$wp_customize->add_section('mountaviary_footer_area', array(
         'title'    => __('Footer Area', 'mountaviary'),
         'description' => 'Change Footer Text.',
@@ -349,14 +385,27 @@ function mountaviary_customizer_register ($wp_customize) {
     }
 
 
-
     // PORTFOLIO CUSTOM POSTS TYPE AREA 
 
     $wp_customize->add_section('mountaviary_portfolio_front_page_area', array(
         'title'    => __('Front Page Portfolio Section', 'mountaviary'),
-        'description' => 'Change Footer Text.',
         'panel'     => 'front_page_theme_option',
     ));
+    $wp_customize->add_setting('mountaviary_show_portfolio_option', array(
+        'default'        => 1,
+        'type'           => 'option',
+        'sanitize_callback' => 'sanitize_portfolio_section_checkbox',
+    ));
+	
+    $wp_customize-> add_control('mountaviary_show_portfolio_option', array(
+        'label'    => __('Show Portfolio Section', 'mountaviary'),
+        'section'  => 'mountaviary_portfolio_front_page_area',
+        'type'     => 'checkbox'
+    ));
+
+    function sanitize_portfolio_section_checkbox($checked) {
+        return $checked == 1 ? 1 : '';
+    }
 
     $wp_customize->add_setting('mountaviary_portfolio_title_text', array(
         'default'        => 'PORTFOLIO',
@@ -392,6 +441,21 @@ function mountaviary_customizer_register ($wp_customize) {
         'panel'     => 'front_page_theme_option',
     ));
 
+    // Option to show or hide section
+    $wp_customize->add_setting('mountaviary_show_service_option', array(
+        'default'        => 1,
+        'type'           => 'option',
+        'sanitize_callback' => 'sanitize_service_section_checkbox',
+    ));
+    $wp_customize-> add_control('mountaviary_show_service_option', array(
+        'label'    => __('Show Service Section', 'mountaviary'),
+        'section'  => 'mountaviary_service_front_page_area',
+        'type'     => 'checkbox'
+    ));
+    function sanitize_service_section_checkbox($checked) {
+        return $checked == 1 ? 1 : '';
+    }
+
     $wp_customize->add_setting('mountaviary_service_title_text', array(
         'default'        => 'SERVICES',
         'sanitize_callback' => 'sanitize_text_field',
@@ -418,12 +482,61 @@ function mountaviary_customizer_register ($wp_customize) {
         'type'      => 'text',
     ));
 
+    // CUSTOM FRONT PAGE BLOG AREA CUSTOMIZE
+
+    $wp_customize->add_section('mountaviary_front_blog_area', array(
+        'title'    => __('User Blog Section', 'mountaviary'),
+        'panel'     => 'front_page_theme_option',
+    ));
+    // Option to show or hide section
+    $wp_customize->add_setting('mountaviary_show_blog_option', array(
+        'default'        => 1,
+        'type'           => 'option',
+        'sanitize_callback' => 'sanitize_blog_section_checkbox',
+    ));
+    $wp_customize-> add_control('mountaviary_show_blog_option', array(
+        'label'    => __('Show Blog Section', 'mountaviary'),
+        'section'  => 'mountaviary_front_blog_area',
+        'type'     => 'checkbox'
+    ));
+    function sanitize_blog_section_checkbox($checked) {
+        return $checked == 1 ? 1 : '';
+    }
+    // CUSTOM FRONT PAGE BLOG POSTS NUMBER
+    $wp_customize->add_setting( 'front_blog_post_count',
+    array(
+        'default'        => 6,
+        'sanitize_callback' => 'absint',
+    ));
+    $wp_customize->add_control('front_blog_post_count',
+    array(
+        'label' => __( 'Number of Posts to display', 'mountaviary' ),
+        'section'  => 'mountaviary_front_blog_area',
+        'type'=> 'number'
+    ));
+
+
     // CUSTOM FRONT PAGE CONTACT AREA CUSTOMIZE
 
     $wp_customize->add_section('mountaviary_front_contact_area', array(
         'title'    => __('User Contact Section', 'mountaviary'),
         'panel'     => 'front_page_theme_option',
     ));
+    // Option to show or hide section
+    $wp_customize->add_setting('mountaviary_show_contact_option', array(
+        'default'        => 1,
+        'type'           => 'option',
+        'sanitize_callback' => 'sanitize_contact_section_checkbox',
+    ));
+    $wp_customize-> add_control('mountaviary_show_contact_option', array(
+        'label'    => __('Show Contact Section', 'mountaviary'),
+        'section'  => 'mountaviary_front_contact_area',
+        'type'     => 'checkbox'
+    ));
+    function sanitize_contact_section_checkbox($checked) {
+        return $checked == 1 ? 1 : '';
+    }
+
     $wp_customize->add_setting( 'mountaviary_front_contact_page_title',
     array(
         'default'   => 'Find Me Here',

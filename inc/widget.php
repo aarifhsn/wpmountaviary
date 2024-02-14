@@ -1,14 +1,12 @@
 <?php
 
-
-
 // REGISTERING WIDGET
 
 function mountaviary_register_widgets() {
 	
     register_sidebar( array(
-        'name' => esc_html__( 'Right Sidebar', 'mountaviary' ),
-        'id' => 'right_sidebar',
+        'name' => esc_html__( 'Left Sidebar', 'mountaviary' ),
+        'id' => 'left_sidebar',
         'before_widget' => '<div class="single_widget mt-2 mb-4 overflow-hidden">',
         'after_widget' => '</div>',
         'before_title' => '<div class="widget_title"><h3>',

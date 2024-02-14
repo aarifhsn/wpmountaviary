@@ -1,6 +1,6 @@
 <?php /* Template Name: Custom Front Page */
 
-get_header(); ?>
+get_header('part'); ?>
 
 <?php if(get_option('front_page_user_info', 1)) { ?>
 <section
@@ -84,12 +84,8 @@ get_header(); ?>
 <?php } ?>
 <!--end devs_top_info-->
 
+<?php if(get_option('mountaviary_show_about_option', true)) { ?>
 <!--ABOUT SECTION-->
-<?php 
-$args= (array('post_type' => 'user_about_profile', 'post_status' => 'publish'));
-$about_query = new WP_Query($args);
-if($about_query->have_posts()) :
-while ($about_query->have_posts()) : $about_query->the_post(); ?>
 <section
   id="about"
   class="devs_about min-h-[100vh] mb-24 lg:mb-48 transition-all"
@@ -157,15 +153,15 @@ while ($about_query->have_posts()) : $about_query->the_post(); ?>
       </div>
     </div>
   </div>
-
-  <?php endwhile; ?>
-  <?php endif; ?>
 </section>
+<?php } ?>
+
+
 
 <!--PORTFOLIO SECTION-->
-
+<?php if(get_option('mountaviary_show_portfolio_option', true)) { ?>
 <?php 
-$args= (array('post_type' => 'portfolio', 'post_status' => 'publish','posts_per_page' => -1));
+$args= (array('post_type' => 'mav_portfolio', 'post_status' => 'publish','posts_per_page' => -1));
 $portfolio_query = new WP_Query($args);
 if($portfolio_query->have_posts()) :
 ?>
@@ -188,15 +184,22 @@ if($portfolio_query->have_posts()) :
         <?php if ( has_post_thumbnail() ) { ?>
           <a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('post_temp', array('class' => 'w-full h-auto')); ?></a>
         <?php } else {?>
-          <a href="<?php the_permalink(); ?>"><img class="w-full h-auto wp-post-image" src="<?php echo get_template_directory_uri(); ?>/img/redBackground_port.png" alt="Portfolio Default"></a>
+          <a href="<?php the_permalink(); ?>"><img class="w-full h-auto wp-post-image" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/redBackground_port.png" alt="Portfolio Default"></a>
         <?php } ?>
         
       <div
         class="overlay absolute flex top-0 left-0 h-full w-full opacity-0 hover:opacity-80 z-40 bg-slate-700 justify-center items-center cursor-pointer transition"
       >
         <div class="text-slate-100 font-bold text-center">
-          <?php $portfolio_item_link = get_post_meta(get_the_ID(), 'portfolio-item-link', true); ?>
-          <a href="<?php echo $portfolio_item_link; ?>" target="_blank"><?php echo the_title(); ?></a>
+        <?php
+            // Retrieve the custom meta box value
+            $custom_value = get_post_meta(get_the_ID(), '_custom_value_key', true);
+            // Check if the meta box value exists
+            if (!empty($custom_value)) { ?>
+              <a href="<?php echo esc_url($custom_value); ?>" target="_blank"><?php echo the_title(); ?></a>
+             <?php }
+            ?>
+          
         </div>
       </div>
     </div>
@@ -207,13 +210,15 @@ if($portfolio_query->have_posts()) :
 <?php endif; ?>
 <!-- reset global post variable. After this point, we are back to the Main Query object -->
 <?php wp_reset_postdata(); ?>
+<?php } ?>
 <!-- END OF PORTFOLIO SECTION  -->
 
 
 
 <!-- SERVICES SECTION  -->
+<?php if(get_option('mountaviary_show_service_option', true)) { ?>
 <?php 
-$args= (array('post_type' => 'service', 'post_status' => 'publish','posts_per_page' => -1));
+$args= (array('post_type' => 'mav_service', 'post_status' => 'publish','posts_per_page' => -1));
 $services_query = new WP_Query($args);
 
 if($services_query->have_posts()) :
@@ -259,11 +264,14 @@ if($services_query->have_posts()) :
 <!-- reset global post variable. After this point, we are back to the Main Query object -->
 <?php wp_reset_postdata(); ?>
 
+<?php } ?>
+
 
 <!-- BLOG SECTION  -->
 
+<?php if(get_option('mountaviary_show_blog_option', true)) { ?>
 <?php 
-    $args = array( 'post_type' => 'post', 'posts_per_page' => 6, 'ignore_sticky_posts' =>1 );
+    $args = array( 'post_type' => 'post', 'posts_per_page' => get_theme_mod('front_blog_post_count'), 'ignore_sticky_posts' =>1 );
     $the_query = new WP_Query( $args ); 
     if($the_query->have_posts()) : 
 ?>
@@ -315,9 +323,10 @@ if($services_query->have_posts()) :
 <?php endif; ?>
 <!-- reset global post variable. After this point, we are back to the Main Query object -->
 <?php wp_reset_postdata(); ?>
-
+<?php } ?>
 
 <!-- CONTACT SECTION -->
+<?php if(get_option('mountaviary_show_contact_option', true)) { ?>
 <section
   id="contact"
   class="contact_section min-h-[100vh] my-10 md:my-20 lg:my-36"
@@ -375,5 +384,6 @@ if($services_query->have_posts()) :
     </div>
   </div>
 </section>
+<?php } ?>
 
 <?php get_footer(); ?>

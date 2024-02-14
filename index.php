@@ -56,9 +56,9 @@ get_header();
               endif; ?>
 
               <h4
-                class="text-xs text-slate-500 mb-2 py-4 font-medium leading-5"
+                class="text-sm text-slate-500 mb-2 py-4 font-medium leading-6"
               >
-                <?php echo wp_trim_words(get_the_content(), 20, '<a class="font-medium text-sm mt-4 text-slate-500 hover:text-slate-900 block transition-all" href=" ' .get_permalink() . ' "> Read More ... </a>'); ?>
+                <?php echo wp_trim_words(get_the_content(), 20, '<a class="font-medium text-sm mt-4 text-slate-700 hover:text-slate-900 block transition-all" href=" ' .get_permalink() . ' "> Read More ... </a>'); ?>
               
               </h4>
           </div>

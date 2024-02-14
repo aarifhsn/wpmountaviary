@@ -9,8 +9,7 @@
 ?>
 
 <div class="sidebar_section">
-
-	<!--Wordpress default widget section-->
-	<?php dynamic_sidebar('right_sidebar'); ?>
-
+<?php if ( is_active_sidebar( 'left_sidebar' ) ) { 
+	dynamic_sidebar('left_sidebar');
+} ?>
 </div>

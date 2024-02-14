@@ -26,7 +26,7 @@ function mountaviary_theme_setup(){
      *
      * Enable support for Post Formats
      */
-    add_theme_support( 'post-thumbnails', array( 'post', 'page', 'portfolio') );
+    add_theme_support( 'post-thumbnails', array( 'post', 'page', 'mav_portfolio') );
 	
 	//set_post_thumbnail_size( 200, 200, true ); // Normal post thumbnails, hard crop mode
 	
@@ -65,8 +65,8 @@ function mountaviary_theme_setup(){
 
     /** custom logo **/
     add_theme_support( 'custom-logo', array(
-        'height'      => 60,
-        'width'       => 400,
+        'height'      => 300,
+        'width'       => 300,
         'flex-height' => true,
         'flex-width'  => true,
         'header-text' => array( 'site-title', 'site-description' ),
@@ -89,4 +89,4 @@ include_once ('inc/custom_posts.php');
 
 //--------- All CPT ---------------- //
 
-require_once get_template_directory() . '/inc/plugins/index.php';
+require_once get_template_directory() . '/inc/plugins/main.php';
