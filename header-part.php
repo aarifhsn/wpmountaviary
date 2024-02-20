@@ -12,7 +12,7 @@
     <header
       class=" lg:hidden bg-white relative md:fixed top-0 left-0 min-h-[40px] z-50 w-full overflow-hidden items-center"
     >
-      <div class="header_container flex container px-3 md:px-6 mx-auto py-1">
+      <div class="header_container container flex justify-between px-3 md:pl-6 md:pr-0 mx-auto py-1">
         <div class="site_title flex w-4/12 font-poppins">
             <div class="logo mr-4">
               <?php if ( function_exists( 'the_custom_logo' ) ) { 
@@ -50,7 +50,7 @@
                   'fallback_cb'   => false,
                   'items_wrap'    => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                   'add_li_class'  => 'mb-5 relative hover:text-slate-500',
-                  //'nav_anchor_class' => 'hover:text-slate-400'
+                  'nav_anchor_class' => 'font-semibold hover:text-slate-400'
                 ));
             ?>
         
@@ -86,7 +86,7 @@
             </div>
           </div>
  
-            <div class="sidebar_section_front overflow-y-auto max-h-96 mb-20">
+            <div class="sidebar_area overflow-y-auto max-h-96 mb-20">
               <div class="section_border border-t-2 border-solid border-slate-300 mx-8">
 
               </div>

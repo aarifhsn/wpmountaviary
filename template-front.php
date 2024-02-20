@@ -192,8 +192,7 @@ if($portfolio_query->have_posts()) :
       >
         <div class="text-slate-100 font-bold text-center">
         <?php
-            // Retrieve the custom meta box value
-            $custom_value = get_post_meta(get_the_ID(), '_custom_value_key', true);
+           
             // Check if the meta box value exists
             if (!empty($custom_value)) { ?>
               <a href="<?php echo esc_url($custom_value); ?>" target="_blank"><?php echo the_title(); ?></a>

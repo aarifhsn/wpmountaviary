@@ -37,7 +37,7 @@
           >
             <div class="screen_menu">
                 <div
-                  class="left_nav menu_list capitalize font-poppins py-4 relative overflow-hidden lg:block hidden"
+                  class="left_nav capitalize font-poppins  py-4 relative overflow-hidden"
                 > 
                 <!-- SCREEN MENU -->
                   <?php wp_nav_menu( array(
@@ -50,11 +50,11 @@
                 </div>
             </div>
             
-            <div class="menu-toggle pt-4 block lg:hidden float-right">
+            <!-- <div class="menu-toggle pt-4">
               <span id="mobile-menu" class="cursor-pointer text-lg"
                 ><i class="fa-solid fa-bars"></i
               ></span>
-            </div>
+            </div> -->
 
             <!-- TOP MOBILE MENU - AS SCREEN MENU -->
             <?php wp_nav_menu(array(
@@ -65,7 +65,7 @@
                   'fallback_cb'   => false,
                   'items_wrap'    => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                   'add_li_class'  => 'mb-5 relative hover:text-slate-500',
-                  'nav_anchor_class' => 'font-semibold hover:text-slate-400'
+                  //'nav_anchor_class' => 'hover:text-slate-400'
                 ));
             ?>
         
@@ -79,21 +79,8 @@
         class="container px-3 md:px-4 xl:p-0 mx-auto relative"
       >
         <div class="site_content flex flex-row-reverse relative">
-          <div
-            class="left_nav_content hidden lg:block 2xl:block flex-auto h-full z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-left_nav-bg  bg-cover bg-no-repeat bg-center bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm"
-          >
- 
-            <div class="sidebar_section_front mt-32 mb-16 pl-8 pr-0">
-               
-              <div class="sidebar_area overflow-y-auto max-h-96 pr-1">
-                <?php get_sidebar(); ?>
-              </div>
-
-            </div>
-            <!-- end sidebar_section_front  -->
-          </div>
-          <!--end left_nav_content-->
+          
 
           <div
-            class="body_content w-full lg:w-9/12 2xl:w-9/12 overflow-hidden relative mt-20"
+            class="body_content w-full overflow-hidden relative mt-20"
           >

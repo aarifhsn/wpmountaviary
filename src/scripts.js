@@ -29,7 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // });
 
   // add an icon when menu has children or sub menu
-  let parentItems = document.querySelectorAll("li.menu-item-has-children");
+  let parentItems = document.querySelectorAll(
+    ".left_nav li.menu-item-has-children"
+  );
 
   parentItems.forEach(function (parentItem) {
     let menu_icon = document.createElement("i");
@@ -40,5 +42,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Insert menu_icon just after the first child
     parentItem.insertBefore(menu_icon, firstChild.nextSibling);
+  });
+
+  // add an icon when menu has children or sub menu
+  let menuItems = document.querySelectorAll(
+    ".menu_lists li.menu-item-has-children"
+  );
+
+  menuItems.forEach(function (menu_list) {
+    let menu_icon = document.createElement("i");
+    menu_icon.className = "fa-solid fa-caret-down";
+
+    // Get the first child of menu_list
+    let firstChild = menu_list.firstChild;
+
+    // Insert menu_icon just after the first child
+    menu_list.insertBefore(menu_icon, firstChild.nextSibling);
   });
 });
