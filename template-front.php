@@ -192,13 +192,12 @@ if($portfolio_query->have_posts()) :
       >
         <div class="text-slate-100 font-bold text-center">
         <?php
-           
             // Check if the meta box value exists
-            if (!empty($custom_value)) { ?>
-              <a href="<?php echo esc_url($custom_value); ?>" target="_blank"><?php echo the_title(); ?></a>
+            $portfolio_link = get_post_meta($post->ID, 'project-link', true);
+            if (!empty($portfolio_link)) { ?>
+              <a href="<?php echo esc_url($portfolio_link); ?>" target="_blank"><?php echo the_title(); ?></a>
              <?php }
             ?>
-          
         </div>
       </div>
     </div>
@@ -239,14 +238,14 @@ if($services_query->have_posts()) :
       class="single_serve group relative mr-2 my-1 sm:my-4 border-2 border-gray-100 hover:border-gray-200 transition-all rounded border-solid p-4"
     >
     <!-- IF ADDED SERVICE AREA ICON -->
-    <?php $services_icon = get_post_meta(get_the_ID(), 'services-icon', true); ?>
-    <?php if($services_icon !== '') { ?>
-      <span
-        class="service_icon flex justify-center items-center left-0 relative text-center w-10 h-10 bg-slate-200 py-2 px-3 m-4 ml-0 rounded group-hover:bg-slate-300 transition-all"
-      >
-        <span class="dashicons <?php echo $services_icon; ?>"></span>
-      </span>
-    <?php } ?>
+    <?php $services_icon = get_post_meta($post->ID, 'service-icon', true);
+        if (!empty($services_icon)) { ?>
+        <span
+          class="service_icon flex justify-center items-center left-0 relative text-center w-10 h-10 bg-slate-200 py-2 px-3 m-4 ml-0 rounded group-hover:bg-slate-300 transition-all"
+        >
+          <span class="dashicons <?php echo $services_icon; ?>"></span>
+        </span>
+      <?php } ?>
       <h3 class="services_title text-xl font-medium text-slate-600 hover:text-slate-900 my-4"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h3>
       <p
         class="services_content text-sm text-slate-500 font-normal leading-6 mb-4"
