@@ -3,36 +3,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const navList = document.querySelector(".nav-list");
 
   mobileMenuButton.addEventListener("click", function (event) {
-    if (!navList.contains(event.target)) {
-      navList.classList.toggle("show");
-      mobileMenuButton.classList.toggle("active");
+    event.stopPropagation(); // Stop propagation to prevent document click listener from firing
+    navList.classList.toggle("show");
+    mobileMenuButton.classList.toggle("active");
+  });
+
+  document.addEventListener("click", function (event) {
+    if (!navList.contains(event.target) && event.target !== mobileMenuButton) {
+      navList.classList.remove("show");
+      mobileMenuButton.classList.remove("active");
     }
   });
 
-  // Menu and Sidebar Toggle
-
-  // const sidebarIcon = document.querySelectorAll(".sidebar_icon");
-  // const sidebarToggle = document.querySelectorAll(".sidebar_toggle");
-
-  // sidebarIcon.forEach(function (icon, index) {
-  //   icon.addEventListener("click", function () {
-  //     sidebarToggle.forEach(function (area) {
-  //       area.classList.add("hidden");
-  //     });
-
-  //     // Show the corresponding area
-  //     const associatedArea = document.getElementById(`sidebar${index + 1}`);
-  //     if (associatedArea) {
-  //       associatedArea.classList.remove("hidden");
-  //     }
-  //   });
-  // });
-
   // add an icon when menu has children or sub menu
+  // custom header (for header-part)
   let parentItems = document.querySelectorAll(
-    ".left_nav li.menu-item-has-children"
+    ".menu_front_list li.menu-item-has-children"
   );
-
+  console.log(parentItems);
   parentItems.forEach(function (parentItem) {
     let menu_icon = document.createElement("i");
     menu_icon.className = "fa-solid fa-caret-right";
@@ -45,18 +33,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // add an icon when menu has children or sub menu
+  // all pages except custom front page (for header)
   let menuItems = document.querySelectorAll(
-    ".menu_lists li.menu-item-has-children"
+    ".menu_list li.menu-item-has-children"
   );
-
+  console.log(menuItems);
   menuItems.forEach(function (menu_list) {
-    let menu_icon = document.createElement("i");
-    menu_icon.className = "fa-solid fa-caret-down";
+    let menu_icon_page = document.createElement("i");
+    menu_icon_page.className = "fa-solid fa-caret-down";
 
     // Get the first child of menu_list
     let firstChild = menu_list.firstChild;
 
-    // Insert menu_icon just after the first child
-    menu_list.insertBefore(menu_icon, firstChild.nextSibling);
+    // Insert menu_icon_page just after the first child
+    menu_list.insertBefore(menu_icon_page, firstChild.nextSibling);
   });
 });

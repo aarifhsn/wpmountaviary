@@ -106,10 +106,11 @@ img {
 .navbar ul.show {
   display: block !important;
   transition: all .5s;
-  position: fixed;
+  position: absolute;
   right: 40px;
   top: 53px;
   z-index: 999;
+  backdrop-filter: blur(4px);
 }
 
 
@@ -455,7 +456,7 @@ code {
   visibility: hidden;
   position: absolute;
   opacity: 1;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(0,0,0,0.05);
   text-align: left;
   -webkit-transition: all .1s;
   -moz-transition: all .1s;
@@ -469,13 +470,24 @@ code {
   z-index: 9999;
   backdrop-filter: blur(4px);
 }
+.left_nav ul li ul {backdrop-filter: blur(6px);}
+.menu_list  ul {
+  left: 50px !important;
+  top: 20px !important;
+}
 .left_nav ul li:hover>ul { visibility: visible;}
-.left_nav ul ul li {margin:0px; padding:0px; display: block; position: relative;}
+.left_nav ul ul li {margin:0px; padding:5px; display: block; position: relative;}
 .left_nav ul ul li:hover {background: none repeat scroll 0 0 rgba(0, 0, 0, .05); border-bottom: 0px; }
 .left_nav ul li:hover ul {display: block;}
 .left_nav ul ul li a{padding: 10px 15px; display: block; font-size: 11px; font-weight:bold;}
 .left_nav ul ul li svg {position: absolute;right: 86px;top: 11px;}
-.left_nav ul ul ul {position: absolute;top: -33px;left: 20px;border: 1px solid #ddd;}
+.left_nav ul ul ul {
+  position: absolute;
+  top: -33px;
+  left: 20px;
+  border: 1px solid #ddd;
+  background: rgba(255,255,255,.9);
+}
 .left_nav ul ul ul li a{font-weight: bold;}
 li.menu-item svg {margin-left: 5px;font-size: 12px;color: #444;}
 li.menu-item-has-children a {margin-right: 10px;}
@@ -483,7 +495,11 @@ li.menu-item-has-children i {color: #856a6a; font-size: 12px; font-weight: bold;
 .site_title .logo img, .mountaviary_logo img  {
   max-width: 60px;
 }
-
+.mobile_menu .sub-menu {
+    margin-top: 10px;
+    background: rgba(0,0,0,.05);
+    padding: 5px 20px;
+}
 
 /* RECOMMENDED CLASS  */
 .wp-caption-text {

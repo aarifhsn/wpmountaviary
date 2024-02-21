@@ -10,7 +10,7 @@
 
     <?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
     <header
-      class=" lg:hidden bg-white relative md:fixed top-0 left-0 min-h-[40px] z-50 w-full overflow-hidden items-center"
+      class=" lg:hidden bg-white relative md:fixed top-0 left-0 min-h-[40px] z-50 w-full items-center"
     >
       <div class="header_container container flex justify-between px-3 md:pl-6 md:pr-0 mx-auto py-1">
         <div class="site_title flex w-4/12 font-poppins">
@@ -35,7 +35,7 @@
           <div
             class="navbar uppercase font-bold text-sm text-right relative"
           >
-            <div class="menu-toggle pt-4">
+            <div class="menu-toggle pt-4 block lg:hidden float-right">
               <span id="mobile-menu" class="cursor-pointer text-lg"
                 ><i class="fa-solid fa-bars"></i
               ></span>
@@ -45,10 +45,7 @@
             <?php wp_nav_menu(array(
                   'theme_location'=> 'screen_menu',
                   'container'     => '',
-                  'menu_class'    => 'nav-list text-right hidden p-6 pr-2 border border-slate-200 text-slate-700',
-                  'depth'         => 1,
-                  'fallback_cb'   => false,
-                  'items_wrap'    => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                  'menu_class'    => 'nav-list mobile_menu text-right hidden p-6 pr-2 border border-slate-200 text-slate-700 max-w-40',
                   'add_li_class'  => 'mb-5 relative hover:text-slate-500',
                   'nav_anchor_class' => 'font-semibold hover:text-slate-400'
                 ));
@@ -87,21 +84,19 @@
           </div>
  
             <div class="sidebar_area overflow-y-auto max-h-96 mb-20">
-              <div class="section_border border-t-2 border-solid border-slate-300 mx-8">
-
-              </div>
+              <div class="section_border border-t-2 border-solid border-slate-100 mx-8 w-2/5"></div>
               <div
                 id="sidebar1" class="left_nav_info sidebar_toggle"
               >
                 <div class="pl-8 pr-4 pt-4 pb-4">
                   <div
-                    class="left_nav text-left uppercase font-poppins font-bold text-sm text-slate-700 mt-4 relative overflow-hidden"
+                    class="left_nav text-left uppercase font-poppins font-bold text-sm text-slate-700 mt-4 relative"
                   > 
                   <!-- LEFT NAV MENU -->
                     <?php wp_nav_menu( array(
                           'theme_location'=> 'screen_menu',
                           'container'     => '',
-                          'menu_class'    => 'overflow-visible',
+                          'menu_class'    => 'menu_front_list overflow-visible',
                           'add_li_class'  => 'mt-5 relative',
                           'nav_anchor_class' => 'hover:text-slate-950'
                         )); ?>
