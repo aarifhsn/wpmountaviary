@@ -42,6 +42,7 @@ function mountaviary_theme_setup(){
 
     /** custom background **/
     $bg_defaults = array(
+        'default-color'          => 'F8FAFC',
         'default-image'          => '',
         'default-preset'         => 'default',
         'default-size'           => 'cover',
@@ -86,6 +87,7 @@ include_once ('inc/widget.php');
 include_once ('inc/metabox.php');
 include_once ('inc/hook.php');
 include_once ('inc/custom_posts.php');
+require ('inc/customizer_panel.php');
 
 //--------- All CPT ---------------- //
 

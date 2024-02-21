@@ -26,7 +26,7 @@ get_header();
 			while ( have_posts() ) :
 				the_post(); ?>
         
-        <div <?php post_class( 'single_blog bg-white shadow-sm mb-4 rounded-lg' ); ?>>
+        <div <?php post_class( 'single_blog bg-white shadow-sm mb-4 rounded-lg  backdrop-blur-sm' ); ?>>
         
           <div class="thumbnail overflow-hidden">
             <?php if ( has_post_thumbnail() ): ?>

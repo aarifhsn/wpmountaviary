@@ -483,7 +483,7 @@ code {
 .left_nav ul ul li svg {position: absolute;right: 86px;top: 11px;}
 .left_nav ul ul ul {
   position: absolute;
-  top: -33px;
+  top: -150px !important;
   left: 20px;
   border: 1px solid #ddd;
   background: rgba(255,255,255,.9);

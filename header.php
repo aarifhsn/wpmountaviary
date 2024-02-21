@@ -71,7 +71,7 @@
       </div><!--end header_container-->
     </header>
 
-    <div class="mount_body bg-slate-50">
+    <div class="mount_body">
       <div
         class="container px-3 md:px-4 xl:p-0 mx-auto relative"
       >
