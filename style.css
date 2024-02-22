@@ -496,9 +496,10 @@ li.menu-item-has-children i {color: #856a6a; font-size: 12px; font-weight: bold;
   max-width: 60px;
 }
 .mobile_menu .sub-menu {
-    margin-top: 10px;
-    background: rgba(0,0,0,.05);
-    padding: 5px 20px;
+  margin-top: 10px;
+  background: rgba(0,0,0,.05);
+  padding: 15px 17px 5px 10px;
+  border-right: 6px solid #666;
 }
 
 /* RECOMMENDED CLASS  */

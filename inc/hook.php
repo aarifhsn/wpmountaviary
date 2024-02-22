@@ -23,3 +23,26 @@ function mountaviary_post_excerpt() {
     return '<a class="block mt-4 text-slate-700 hover:text-slate-900 duration-75" href="'. get_permalink($post->ID). ' ">' . 'Read More...' . '</a>';
 }
 add_filter( 'excerpt_more', 'mountaviary_post_excerpt' );
+
+
+// Display background image on custom page
+function mountaviary_front_page_background() {
+    if ( is_page_template( 'template-front.php' ) ) {
+        $background_image_url = get_theme_mod( 'mountavaiary_front_background', '' );
+        if ( ! empty( $background_image_url ) ) {
+            echo '<style>
+                .devs_top_info {
+                    background-image: url("' . esc_url( $background_image_url ) . '");
+                }
+            </style>';
+        }
+    }
+}
+add_action( 'wp_head', 'mountaviary_front_page_background' );
+
+// Remove custom_header section
+function remove_customizer_options( $wp_customize ) {
+    // Remove header image section
+    $wp_customize->remove_section( 'header_image' );
+}
+add_action( 'customize_register', 'remove_customizer_options', 20 );

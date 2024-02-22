@@ -32,6 +32,22 @@ function mountaviary_customizer_register ($wp_customize) {
     function sanitize_userinfo_checkbox($checked) {
         return $checked == 1 ? 1 : '';
     }
+
+    $wp_customize->add_setting( 
+        'mountavaiary_front_background', 
+        array(
+            'sanitize_callback' => 'esc_url_raw',
+            'default'           => get_template_directory_uri(). '/img/home_bg.png',
+        )
+    );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'mountavaiary_front_background',
+	array(
+		'label'    => __( 'Upload Background Image', 'mountaviary' ),
+		'section'  => 'mountaviary_front_area',
+		'settings' => 'mountavaiary_front_background',
+	)
+    ));
+
     $wp_customize->add_setting('mountaviary_front_name_text', array(
         'default'        => 'ARIF HASSAN',
         'sanitize_callback' => 'sanitize_text_field',

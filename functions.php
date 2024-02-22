@@ -58,7 +58,7 @@ function mountaviary_theme_setup(){
         'height'                 => 60,
         'flex-height'            => true,
         'flex-width'             => true,
-        'default-text-color'     => '',
+        'default-text-color'     => '#333',
         'header-text'            => true,
         'uploads'                => true,
     );

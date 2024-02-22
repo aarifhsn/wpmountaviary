@@ -45,7 +45,7 @@
             <?php wp_nav_menu(array(
                   'theme_location'=> 'screen_menu',
                   'container'     => '',
-                  'menu_class'    => 'nav-list mobile_menu text-right hidden p-6 pr-2 border border-slate-200 text-slate-700 max-w-40',
+                  'menu_class'    => 'nav-list mobile_menu text-right hidden p-6 pr-2 border border-slate-200 text-slate-700 max-w-40  max-h-96 overflow-y-scroll',
                   'add_li_class'  => 'mb-5 relative hover:text-slate-500',
                   'nav_anchor_class' => 'font-semibold hover:text-slate-400'
                 ));
@@ -56,7 +56,7 @@
       </div><!--end header_container-->
     </header>
 
-    <div class="mount_body bg-slate-50">
+    <div class="mount_body">
       <div
         class="container px-3 md:px-4 xl:p-0 mx-auto relative"
       >

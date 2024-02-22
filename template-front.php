@@ -5,7 +5,7 @@ get_header('part'); ?>
 <?php if(get_option('front_page_user_info', 1)) { ?>
 <section
   id="home"
-  class="devs_top_info min-h-screen md:min-h-[100vh] mb-24 lg:mb-48 flex justify-center items-center text-start px-4 lg:px-16 xl:px-36 py-10 md:py-0 bg-home-bg bg-contain bg-center bg-no-repeat relative"
+  class="devs_top_info min-h-screen md:min-h-[100vh] mb-24 lg:mb-48 flex justify-center items-center text-start px-4 lg:px-16 xl:px-36 py-10 md:py-0 bg-contain bg-center bg-no-repeat relative"
 >
   <div class="devs_top_content">
     <h2
