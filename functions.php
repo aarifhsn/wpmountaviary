@@ -54,7 +54,7 @@ function mountaviary_theme_setup(){
     /** custom header **/
     $header_defaults = array(
         'default-image'          => '',
-        'width'                  => 300,
+        'width'                  => 980,
         'height'                 => 60,
         'flex-height'            => true,
         'flex-width'             => true,
