@@ -64,27 +64,25 @@
           <div
             class="left_nav_content hidden lg:block 2xl:block flex-auto h-full z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-left_nav-bg  bg-cover bg-no-repeat bg-center bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm"
           >
-          <div class="site_title flex w-4/12 font-poppins p-8">
-            <div class="logo mr-4">
-              <?php if ( function_exists( 'the_custom_logo' ) ) { 
-                the_custom_logo();
-              } ?>
-            </div> 
-            <div class="site_context">
-              <?php if ( display_header_text() ) : // If user chooses to display header text. ?> 
-                <h1 class="site-title"><a href="<?php echo esc_url(home_url( '/' )); ?>" class="font-bold" rel="home"><?php echo get_bloginfo('name'); ?></a></h1>
-            
-                <?php
-                $description = get_bloginfo( 'description', 'display' );
-                if ( $description || is_customize_preview() ) : ?>
-                <h4 class="text-xs text-slate-500 italic "><?php echo $description; ?></h4>
+            <div class="site_title flex font-poppins p-8 shadow-sm">
+              <div class="logo mr-4">
+                <?php if ( function_exists( 'the_custom_logo' ) ) { 
+                  the_custom_logo();
+                } ?>
+              </div> 
+              <div class="site_context">
+                <?php if ( display_header_text() ) : // If user chooses to display header text. ?> 
+                  <h1 class="site-title"><a href="<?php echo esc_url(home_url( '/' )); ?>" class="font-bold" rel="home"><?php echo get_bloginfo('name'); ?></a></h1>
+              
+                  <?php
+                  $description = get_bloginfo( 'description', 'display' );
+                  if ( $description || is_customize_preview() ) : ?>
+                  <h4 class="text-xs text-slate-500 italic "><?php echo $description; ?></h4>
+                  <?php endif; ?>
                 <?php endif; ?>
-              <?php endif; ?>
+              </div>
             </div>
-          </div>
- 
             <div class="sidebar_area overflow-y-auto max-h-96 mb-20">
-              <div class="section_border border-t-2 border-solid border-slate-100 mx-8 w-2/5"></div>
               <div
                 id="sidebar1" class="left_nav_info sidebar_toggle"
               >
@@ -106,6 +104,7 @@
               <!-- end left_nav_info -->
             </div>
             <!-- end sidebar_section_front  -->
+
           </div>
           <!--end left_nav_content-->
 

@@ -92,7 +92,7 @@ get_header('part'); ?>
 >
   <div class="page_title my-4">
     <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">
-    <?php the_title(); ?>
+    DEV'S INFO
     </h3>
   </div>
 
@@ -168,19 +168,20 @@ if($portfolio_query->have_posts()) :
 <section id="portfolio" class="portfolio_area min-h-[100vh] my-24 lg:my-48">
   <div class="portfolio_title my-4">
     <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">
-      <?php echo esc_html(get_theme_mod('mountaviary_portfolio_title_text','PORTFOLIO')); ?>
+      <?php echo esc_html(get_theme_mod('mountaviary_portfolio_title_text','PROJECTS')); ?>
     </h3>
   </div>
   <div class="about_content mt-4 mb-6">
     <h5 class="text-sm leading-8 text-slate-500 font-semibold">
     <?php echo esc_html(get_theme_mod('mountaviary_portfolio_subtitle','A few recent design and coding projects')); ?>
     </h5>
+      
   </div>
   <div
     class="portfolio_page grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
   >
     <?php while ($portfolio_query->have_posts()) : $portfolio_query->the_post(); ?>
-    <div class="single_port relative">
+    <div class="single_port relative <?php foreach (get_the_terms( get_the_ID(), 'portfolio_category' ) as $cat) echo $cat->slug . ' '; ?>">
         <?php if ( has_post_thumbnail() ) { ?>
           <a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('post_temp', array('class' => 'w-full h-auto')); ?></a>
         <?php } else {?>

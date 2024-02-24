@@ -50,7 +50,7 @@
                 </div>
             </div>
             
-            <div class="menu-toggle pt-4 block lg:hidden float-right">
+            <div class="menu-toggle block lg:hidden">
               <span id="mobile-menu" class="cursor-pointer text-lg"
                 ><i class="fa-solid fa-bars"></i
               ></span>

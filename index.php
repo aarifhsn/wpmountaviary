@@ -38,11 +38,11 @@ get_header();
             
             <?php echo get_avatar( get_the_author_meta( 'ID' ), $size = '28', $default = '', $alt = '', $args = array( 'class' => 'author_photo rounded-full' ) );  ?>
             <h4
-              class="author_name text-slate-500 hover:text-slate-900 mx-3 text-xs font-bold"
+              class="author_name  hover:text-slate-900 mx-3 text-xs font-bold"
             >
               <?php the_author_posts_link(); ?>
             </h4>
-            <h5 class="post_date text-slate-500 text-xs">
+            <h5 class="post_date  text-xs">
               <?php the_date('M d, Y'); ?>
             </h5>
           </div>
@@ -56,9 +56,9 @@ get_header();
               endif; ?>
 
               <h4
-                class="text-sm text-slate-500 mb-2 py-4 font-medium leading-6"
+                class="text-sm  mb-2 py-4 font-medium leading-6"
               >
-                <?php echo wp_trim_words(get_the_content(), 20, '<a class="font-medium text-sm mt-4 text-slate-700 hover:text-slate-900 block transition-all" href=" ' .get_permalink() . ' "> Read More ... </a>'); ?>
+                <?php echo wp_trim_words(get_the_content(), 20, '<a class="font-medium text-sm mt-4  hover:text-slate-900 block transition-all" href=" ' .get_permalink() . ' "> Read More ... </a>'); ?>
               
               </h4>
           </div>

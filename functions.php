@@ -88,6 +88,7 @@ include_once ('inc/metabox.php');
 include_once ('inc/hook.php');
 include_once ('inc/custom_posts.php');
 require ('inc/customizer_panel.php');
+require ('inc/customizer-color.php');
 
 //--------- All CPT ---------------- //
 

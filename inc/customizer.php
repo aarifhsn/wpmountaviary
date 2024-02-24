@@ -424,7 +424,7 @@ function mountaviary_customizer_register ($wp_customize) {
     }
 
     $wp_customize->add_setting('mountaviary_portfolio_title_text', array(
-        'default'        => 'PORTFOLIO',
+        'default'        => 'PROJECTS',
         'sanitize_callback' => 'sanitize_text_field',
     ));
 	
@@ -608,6 +608,67 @@ function mountaviary_customizer_register ($wp_customize) {
         'section'  => 'mountaviary_front_contact_area',
         'type'=> 'text'
     ));
+
+
+    // add colors on wp default color section
+
+    $wp_customize->add_setting('site_title_color_setting', array(
+        'default' => '#222',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'site_title_color_setting', array(
+        'label' => __('Site Title Color', 'mountaviary'),
+        'section' => 'colors',
+        'settings' => 'site_title_color_setting',
+    )));
+
+    $wp_customize->add_setting('blog_title_color_setting', array(
+        'default' => '#334155',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'blog_title_color_setting', array(
+        'label' => __('Content Heading Color', 'mountaviary'),
+        'section' => 'colors',
+        'settings' => 'blog_title_color_setting',
+    )));
+
+    $wp_customize->add_setting('blog_p_color_setting', array(
+        'default' => '#64748B',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'blog_p_color_setting', array(
+        'label' => __('Content Text Color', 'mountaviary'),
+        'section' => 'colors',
+        'settings' => 'blog_p_color_setting',
+    )));
+
+    $wp_customize->add_setting('blog_meta_color_setting', array(
+        'default' => '#4E5569',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'blog_meta_color_setting', array(
+        'label' => __('Content Meta Color', 'mountaviary'),
+        'section' => 'colors',
+        'settings' => 'blog_meta_color_setting',
+    )));
+
+    $wp_customize->add_setting('nav_menu_color_setting', array(
+        'default' => '#1E293B',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'nav_menu_color_setting', array(
+        'label' => __('Menu Color', 'mountaviary'),
+        'section' => 'colors',
+        'settings' => 'nav_menu_color_setting',
+    )));
+
+    // Remove the header_textcolor control
+    $wp_customize->remove_control( 'header_textcolor' );
 
 }
 

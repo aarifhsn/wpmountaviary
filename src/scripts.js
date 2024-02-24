@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let parentItems = document.querySelectorAll(
     ".menu_front_list li.menu-item-has-children"
   );
-  console.log(parentItems);
+
   parentItems.forEach(function (parentItem) {
     let menu_icon = document.createElement("i");
     menu_icon.className = "fa-solid fa-caret-right";
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let menuItems = document.querySelectorAll(
     ".menu_list li.menu-item-has-children"
   );
-  console.log(menuItems);
+
   menuItems.forEach(function (menu_list) {
     let menu_icon_page = document.createElement("i");
     menu_icon_page.className = "fa-solid fa-caret-down";
