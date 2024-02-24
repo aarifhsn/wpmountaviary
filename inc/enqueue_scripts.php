@@ -7,7 +7,7 @@
 function mountaviary_scripts() {
 	
 	// enqueue tailwind css 
-	wp_register_style('tailwind_css', get_template_directory_uri() . './dist/output.css', array(), '3.4.0');
+	wp_register_style('tailwind_css', get_template_directory_uri() . '/dist/output.css', array(), '3.4.0');
 	wp_enqueue_style('tailwind_css');
 
 	// enqueue font-awesome
