@@ -157,7 +157,6 @@ get_header('part'); ?>
 <?php } ?>
 
 
-
 <!--PORTFOLIO SECTION-->
 <?php if(get_option('mountaviary_show_portfolio_option', true)) { ?>
 <?php 

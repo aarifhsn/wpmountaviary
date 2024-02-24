@@ -498,7 +498,7 @@ li.menu-item-has-children i {color: #856a6a; font-size: 12px; font-weight: bold;
 .mobile_menu .sub-menu {
   margin-top: 10px;
   background: rgba(0,0,0,.05);
-  padding: 15px 17px 5px 10px;
+  padding: 15px 17px 5px 0;
   border-right: 6px solid #666;
 }
 
@@ -532,4 +532,7 @@ li.menu-item-has-children i {color: #856a6a; font-size: 12px; font-weight: bold;
   margin-left: auto;
   display: block;
   clear: both;
+}
+.site_content:not(:has(.left_nav_content)) .body_content {
+  width: 100%;
 }

@@ -7,14 +7,18 @@ $blogTitleColor = get_theme_mod('blog_title_color_setting');
 $themeContentColor = get_theme_mod('blog_p_color_setting');
 $themeMetaColor = get_theme_mod('blog_meta_color_setting');
 $themeMenuColor = get_theme_mod('nav_menu_color_setting');
+$headerFooterBg = get_theme_mod('header_footer_bg_color');
 
-if(!empty($blogTitleColor) || !empty($themeContentColor) || !empty($themeMetaColor) || !empty($themeMenuColor) || !empty($siteTitleColor)): 
-
+if(!empty($blogTitleColor) || !empty($themeContentColor) || !empty($themeMetaColor) || !empty($themeMenuColor) || !empty($siteTitleColor) || !empty($headerFooterBg)):  
 ?>
+
 <style type="text/css" id="mounaviary-theme-option-css">
     
-    .site_title .site_context h1.site-title a {
+    .site_title .site_context h1.site-title a, footer span.footer_site_title {
         color: <?php echo $siteTitleColor; ?>;
+    } 
+    header, footer {
+        background-color: <?php echo $headerFooterBg; ?> !important;
     } 
     
     .single_blog .post_title h2 a, .blog_content h1.entry-title, .blog_content h1.entry-title  {

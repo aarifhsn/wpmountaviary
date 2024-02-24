@@ -10,15 +10,15 @@
 
     <?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
     <header
-      class=" lg:hidden bg-white relative md:fixed top-0 left-0 min-h-[40px] z-50 w-full items-center"
+      class="bg-white  lg:hidden  relative md:fixed top-0 left-0 min-h-[40px] z-50 w-full items-center"
     >
       <div class="header_container container flex justify-between px-3 md:pl-6 md:pr-0 mx-auto py-1">
         <div class="site_title flex w-4/12 font-poppins">
+            <?php if ( function_exists( 'the_custom_logo' ) ) { ?>
             <div class="logo mr-4">
-              <?php if ( function_exists( 'the_custom_logo' ) ) { 
-                the_custom_logo();
-              } ?>
+                <?php the_custom_logo(); ?>
             </div> 
+            <?php } ?>
             <div class="site_context">
              <?php if ( display_header_text() ) : // If user chooses to display header text. ?> 
                 <h1 class="site-title"><a href="<?php echo esc_url(home_url( '/' )); ?>" class="font-bold" rel="home"><?php echo get_bloginfo('name'); ?></a></h1>
@@ -64,7 +64,7 @@
           <div
             class="left_nav_content hidden lg:block 2xl:block flex-auto h-full z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-left_nav-bg  bg-cover bg-no-repeat bg-center bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm"
           >
-            <div class="site_title flex font-poppins p-8 shadow-sm">
+            <div class="site_title flex font-poppins px-8 py-4 shadow-sm">
               <div class="logo mr-4">
                 <?php if ( function_exists( 'the_custom_logo' ) ) { 
                   the_custom_logo();

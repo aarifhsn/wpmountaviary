@@ -667,8 +667,46 @@ function mountaviary_customizer_register ($wp_customize) {
         'settings' => 'nav_menu_color_setting',
     )));
 
+    $wp_customize->add_setting('header_footer_bg_color', array(
+        'default' => '#FFFFFF',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'header_footer_bg_color', array(
+        'label' => __('Header and Footer Background Color', 'mountaviary'),
+        'section' => 'colors',
+        'settings' => 'header_footer_bg_color',
+    )));
+
     // Remove the header_textcolor control
     $wp_customize->remove_control( 'header_textcolor' );
+
+    // show or hide sidebar area
+
+    $wp_customize->add_section('mountaviary_sidebar_show_hide', array(
+        'title'    => __('Sidebar Section', 'mountaviary'),
+        'priority' => 95,
+
+    ));
+
+    $wp_customize->add_setting( 'show_sidebar_area',
+    array(
+        'type'  => 'option',
+        'default'   => 1,
+        'sanitize_callback' => 'sanitize_show_sidebar_area',
+    ));
+ 
+    $wp_customize->add_control('show_sidebar_area',
+    array(
+        'label' => __( 'Show Front Page Work and Portfolio Option', 'mountaviary' ),
+        'settings'  => 'show_sidebar_area',
+        'section'  => 'mountaviary_sidebar_show_hide',
+        'type'=> 'checkbox'
+    ));
+
+    function sanitize_show_sidebar_area($checked) {
+        return $checked == 1 ? 1 : '';
+    }
 
 }
 
