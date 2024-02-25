@@ -47,7 +47,7 @@ get_header();
             </h5>
           </div>
 
-          <div class="post_title my-4  text-md font-semibold px-4 text-slate-700">
+          <div class="post_title my-4  text-md font-semibold px-4 text-slate-700 break-words">
             <?php
               if ( is_singular() ) :
                 the_title( '<h1 class="entry-title">', '</h1>' );
@@ -58,7 +58,7 @@ get_header();
               <h4
                 class="text-sm  mb-2 py-4 font-medium leading-6"
               >
-                <?php echo wp_trim_words(get_the_content(), 20, '<a class="font-medium text-sm mt-4  hover:text-slate-900 block transition-all" href=" ' .get_permalink() . ' "> Read More ... </a>'); ?>
+                <?php the_excerpt(); ?>
               
               </h4>
           </div>

@@ -386,7 +386,18 @@ p.comment-form-cookies-consent label {
 .wp-block-cover__inner-container p {
   line-height: 35px;
 }
+.wp-block-heading {
+    font-weight: 500;
+    font-family: inherit;
+} 
+.wp-block-latest-comments__comment-meta {
+  font-size: 14px;
+  margin-left: 5px;
+}
 
+footer.comment-meta {
+  padding: 2px 4px;
+}
 /* CODE STYLE  */
 code {
   border: 1px solid rgba(0,0,0,.1);
@@ -416,8 +427,8 @@ code {
 }
 .wp-block-search__inside-wrapper button.wp-block-search__button {
     background-color: #eee;
-    padding: 2px;
-    border-radius: 50%;
+    padding: 2px 4px;
+    font-size: 12px;
 }
 
 /* WP BLOG QUESTY POSTS  */
@@ -451,6 +462,13 @@ code {
 
 
 /* NAV MENU  */
+.left_nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 1rem;
+  padding: 0 1rem;
+}
 
 .left_nav ul li ul {
   visibility: hidden;
@@ -500,6 +518,11 @@ li.menu-item-has-children i {color: #856a6a; font-size: 12px; font-weight: bold;
   background: rgba(0,0,0,.05);
   padding: 15px 17px 5px 0;
   border-right: 6px solid #666;
+}
+.footer_menu ul {
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
 }
 
 /* RECOMMENDED CLASS  */

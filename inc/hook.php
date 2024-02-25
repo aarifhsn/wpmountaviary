@@ -12,15 +12,15 @@
 
 
 // excerpt length
-// function mpuntaviary_excerpt_length( $length ) {
-//     return 15;
-// }
-// add_filter( 'excerpt_length', 'mpuntaviary_excerpt_length');
+function mpuntaviary_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'mpuntaviary_excerpt_length');
 
 // Post Excerpt (Read More) Support 
 function mountaviary_post_excerpt() {
     global $post;
-    return '<a class="block mt-4 text-slate-700 hover:text-slate-900 duration-75" href="'. get_permalink($post->ID). ' ">' . 'Read More...' . '</a>';
+    return '<a class="font-medium text-sm mt-4  hover:text-slate-900 block transition-all" href="'. get_permalink($post->ID). ' ">' . 'Read More...' . '</a>';
 }
 add_filter( 'excerpt_more', 'mountaviary_post_excerpt' );
 

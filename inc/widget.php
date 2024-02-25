@@ -9,8 +9,8 @@ function mountaviary_register_widgets() {
         'id' => 'left_sidebar',
         'before_widget' => '<div class="single_widget mb-6 overflow-hidden">',
         'after_widget' => '</div>',
-        'before_title' => '<div class="widget_title"><h3>',
-        'after_title' => '</h3></div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
     ) );
     
     //register_widget( 'popular_post' );

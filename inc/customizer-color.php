@@ -32,7 +32,7 @@ if(!empty($blogTitleColor) || !empty($themeContentColor) || !empty($themeMetaCol
         color: <?php echo $themeMenuColor; ?>
     }
 
-    .site_title .site_context h4, h4.author_name, h5.post_date, .post_title h4 a {
+    .site_title .site_context h4, h4.author_name, h5.post_date, .post_title h4 a, .nav-links .nav-previous a, .nav-links .nav-next a {
         color: <?php echo $themeMetaColor; ?>
     }
 

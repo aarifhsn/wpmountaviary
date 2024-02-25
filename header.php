@@ -13,7 +13,7 @@
       class="bg-white relative md:fixed top-0 left-0 min-h-[40px] z-[9999] w-full shadow-sm"
     >
       <div class="header_container flex justify-between items-center py-2 px-8">
-        <div class="site_title flex font-poppins">
+        <div class="site_title flex font-poppins items-center">
             <div class="logo mr-4">
               <?php if ( function_exists( 'the_custom_logo' ) ) { 
                 the_custom_logo();
