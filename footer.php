@@ -32,7 +32,7 @@
             ><?php echo bloginfo('name'); ?></span
           >
         </a>
-        <div class="footer_menu uppercase font-bold text-sm text-slate-500 overflow-hidden">
+        <div class="footer_menu uppercase font-semibold text-sm text-slate-500 overflow-hidden">
         <!-- FOOTER MENU -->
             <?php wp_nav_menu( array(
               'theme_location'=> 'footer_menu',
@@ -49,7 +49,7 @@
           >&copy;<?php echo date( 'Y' ); ?> &nbsp;&nbsp;
           <a href="<?php echo site_url(); ?>" class="font-semibold hover:text-slate-950"><?php echo bloginfo('name'); ?></a>
           &nbsp;
-          <?php echo esc_html(get_theme_mod('mountaviary_footer_text')); ?>
+          <?php echo esc_html(get_theme_mod('mountaviary_footer_text', 'All Rights Reserved.')); ?>
         </span>
 
       <?php } ?>
