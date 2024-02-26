@@ -1,7 +1,5 @@
 <?php
 
-
-
 // Practice filter hook
 // add a content(as domain name) in all pages title and posts title
 // add_filter('the_title', 'replace_title_function');

@@ -3,8 +3,6 @@
 /*
 * Register Menus
 */
-
-
 function mountaviary_register_nav_menu(){
     register_nav_menus( array(
         'screen_menu' => esc_html__( 'Screen Menu', 'mountaviary' ),

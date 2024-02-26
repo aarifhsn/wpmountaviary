@@ -1,4 +1,4 @@
- <?php 
+<?php 
  
 /**
  * Register a custom post type called "benefit".

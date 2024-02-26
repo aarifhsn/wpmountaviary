@@ -10,7 +10,7 @@
 
     <?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
     <header
-      class="bg-white relative md:fixed top-0 left-0 min-h-[40px] z-[9999] w-full shadow-sm"
+      class="bg-white relative md:fixed top-0 left-0 min-h-[60px] z-[9999] w-full shadow-sm"
     >
       <div class="header_container flex justify-between items-center py-2 px-8">
         <div class="site_title flex font-poppins items-center">

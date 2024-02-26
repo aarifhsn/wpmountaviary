@@ -28,7 +28,7 @@
           target="_blank"
           class="flex items-center mb-4 sm:mb-0 uppercase"
         > 
-          <span class="footer_site_title self-center text-sm text-red-950 font-bold whitespace-nowrap"
+          <span class="footer_site_title self-center text-lg md:text-sm text-red-950 font-bold whitespace-nowrap"
             ><?php echo bloginfo('name'); ?></span
           >
         </a>

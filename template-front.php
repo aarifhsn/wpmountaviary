@@ -5,14 +5,14 @@ get_header('part'); ?>
 <?php if(get_option('front_page_user_info', 1)) { ?>
 <section
   id="home"
-  class="devs_top_info min-h-screen md:min-h-[100vh] mb-24 lg:mb-48 flex justify-center items-center text-start px-4 lg:px-16 xl:px-36 py-10 md:py-0 bg-contain bg-center bg-no-repeat relative"
+  class="devs_top_info min-h-96 md:min-h-screen mb-12 lg:mb-24 flex justify-center items-center text-start px-4 lg:px-16 xl:px-36 py-10 md:py-0 bg-contain bg-center bg-no-repeat relative"
 >
   <div class="devs_top_content">
     <h2
       class="relative text-3xl md:text-5xl 2xl:text-8xl text-slate-700 font-extrabold capitalize"
     >
       <span
-        class="font-extrabold text-slate-200 absolute -mt-2 md:-mt-6 2xl:-mt-14 -left-8"
+        class="font-extrabold text-slate-200 absolute -mt-4 md:-mt-6 2xl:-mt-14 -left-8"
         ><?php echo esc_html(get_theme_mod('mountaviary_front_span_text')); ?></span
       >
       <span class="relative"><?php echo esc_html(get_theme_mod('mountaviary_front_name_text')); ?></span>
@@ -88,7 +88,7 @@ get_header('part'); ?>
 <!--ABOUT SECTION-->
 <section
   id="about"
-  class="devs_about min-h-[100vh] mb-24 lg:mb-48 transition-all"
+  class="devs_about min-h-96 md:min-h-screen mb-12 lg:mb-24 transition-all"
 >
   <div class="page_title my-4">
     <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">
@@ -102,7 +102,7 @@ get_header('part'); ?>
         <div
           class="my-2 font-poppins pl-10"
         ><span class="block text-sm font-bold text-slate-400  uppercase ">Hello</span>
-            <h3 class="-mr-10 font-bold text-8xl text-slate-100 z-40 relative tracking-wide block max-w-max ">
+            <h3 class="-mr-10 font-bold text-4xl md:text-6xl lg:text-8xl text-slate-100 z-40 relative tracking-wide block max-w-max ">
             <?php echo esc_html(get_theme_mod('mountaviary_about_username_text', 'I\'m Arif')); ?>
             </h3>
             <h5 class="text-slate-100 w-4/5">
@@ -164,7 +164,7 @@ $args= (array('post_type' => 'mav_portfolio', 'post_status' => 'publish','posts_
 $portfolio_query = new WP_Query($args);
 if($portfolio_query->have_posts()) :
 ?>
-<section id="portfolio" class="portfolio_area min-h-[100vh] my-24 lg:my-48">
+<section id="portfolio" class="portfolio_area min-h-96 md:min-h-screen mb-12 lg:mb-24">
   <div class="portfolio_title my-4">
     <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">
       <?php echo esc_html(get_theme_mod('mountaviary_portfolio_title_text','PROJECTS')); ?>
@@ -222,7 +222,7 @@ $services_query = new WP_Query($args);
 if($services_query->have_posts()) :
 ?>
 
-<section id="service" class="services_area min-h-[100vh] my-24 lg:my-48">
+<section id="service" class="services_area min-h-96 md:min-h-screen mb-12 lg:mb-24">
   <div class="services_title my-4">
     <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">
       <?php echo esc_html(get_theme_mod('mountaviary_service_title_text','SERVICES')); ?>
@@ -273,7 +273,7 @@ if($services_query->have_posts()) :
     $the_query = new WP_Query( $args ); 
     if($the_query->have_posts()) : 
 ?>
-<section id="blog" class="blog_posts min-h-[100vh] my-24 lg:my-48">
+<section id="blog" class="blog_posts min-h-96 md:min-h-screen mb-12 lg:mb-24">
   <div class="blog_area_title my-6">
     <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">
       Blog Posts
@@ -327,7 +327,7 @@ if($services_query->have_posts()) :
 <?php if(get_option('mountaviary_show_contact_option', true)) { ?>
 <section
   id="contact"
-  class="contact_section min-h-[100vh] my-10 md:my-20 lg:my-36"
+  class="contact_section min-h-96 md:min-h-screen my-10 md:my-20 lg:my-36"
 >
   <div class="contact_area_title my-4">
     <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">
@@ -350,7 +350,7 @@ if($services_query->have_posts()) :
     class="contact_area gap-8 py-9 px-8 md:px-0 font-poppins font-bold uppercase text-xs"
   >
     <div
-      class="contact_info mb-10 overflow-hidden text-slate-800 mx-auto w-2/3"
+      class="contact_info mb-10 overflow-hidden text-slate-800 mx-auto w-full md:w-2/3"
     >   <ul>
           <?php 
             $user_cont_phone = get_theme_mod('mountaviary_front_contact_page_phone');

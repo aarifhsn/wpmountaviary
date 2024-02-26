@@ -16,23 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // add an icon when menu has children or sub menu
-  // custom header (for header-part)
-  let parentItems = document.querySelectorAll(
-    ".menu_front_list li.menu-item-has-children"
-  );
-
-  parentItems.forEach(function (parentItem) {
-    let menu_icon = document.createElement("i");
-    menu_icon.className = "fa-solid fa-caret-right";
-
-    // Get the first child of parentItem
-    let firstChild = parentItem.firstChild;
-
-    // Insert menu_icon just after the first child
-    parentItem.insertBefore(menu_icon, firstChild.nextSibling);
-  });
-
-  // add an icon when menu has children or sub menu
   // all pages except custom front page (for header)
   let menuItems = document.querySelectorAll(
     ".left_nav ul li.menu-item-has-children"

@@ -1,7 +1,6 @@
 <?php
 
 // REGISTERING WIDGET
-
 function mountaviary_register_widgets() {
 	
     register_sidebar( array(

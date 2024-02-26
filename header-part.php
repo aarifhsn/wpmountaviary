@@ -10,9 +10,9 @@
 
     <?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
     <header
-      class="bg-white  lg:hidden  relative md:fixed top-0 left-0 min-h-[40px] z-50 w-full items-center"
+      class="bg-white  lg:hidden  relative md:fixed top-0 left-0 min-h-[60px] z-50 w-full flex items-center"
     >
-      <div class="header_container container flex justify-between px-3 md:pl-6 md:pr-0 mx-auto py-1">
+      <div class="header_container container flex justify-between items-center px-3 md:pl-6 md:pr-0 mx-auto py-1">
         <div class="site_title flex w-4/12 font-poppins items-center">
             <?php if ( function_exists( 'the_custom_logo' ) ) { ?>
             <div class="logo mr-4">
@@ -35,7 +35,7 @@
           <div
             class="navbar uppercase font-bold text-sm text-right relative"
           >
-            <div class="menu-toggle pt-4 block lg:hidden float-right">
+            <div class="menu-toggle block lg:hidden float-right">
               <span id="mobile-menu" class="cursor-pointer text-lg"
                 ><i class="fa-solid fa-bars"></i
               ></span>
