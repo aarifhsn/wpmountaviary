@@ -542,6 +542,11 @@ li.menu-item-has-children i {
   font-size: 12px;
   font-weight: bold;
 }
+li.current_page_item {
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
 .site_title .logo img,
 .mountaviary_logo img {
   max-width: 60px;

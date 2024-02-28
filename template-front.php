@@ -5,7 +5,7 @@ get_header('part'); ?>
 <?php if(get_option('front_page_user_info', 1)) { ?>
 <section
   id="home"
-  class="devs_top_info min-h-96 md:min-h-screen mb-12 lg:mb-24 flex justify-center items-center text-start px-4 lg:px-16 xl:px-36 py-10 md:py-0 bg-contain bg-center bg-no-repeat relative"
+  class="devs_top_info min-h-[480px] md:min-h-screen flex justify-center items-center text-start px-4 lg:px-16 xl:px-36 py-10 md:py-0 bg-contain bg-center bg-no-repeat relative"
 >
   <div class="devs_top_content">
     <h2
@@ -88,7 +88,7 @@ get_header('part'); ?>
 <!--ABOUT SECTION-->
 <section
   id="about"
-  class="devs_about min-h-96 md:min-h-screen mb-12 lg:mb-24 transition-all"
+  class="devs_about min-h-[480px] md:min-h-screen mb-12 lg:mb-24 transition-all"
 >
   <div class="page_title my-4">
     <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">
@@ -164,7 +164,7 @@ $args= (array('post_type' => 'mav_portfolio', 'post_status' => 'publish','posts_
 $portfolio_query = new WP_Query($args);
 if($portfolio_query->have_posts()) :
 ?>
-<section id="portfolio" class="portfolio_area min-h-96 md:min-h-screen mb-12 lg:mb-24">
+<section id="portfolio" class="portfolio_area min-h-[480px] md:min-h-screen mb-12 lg:mb-24">
   <div class="portfolio_title my-4">
     <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">
       <?php echo esc_html(get_theme_mod('mountaviary_portfolio_title_text','PROJECTS')); ?>
@@ -177,7 +177,7 @@ if($portfolio_query->have_posts()) :
       
   </div>
   <div
-    class="portfolio_page grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+    class="portfolio_page grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3"
   >
     <?php while ($portfolio_query->have_posts()) : $portfolio_query->the_post(); ?>
     <div class="single_port relative <?php foreach (get_the_terms( get_the_ID(), 'portfolio_category' ) as $cat) echo $cat->slug . ' '; ?>">
@@ -222,7 +222,7 @@ $services_query = new WP_Query($args);
 if($services_query->have_posts()) :
 ?>
 
-<section id="service" class="services_area min-h-96 md:min-h-screen mb-12 lg:mb-24">
+<section id="service" class="services_area min-h-[480px] md:min-h-screen mb-12 lg:mb-24">
   <div class="services_title my-4">
     <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">
       <?php echo esc_html(get_theme_mod('mountaviary_service_title_text','SERVICES')); ?>
@@ -273,7 +273,7 @@ if($services_query->have_posts()) :
     $the_query = new WP_Query( $args ); 
     if($the_query->have_posts()) : 
 ?>
-<section id="blog" class="blog_posts min-h-96 md:min-h-screen mb-12 lg:mb-24">
+<section id="blog" class="blog_posts min-h-[480px] md:min-h-screen mb-12 lg:mb-24">
   <div class="blog_area_title my-6">
     <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">
       Blog Posts
@@ -288,18 +288,18 @@ if($services_query->have_posts()) :
         <div class="thumbnail overflow-hidden">  
           <a href="<?php the_permalink(); ?>"
               ><?php if ( has_post_thumbnail() ): ?>
-                <?php echo the_post_thumbnail('media_thumb', array('class' => 'w-full h-auto hover:scale-110 duration-300 rounded-t-lg')); ?>
+                <?php echo the_post_thumbnail('medium', array('class' => 'w-full h-auto hover:scale-110 duration-300 rounded-t-lg')); ?>
             <?php endif; ?>
           </a>
         </div>
-        <div class="post_title px-4 pt-2 mt-2">
+        <div class="post_title px-4 pt-2 mt-2 text-xl">
             <?php
-              the_title( '<h2 class="entry-title"><a class="font-semibold text-slate-600 hover:text-slate-900" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+              the_title( '<h2 class="entry-title"><a class="font-semibold text-slate-700 hover:text-slate-900" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
         </div>
       <div class="author_info flex items-center px-4 py-2 mt-2">
         <?php echo get_avatar( get_the_author_meta( 'ID' ), $size = '28', $default = '', $alt = '', $args = array( 'class' => 'author_photo rounded-full' ) );  ?>
         <h4
-          class="author_name text-slate-500 hover:text-slate-900 mx-3 text-xs font-bold"
+          class="author_name text-slate-500 hover:text-slate-900 mr-3 text-xs font-bold"
         >
         <?php the_author_posts_link(); ?>
         </h4>
@@ -307,9 +307,9 @@ if($services_query->have_posts()) :
       </div>
       <div class="blog_content px-4 py-3">
         <h4
-          class="text-sm text-slate-700 hover:text-slate-950 mb-2 font-medium leading-6"
+          class="text-sm text-slate-500 hover:text-slate-950 mb-2 font-medium leading-6"
         >
-        <?php echo wp_trim_words(get_the_content(), 20, '<a class="font-medium text-xs mt-4 text-slate-500 hover:text-slate-900 block transition-all" href=" ' .get_permalink() . ' "> Read More ... </a>'); ?>
+        <?php the_excerpt(); ?>
         </h4>
         
       </div>
@@ -327,7 +327,7 @@ if($services_query->have_posts()) :
 <?php if(get_option('mountaviary_show_contact_option', true)) { ?>
 <section
   id="contact"
-  class="contact_section min-h-96 md:min-h-screen my-10 md:my-20 lg:my-36"
+  class="contact_section min-h-[480px] md:min-h-screen my-10 md:my-20 lg:my-36"
 >
   <div class="contact_area_title my-4">
     <h3 class="bg-slate-200 px-4 py-2 inline-block font-bold text-2xl text-slate-700 tracking-wider  uppercase border-l-4 border-solid border-l-red-500">

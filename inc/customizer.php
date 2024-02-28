@@ -236,7 +236,8 @@ function mountaviary_customizer_register ($wp_customize) {
         $mimes = array(
             'jpg|jpeg|jpe' => 'image/jpeg',
             'gif'          => 'image/gif',
-            'png'          => 'image/png'
+            'png'          => 'image/png',
+            'pdf'          => 'application/pdf' // Add PDF mime type
         );
           
         //check file type from file name
@@ -248,7 +249,7 @@ function mountaviary_customizer_register ($wp_customize) {
 
     $wp_customize->add_setting( 'mountaviary_about_resume_link',
     array(
-        'default'   => '',
+        'default'   => '#',
         'sanitize_callback' => 'mountaviary_sanitize_file'
     ));
     $wp_customize->add_control( new WP_Customize_Upload_Control( $wp_customize, 'mountaviary_about_resume_link', array(

@@ -81,7 +81,7 @@
             class="left_nav_content hidden lg:block 2xl:block flex-auto h-full z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-left_nav-bg  bg-cover bg-no-repeat bg-center bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm"
           >
  
-            <div class="sidebar_section_front mt-24 mb-16 pl-8 pr-0">
+            <div class="sidebar_section_front mt-20 mb-16 pl-8 pr-0">
                
               <div class="sidebar_area overflow-y-auto max-h-96 pr-1">
                 <?php get_sidebar(); ?>

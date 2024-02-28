@@ -30,7 +30,7 @@ get_header();
         
           <div class="thumbnail overflow-hidden">
             <?php if ( has_post_thumbnail() ): ?>
-            <a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('media_thumb', array('class' => 'w-full h-auto hover:scale-110 duration-300 rounded-t-lg')); ?></a>
+            <a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('medium', array('class' => 'w-full h-auto hover:scale-110 duration-300 rounded-t-lg')); ?></a>
             <?php endif; ?>
           </div>
 
@@ -47,7 +47,7 @@ get_header();
             </h5>
           </div>
 
-          <div class="post_title my-4  text-md font-semibold px-4 text-slate-700 break-words">
+          <div class="post_title my-4 text-xl font-semibold px-4 text-slate-700 break-words">
             <?php
               if ( is_singular() ) :
                 the_title( '<h1 class="entry-title">', '</h1>' );
@@ -56,7 +56,7 @@ get_header();
               endif; ?>
 
               <h4
-                class="text-sm  mb-2 py-4 font-medium leading-6"
+                class="text-sm text-slate-500 mb-2 py-4 font-medium leading-6"
               >
                 <?php the_excerpt(); ?>
               

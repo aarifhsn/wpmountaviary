@@ -96,7 +96,7 @@
                           'container'     => '',
                           'menu_class'    => 'menu_front_list overflow-visible',
                           'add_li_class'  => 'mt-5 relative',
-                          'nav_anchor_class' => 'hover:text-slate-950'
+                          'nav_anchor_class' =>'hover:text-slate-950'
                         )); ?>
                   </div>
                 </div>
