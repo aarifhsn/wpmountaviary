@@ -75,24 +75,24 @@
       <div
         class="container px-3 md:px-4 xl:p-0 mx-auto relative"
       >
-        <div class="site_content flex flex-row-reverse relative">
+        <div class="site_content w-full relative">
         <?php if(get_option('show_sidebar_area', 1)) { ?>
           <div
-            class="left_nav_content hidden lg:block 2xl:block flex-auto h-full z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-left_nav-bg  bg-cover bg-no-repeat bg-center bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm"
+            class="left_nav_content hidden lg:block 2xl:block flex-auto h-full z-50 top-0 left-0 bottom-0 fixed border-r-2 w-3/12 bg-left_nav-bg  bg-cover bg-no-repeat bg-center bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm"
           >
  
-            <div class="sidebar_section_front mt-20 mb-16 pl-8 pr-0">
+            <div class="sidebar_section_front mb-16 pl-8 pr-0 mt-20">
                
               <div class="sidebar_area overflow-y-auto max-h-96 pr-1">
                 <?php get_sidebar(); ?>
               </div>
 
             </div>
-            <!-- end sidebar_section_front  -->
+            <!-- end sidebar_section_front  --> 
           </div>
           <!--end left_nav_content-->
         <?php } ?>
 
           <div
-            class="body_content w-full lg:w-9/12 overflow-hidden relative mt-10 md:mt-20"
+            class="body_content w-full lg:w-9/12 overflow-hidden relative mt-10 md:mt-20 ml-0 lg:ml-[25%]"
           >

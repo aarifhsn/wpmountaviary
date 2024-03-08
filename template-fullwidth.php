@@ -13,12 +13,12 @@ get_header('no-sidebar');
           <div <?php post_class( 'single_blog bg-white shadow-sm mb-4 rounded-lg' );?>>
             
             <div class="blog_content px-4 py-3">
-              <h2 class="font-bold text-lg my-4 capitalize"><?php single_post_title(); ?></h2>
+              <h2 class="font-bold text-lg my-4 capitalize underline decoration-slate-200 underline-offset-[10px]"><?php single_post_title(); ?></h2>
               <p
                 class="text-sm text-slate-700 hover:text-slate-950 mb-2 font-medium"
               >
                 <?php the_content(); ?>
-              
+               
               </p>
               <div class="page_comments mt-12">
               <?php // If comments are open or we have at least one comment, load up the comment template.

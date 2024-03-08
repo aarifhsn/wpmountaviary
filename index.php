@@ -62,8 +62,6 @@ get_header();
               
               </h4>
           </div>
-          
-
         </div>
         <?php endwhile; ?>
       </div>

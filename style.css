@@ -302,7 +302,6 @@ p.comment-form-cookies-consent label {
 /* 404 PAGE SEARCH FORM  */
 
 #search_404 form {
-  background-color: #f3efef;
   padding: 20px 30px;
 }
 
@@ -314,17 +313,30 @@ p.comment-form-cookies-consent label {
   border: 1px solid #ccc;
 }
 
-#search_404 form input[type="submit"] {
-  padding: 6px 20px;
-  background-color: #efefef;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+#search_404 .search-submit {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  border-radius: 50px;
+  margin-left: -101px;
+  height: 45px;
+  padding: 4px 20px;
+  display: inline-block;
   cursor: pointer;
 }
 
 #search_404 form input[type="submit"]:hover {
   background-color: #ccc;
   transition: all 0.3s;
+}
+
+#search_404 .search-field {
+  width: 60%;
+  height: 45px;
+  padding: 4px 92px 4px 10px;
+  border-radius: 50px;
+  margin-right: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  display: inline-block;
 }
 
 .widget_404 h2.widgettitle,
@@ -466,6 +478,12 @@ code {
 .wp-block-page-list li ul li {
   margin: 5px 0;
 }
+.wp-block-latest-posts__post-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 14px 0;
+  display: block;
+}
 
 .left_nav ul li ul {
   visibility: hidden;
@@ -546,6 +564,7 @@ li.current_page_item {
   font-weight: bold;
   text-decoration: underline;
   text-underline-offset: 8px;
+  text-decoration-color: #e2e8f0;
 }
 .site_title .logo img,
 .mountaviary_logo img {
@@ -599,4 +618,41 @@ img.aligncenter {
 }
 .site_content:not(:has(.left_nav_content)) .body_content {
   width: 100%;
+}
+
+.wp-block-button a.wp-element-button:hover {
+  color: #aaa;
+  transition: all 0.3s;
+}
+.pagination {
+  margin-top: 15px;
+}
+.pagination span.current {
+  font-weight: bold;
+  border-color: #888;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.pagination .page-numbers {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 4px 11px;
+  margin-right: 4px;
+}
+.pagination a.prev,
+.pagination a.next {
+  border: 0px solid !important;
+}
+.pagination a.page-numbers:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+}
+.pagination a.next:hover .pagination a.prev:hover {
+  font-weight: bold !important;
+  transition: all 0.3s;
+  border: 0px solid !important;
+  background-color: rgba(255, 255, 255, 0) !important;
+  border-radius: 0% !important;
+}
+.pagination a.next {
+  border: 0px;
 }

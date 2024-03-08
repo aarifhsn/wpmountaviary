@@ -609,6 +609,19 @@ function mountaviary_customizer_register ($wp_customize) {
         'section'  => 'mountaviary_front_contact_area',
         'type'=> 'text'
     ));
+    $wp_customize->add_setting( 'mountaviary_contact_form',
+    array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('mountaviary_contact_form',
+    array(
+        'label' => __( 'Contact Form', 'mountaviary' ),
+        'section'  => 'mountaviary_front_contact_area',
+        'description'   => 'use your contact form shortcode here. example:<span class="italic">[wpforms id="89" title="false"]</span> ',
+        'type'=> 'text'
+    ));
+
+
 
 
     // add colors on wp default color section

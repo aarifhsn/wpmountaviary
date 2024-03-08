@@ -60,7 +60,7 @@
       <div
         class="container px-3 md:px-4 xl:p-0 mx-auto relative"
       >
-        <div class="site_content flex flex-row-reverse relative">
+        <div class="site_content w-full relative">
           <div
             class="left_nav_content hidden lg:block 2xl:block flex-auto h-full z-50 top-0 left-0 fixed border-r-2 w-3/12 bg-left_nav-bg  bg-cover bg-no-repeat bg-center bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm"
           >
@@ -109,5 +109,6 @@
           <!--end left_nav_content-->
 
           <div
-            class="body_content w-full lg:w-9/12 2xl:w-9/12 overflow-hidden relative"
+            class="body_content w-full lg:w-9/12 overflow-hidden relative mt-10 md:mt-20 ml-0 lg:ml-[25%]"
           >
+          

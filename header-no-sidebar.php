@@ -75,7 +75,7 @@
       <div
         class="container px-3 md:px-4 xl:p-0 mx-auto relative"
       >
-        <div class="site_content flex flex-row-reverse relative">
+        <div class="site_content relative">
           <div
             class="body_content w-full overflow-hidden relative mt-10 md:mt-20"
           >

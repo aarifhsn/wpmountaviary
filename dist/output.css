@@ -645,6 +645,10 @@ video {
   left: -2rem;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .end-1 {
   inset-inline-end: 0.25rem;
 }
@@ -819,12 +823,20 @@ video {
   margin-left: 0.5rem;
 }
 
+.ml-\[25\%\] {
+  margin-left: 25%;
+}
+
 .mr-0 {
   margin-right: 0px;
 }
 
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
 }
 
 .mr-4 {
@@ -843,8 +855,8 @@ video {
   margin-top: 0.5rem;
 }
 
-.mt-24 {
-  margin-top: 6rem;
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .mt-4 {
@@ -2300,6 +2312,11 @@ video {
   padding-bottom: 1rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .py-9 {
   padding-top: 2.25rem;
   padding-bottom: 2.25rem;
@@ -2618,6 +2635,10 @@ video {
   text-decoration-line: none;
 }
 
+.decoration-slate-200 {
+  text-decoration-color: #e2e8f0;
+}
+
 .decoration-solid {
   text-decoration-style: solid;
 }
@@ -2636,6 +2657,10 @@ video {
 
 .decoration-wavy {
   text-decoration-style: wavy;
+}
+
+.underline-offset-\[10px\] {
+  text-underline-offset: 10px;
 }
 
 .antialiased {
@@ -3289,6 +3314,10 @@ video {
     margin-bottom: 6rem;
   }
 
+  .lg\:ml-\[25\%\] {
+    margin-left: 25%;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -3303,10 +3332,6 @@ video {
 
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:px-16 {

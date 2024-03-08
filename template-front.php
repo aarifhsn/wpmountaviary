@@ -376,7 +376,8 @@ if($services_query->have_posts()) :
     <div
       class="contact_form overflow-hidden ml-0 mr-0 -mt-6 px-0 text-slate-500 leading-8"
     >
-        <?php echo do_shortcode('[wpforms id="1938" title="false]'); ?>
+      <?php $contact_form_shortcode = get_theme_mod('mountaviary_contact_form'); ?>  
+      <?php echo do_shortcode($contact_form_shortcode); ?>
         <!-- submit css class  -->
         <!-- class= "rounded-sm bg-slate-100 border-2 border-slate-200 py-2 px-4 text-slate-600 hover:bg-slate-400 hover:border-slate-600 transition duration-500"  -->
     </div>
