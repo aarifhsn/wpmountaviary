@@ -47,19 +47,19 @@ textarea {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 button[type="submit"] {
-  border: 2px solid #f2ebeb;
+  border: 1px solid #ebe5e5;
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 6px 12px;
-  font-weight: 700;
-  color: #877d7d;
+  font-weight: 500;
+  color: #423535;
   text-transform: uppercase;
+  font-size: 14px;
 }
 button[type="submit"]:hover {
-  background-color: #f9f2f2;
-  transition: all 0.05s;
+  border: 1px solid #9e8b8b;
+  transition: all 0.03s;
 }
-
 img {
   max-width: 100%;
   height: auto;
@@ -566,6 +566,9 @@ li.current_page_item {
   text-underline-offset: 8px;
   text-decoration-color: #e2e8f0;
 }
+footer li.current_page_item {
+  text-decoration: none;
+}
 .site_title .logo img,
 .mountaviary_logo img {
   max-width: 60px;
@@ -617,6 +620,7 @@ img.aligncenter {
   clear: both;
 }
 .site_content:not(:has(.left_nav_content)) .body_content {
+  margin-left: 0 !important;
   width: 100%;
 }
 

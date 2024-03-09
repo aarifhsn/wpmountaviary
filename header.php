@@ -9,6 +9,7 @@
   <body <?php body_class('font-poppins w-full mx-auto transition-all scroll-smooth'); ?>>
 
     <?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
+    
     <header
       class="bg-white relative md:fixed top-0 left-0 min-h-[60px] z-[9999] w-full shadow-sm"
     >
@@ -94,5 +95,5 @@
         <?php } ?>
 
           <div
-            class="body_content w-full lg:w-9/12 overflow-hidden relative mt-10 md:mt-20 ml-0 lg:ml-[25%]"
+            class="body_content w-full lg:w-9/12 overflow-hidden relative mt-6 md:mt-14 ml-0 lg:ml-[25%]"
           >

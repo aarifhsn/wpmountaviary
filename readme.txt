@@ -1,14 +1,17 @@
-=== discover ===
+=== Mountaviary ===
 Author: Aarif Hassan
 Author URI: http://mountaviary.com/
+Tags: custom-menu, custom-logo, entertainment, featured-images, full-width-template, one-column, two-columns, left-sidebar, custom-colors, editor-style, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, blog.
 Description: Mountaviary is a modern, user-friendly and stylish theme. It has a list of customizable features allowing you to make different kind of changes in layout, style, colors and fonts. Mountaviary theme is easy to use. It has fully responsive design layout.
+Tested up to: 6.5
+Requires PHP: 5.3
 
 License: GNU General Public License v3 or later
 License URI: license.txt
 
 fontawesome-web-fonts are from https://fontawesome.com/
-License: SIL OFL 1.1
-URL: http://scripts.sil.org/OFL
+License: SIL OFL 1.1 License
+URL: https://scripts.sil.org/OFL
 
 Font-awesome icons from https://fontawesome.com/icons
 License: MIT License
@@ -37,58 +40,6 @@ of your WordPress installation. You will then be able to activate the theme.
 
 
 == Changelog ==
-
-Version: 2.0
-------------------------------------------
-* Update theme styles.
-* Fixed responsive issues.
-* Bug fixed
-* fixed archive files.
-
-
-Version: 1.7.4
-------------------------------------------
-Update footer info
-
-Version: 1.7.3
-------------------------------------------
-Added latest version of bootstrap
-
-Version: 1.7.2
-------------------------------------------
-Fixed  minification of scripts or files
-
-Version: 1.7.1
-------------------------------------------
-Fixed script and header issue
-
-Version: 1.7
-------------------------------------------
-Removed SMOF for various issues
-
-Version: 1.6
-------------------------------------------
-Fixed author name from footer
-
-Version: 1.5
-------------------------------------------
-Fixed functions theme-slug
-
-Version: 1.4
-------------------------------------------
-Fixed images curtesy with Copyright and license information 
-
-Version: 1.3
-------------------------------------------
-Added Change log and image curtesy. 
-
-Version: 1.2
-------------------------------------------
-Fixed Few more issues. 
-
-Version: 1.1
-------------------------------------------
-Solved Theme-Check Warning or Required notices
 
 Version: 1.0.
 ------------------------------------------

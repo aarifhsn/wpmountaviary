@@ -449,6 +449,33 @@ function mountaviary_customizer_register ($wp_customize) {
         'type'      => 'text',
     ));
 
+     // CUSTOM FRONT PAGE PORTFOLIO POSTS COUNT
+     $wp_customize->add_setting( 'front_portfolio_post_count',
+     array(
+         'default'        => 6,
+         'sanitize_callback' => 'absint',
+     ));
+     $wp_customize->add_control('front_portfolio_post_count',
+     array(
+         'label' => __( 'Number of Posts to display', 'mountaviary' ),
+         'section'  => 'mountaviary_portfolio_front_page_area',
+         'type'=> 'number'
+     ));
+
+     // CUSTOM FRONT PAGE PORTFOLIO VIEW EXTERNAL PAGE ID
+     $wp_customize->add_setting( 'portfolio_items_page_id',
+     array(
+         'default'        => '#',
+         'sanitize_callback' => 'absint',
+     ));
+     $wp_customize->add_control('portfolio_items_page_id',
+     array(
+         'label' => __( 'All Portfolio Items Page ID', 'mountaviary' ),
+         'section'  => 'mountaviary_portfolio_front_page_area',
+         'description' => 'Get the id of the page from dashboard where you want to display all items. By default 6 items will be shown in front page, which you can change from the avobe option',
+         'type'=> 'number'
+     ));
+
 
     // SERVICES CUSTOM POSTS TYPE AREA 
 
@@ -712,7 +739,7 @@ function mountaviary_customizer_register ($wp_customize) {
  
     $wp_customize->add_control('show_sidebar_area',
     array(
-        'label' => __( 'Show Front Page Work and Portfolio Option', 'mountaviary' ),
+        'label' => __( 'Show Sidebar Area', 'mountaviary' ),
         'settings'  => 'show_sidebar_area',
         'section'  => 'mountaviary_sidebar_show_hide',
         'type'=> 'checkbox'

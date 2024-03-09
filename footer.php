@@ -21,17 +21,19 @@
       class="bg-white p-4 md:px-6 md:py-8 border border-slate-300 border-solid relative z-50 font-poppins"
     >
       <div
-        class="sm:flex sm:items-center justify-center sm:justify-between border-b border-b-slate-300 pb-4 md:pb-7"
+        class="flex flex-col md:flex-row justify-center md:justify-between gap-6 items-center border-b border-b-slate-300 pb-4 md:pb-7"
       >
-        <a
-          href="<?php echo site_url(); ?>"
-          target="_blank"
-          class="flex items-center mb-4 sm:mb-0 uppercase"
-        > 
-          <span class="footer_site_title self-center text-lg md:text-sm text-red-950 font-bold whitespace-nowrap"
-            ><?php echo bloginfo('name'); ?></span
-          >
-        </a>
+        <div class="footer_site_title">
+          <a
+            href="<?php echo site_url(); ?>"
+            target="_blank"
+            class="flex items-center mb-4 sm:mb-0 uppercase"
+          > 
+            <span class="footer_site_title self-center text-lg md:text-sm text-red-950 font-bold whitespace-nowrap"
+              ><?php echo bloginfo('name'); ?></span
+            >
+          </a>
+        </div> 
         <div class="footer_menu uppercase font-semibold text-sm text-slate-500 overflow-hidden">
         <!-- FOOTER MENU -->
             <?php wp_nav_menu( array(
