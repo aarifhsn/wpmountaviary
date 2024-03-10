@@ -39,14 +39,17 @@
                 <div
                   class="left_nav capitalize font-poppins py-4 relative lg:block hidden"
                 > 
-                <!-- SCREEN MENU -->
-                  <?php wp_nav_menu( array(
-                        'theme_location'=> 'screen_menu',
-                        'container'     => '',
-                        'menu_class'    => 'menu_list flex flex-wrap justify-end gap-4 px-4',
-                        'add_li_class'  => 'relative',
-                        'nav_anchor_class' => ' text-slate-800 font-semibold hover:text-slate-950'
-                      )); ?>
+                  <!-- SCREEN MENU -->
+                  <div class="mount_top_menu">
+                      <?php wp_nav_menu( array(
+                            'theme_location'=> 'screen_menu',
+                            'container'     => '',
+                            'menu_class'    => 'menu_list',
+                            'add_li_class'  => '',
+                            'nav_anchor_class' => ''
+                          )); 
+                      ?>
+                    </div>
                 </div>
             </div>
             
@@ -57,14 +60,16 @@
             </div>
 
             <!-- TOP MOBILE MENU - AS SCREEN MENU -->
-            <?php wp_nav_menu(array(
-                  'theme_location'=> 'screen_menu',
-                  'container'     => '',
-                  'menu_class'    => 'nav-list mobile_menu text-right hidden p-6 pr-2 border border-slate-200 text-slate-700 max-w-40 max-h-96 overflow-y-scroll',
-                  'add_li_class'  => 'mb-5 relative hover:text-slate-500',
-                  'nav_anchor_class' => 'font-semibold hover:text-slate-400'
-                ));
-            ?>
+            <div class="mount_top_mobile_menu">
+              <?php wp_nav_menu(array(
+                    'theme_location'=> 'screen_menu',
+                    'container'     => '',
+                    'menu_class'    => '',
+                    'add_li_class'  => '',
+                    'nav_anchor_class' => ''
+                  ));
+              ?>
+            </div>
         
           </div>
         </div>

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const mobileMenuButton = document.getElementById("mobile-menu");
-  const navList = document.querySelector(".nav-list");
+  const navList = document.querySelector(".mount_top_mobile_menu ul");
 
   mobileMenuButton.addEventListener("click", function (event) {
     event.stopPropagation(); // Stop propagation to prevent document click listener from firing

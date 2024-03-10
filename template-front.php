@@ -5,7 +5,7 @@ get_header('part'); ?>
 <?php if(get_option('front_page_user_info', 1)) { ?>
 <section
   id="home"
-  class="devs_top_info min-h-[480px] md:min-h-screen flex justify-center items-center text-start px-4 lg:px-16 xl:px-36 py-10 md:py-0 my-20 md:my-2 bg-contain bg-center bg-no-repeat relative"
+  class="devs_top_info min-h-[480px] md:min-h-screen flex justify-center items-center text-start px-4 lg:px-16 xl:px-36 py-10 md:py-0 mb-20 md:my-2 bg-contain bg-center bg-no-repeat relative"
 >
   <div class="devs_top_content">
     <h2
@@ -112,7 +112,7 @@ get_header('part'); ?>
       </div>
       <div class="about_content">
         <img class="w-full h-auto" src="<?php echo esc_url(get_theme_mod('mountavaiary_about_profile', 'https://pixabay.com/get/g5d98e04901ad7b021a34314a0d48208c294242157632fc16dcd54a7f63dc784f3526f53aaa2668ed249f1fcca1912a3b50c6e2e55434a7159df6946739d2faf9_1280.png')); ?>" alt="pixabay"/>
-        <div class="author_info_text text-slate-600 font-medium leading-7 mt-2 p-4">
+        <div class="author_info_text text-slate-600 bg-slate-200 font-medium leading-7 p-4 pt-7">
           <p><?php echo esc_html(get_theme_mod('mountaviary_about_user_content', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.')); ?></p>
           <h5 class="text-xs text-slate-100 font-semibold  mt-8 uppercase"><a class="p-4 inline-block bg-slate-800 hover:text-red-500 transition-all" href="<?php echo esc_url(get_theme_mod('mountaviary_about_resume_link')); ?>" target="_blank">View Resume</a></h5>
         </div>

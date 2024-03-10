@@ -39,9 +39,9 @@
             <?php wp_nav_menu( array(
               'theme_location'=> 'footer_menu',
               'container'     => '',
-              'menu_class'    => 'flex flex-wrap items-center',
-              'add_li_class'  => 'mr-4 md:mr-6',
-              'nav_anchor_class' => 'hover:text-slate-950'
+              'menu_class'    => '',
+              'add_li_class'  => 'md:mr-6',
+              'nav_anchor_class' => ''
             ));  ?>
         </div>
       </div>

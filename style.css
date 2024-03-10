@@ -2,7 +2,7 @@
 Theme Name: Mountaviary
 Theme URI: https://mountaviary.com
 Author: Arif Hassan
-Author URI: https://mountaviary.com
+Author URI: https://github.com/aarifhsn
 Description: MountAviary is a Lightning-fast and responsive WordPress theme which is suitable for blog, personal portfolio and many more. With its sleek multiple layout and customizable color palette, MountAviary offers endless possibilities for expressing unique style. Have features like custom menus and logos. This theme supports featured images and a user-friendly navigation experience, courtesy of the walker nav menu. Embrace the modern web with block patterns and styles, while ensuring inclusivity with accessibility-ready design. Sticky posts and threaded comments keep your content dynamic and interactive. MountAviary's portfolio and services custom posts offer a platform to showcase your work in style. And with responsive design, your website will look fantastic on any device, ensuring a seamless experience for your visitors.
 Requires at least: 6.0
 Tested up to: 6.5
@@ -72,33 +72,43 @@ img {
 /* custom Scroll bar */
 
 /* width */
-.mobile_menu::-webkit-scrollbar,
+.mount_top_mobile_menu ul::-webkit-scrollbar,
 .sidebar_area::-webkit-scrollbar {
   width: 7px;
   top: 8px;
 }
 
 /* Track */
-.mobile_menu::-webkit-scrollbar-track,
+.mount_top_mobile_menu ul::-webkit-scrollbar-track,
 .sidebar_area::-webkit-scrollbar-track {
   background: #f1f1f1;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Handle */
-.mobile_menu::-webkit-scrollbar-thumb,
+.mount_top_mobile_menu ul::-webkit-scrollbar-thumb,
 .sidebar_area::-webkit-scrollbar-thumb {
   background: #c3c2c2;
 }
 
 /* Handle on hover */
-.mobile_menu::-webkit-scrollbar-thumb:hover,
+.mount_top_mobile_menu ul::-webkit-scrollbar-thumb:hover,
 .sidebar_area::-webkit-scrollbar-thumb:hover {
   background: #b5b4b4;
 }
 
 /* SUB MENU  */
 
+.mount_frontpage_left_menu ul {
+  overflow: visible;
+}
+.mount_frontpage_left_menu ul li {
+  margin-top: 20px;
+  position: relative;
+}
+.mount_frontpage_left_menu ul li a:hover {
+  color: #020617;
+}
 .left_nav ul li ul {
   display: block;
 }
@@ -116,6 +126,47 @@ img {
   top: 53px;
   z-index: 999;
   backdrop-filter: blur(4px);
+}
+.mount_top_menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 16px;
+  padding: 0 16px;
+}
+.mount_top_menu ul li {
+  position: relative;
+}
+.mount_top_menu ul li a {
+  font-weight: 500;
+  color: #1e293b;
+}
+.mount_top_menu ul li a:hover {
+  color: #020617;
+}
+.mount_top_mobile_menu ul {
+  text-align: right;
+  display: none;
+  padding: 24px;
+  padding-right: 8px;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  max-width: 160px;
+  max-height: 384px;
+  overflow-y: scroll;
+}
+.mount_top_mobile_menu ul li {
+  margin-bottom: 20px;
+  position: relative;
+}
+.mount_top_mobile_menu ul li:hover {
+  color: #64748b;
+}
+.mount_top_mobile_menu ul li a {
+  font-weight: 500;
+}
+.mount_top_mobile_menu ul li a:hover {
+  color: #94a3b8;
 }
 
 .person_social_info ul li a:hover {
@@ -583,6 +634,12 @@ footer li.current_page_item {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+}
+.footer_menu ul li {
+  margin-right: 16px;
+}
+.footer_menu ul li a:hover {
+  color: #020617;
 }
 
 /* RECOMMENDED CLASS  */

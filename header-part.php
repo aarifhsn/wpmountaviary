@@ -42,14 +42,16 @@
             </div>
 
             <!-- TOP MOBILE MENU - AS SCREEN MENU -->
-            <?php wp_nav_menu(array(
-                  'theme_location'=> 'screen_menu',
-                  'container'     => '',
-                  'menu_class'    => 'nav-list mobile_menu text-right hidden p-6 pr-2 border border-slate-200 text-slate-700 max-w-40  max-h-96 overflow-y-scroll',
-                  'add_li_class'  => 'mb-5 relative hover:text-slate-500',
-                  'nav_anchor_class' => 'font-semibold hover:text-slate-400'
-                ));
-            ?>
+            <div class="mount_top_mobile_menu">
+              <?php wp_nav_menu(array(
+                    'theme_location'=> 'screen_menu',
+                    'container'     => '',
+                    'menu_class'    => '',
+                    'add_li_class'  => '',
+                    'nav_anchor_class' => ''
+                  ));
+              ?>
+            </div>
         
           </div>
         </div>
@@ -91,13 +93,16 @@
                     class="left_nav text-left uppercase font-poppins font-bold text-sm text-slate-700 mt-4 relative"
                   > 
                   <!-- LEFT NAV MENU -->
-                    <?php wp_nav_menu( array(
+                    <div class="mount_frontpage_left_menu">
+                      <?php wp_nav_menu( array(
                           'theme_location'=> 'screen_menu',
                           'container'     => '',
-                          'menu_class'    => 'menu_front_list overflow-visible',
-                          'add_li_class'  => 'mt-5 relative',
-                          'nav_anchor_class' =>'hover:text-slate-950'
+                          'menu_class'    => '',
+                          'add_li_class'  => '',
+                          'nav_anchor_class' =>''
                         )); ?>
+                    </div>
+                    
                   </div>
                 </div>
               </div>
@@ -109,6 +114,6 @@
           <!--end left_nav_content-->
 
           <div
-            class="body_content w-full lg:w-9/12 overflow-hidden relative mt-10 md:mt-20 ml-0 lg:ml-[25%]"
+            class="body_content w-full lg:w-9/12 overflow-hidden relative  ml-0 lg:ml-[25%]"
           >
           
