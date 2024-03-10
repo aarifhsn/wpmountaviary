@@ -18,18 +18,18 @@ Mountaviary has single widget area, arrived in left sidebar.
 
 = Appearance > Customize =
 	- Site Identity: Select your own Logo, Hide your site title or tagline and replace with your own.
-    - Colors & background: Choose your default background color, body color, theme color and link color.
-    - Menus: Choose your menu options. Saving the menu is our top priority, ensuring you'll access the default design theme. Also you have a options to add walker nav menu.
-    - Widget: Choose your option to use WordPress Default Widgets.
-    - Custom Front Page Tempalte: When utilizing the custom front page template, you'll encounter a plethora of options to craft your own theme template, essentially creating a portfolio theme design.
+	- Colors & background: Choose your default background color, body color, theme color and link color.
+	- Menus: Choose your menu options. Saving the menu is our top priority, ensuring you'll access the default design theme. Also you have a options to add walker nav menu.
+    	- Widget: Choose your option to use WordPress Default Widgets.
+    	- Custom Front Page Tempalte: When utilizing the custom front page template, you'll encounter a plethora of options to craft your own theme template, essentially creating a portfolio theme design.
 	- Footer Area: Choose your footer text option.
-    - Sidebar Section: Select your preference for utilizing a sidebar or not.
+    	- Sidebar Section: Select your preference for utilizing a sidebar or not.
 
 = CSS, Fonts and Icons License
 
 Tailwindcss license are under MIT License
 Copyright (c) Tailwind Labs, Inc.
-License URI: https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE
+License URL: https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE
 
 fontawesome-web-fonts are from https://fontawesome.com/
 License: SIL OFL 1.1 License
@@ -41,14 +41,18 @@ URL: http://opensource.org/licenses/mit-license.html
 
 glyphicons-halflings-regular fonts are from http://glyphicons.com/
 License: Creative Commons Attribution 3.0 Unported (CC BY 3.0).
-url: http://creativecommons.org/licenses/by/3.0/
+URL: http://creativecommons.org/licenses/by/3.0/
 
 Screenshot.png image and home_bg background image is  made by Md. Arif Hassan
 Copyright: https://mountaviary.com/
 licensed as GPLv3
 
+redBackground.png and redBackground_port.png images are from https://pixabay.com/.
+licensed under the Creative Commons Zero (CC0) license ("CC0 Content").
+URL: https://pixabay.com/service/license-summary/
+
 Kanit, Montserrat, Poppins fonts License: Open Font License.
-https://openfontlicense.org/
+URL: https://openfontlicense.org/
 
 == Installation ==
 You can install the theme through the WordPress installer under Themes-Install themes by searching for it.

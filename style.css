@@ -478,7 +478,7 @@ code {
 .wp-block-page-list li ul li {
   margin: 5px 0;
 }
-.wp-block-latest-posts__post-title {
+.single_blog .wp-block-latest-posts__post-title {
   font-size: 24px;
   font-weight: 500;
   margin: 14px 0;

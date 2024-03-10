@@ -41,6 +41,15 @@ get_header();
           
           <?php 
           endwhile; ?>
+          <?php the_posts_navigation(array(
+              'mid_size'           => 1,
+              'prev_text'          => _x( '&#8592 Previous Page', 'Navigation previous page', 'mountaviary' ),
+              'next_text'          => _x( 'Next Page &#8594', 'Navigation Next page', 'mountaviary' ),
+          
+            ));
+                
+          else : ?>
+          <?php get_template_part('404'); ?>
           <?php endif; ?>
         
         </div>
