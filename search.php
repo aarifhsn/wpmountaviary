@@ -1,6 +1,6 @@
 <?php
 /**
- * @version    1.0
+ * @version    1.0.1
  * @package    mountaviary
  * @author     aarif hassan
  * @copyright  Copyright (C) 2015 mountaviary.com. All Rights Reserved.

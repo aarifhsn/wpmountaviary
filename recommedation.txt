@@ -1,5 +1,0 @@
-1. remove cmb2 and create a custom field option. because only one custom field is needed. so no need to add cmb2 for only one custom field.
-
-2. register posts type plugin
-
-3. 

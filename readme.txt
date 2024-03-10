@@ -1,7 +1,7 @@
 === Mountaviary ===
 Contributors: aarifhsn
 Author: Arif Hassan
-Author URI: http://mountaviary.com/
+Author URI: https://github.com/aarifhsn
 Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, walker nav menu, block-patterns, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, theme-options, threaded-comments, full-width-template style-variations, accessibility-ready, blog, custom posts, portfolio, services. category, responsive, shortcode, microformats, post-formats.
 Description: Mountaviary is a modern, user-friendly and stylish theme. It has a list of customizable features allowing you to make different kind of changes in layout, style, colors and fonts. Mountaviary theme is easy to use. It has fully responsive design layout.
 Tested up to: 6.5
@@ -61,13 +61,6 @@ URL: https://openfontlicense.org/
 You can install the theme through the WordPress installer under Themes-Install themes by searching for it.
 Alternatively you can download the file from here, unzip it and move the unzipped contents to the wp-content/themes folder
 of your WordPress installation. You will then be able to activate the theme.
-
-
-== Changelog ==
-
-Version: 1.0.
-------------------------------------------
-Initial release.
 
 
 == Installation ==

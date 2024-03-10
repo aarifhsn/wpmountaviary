@@ -3,8 +3,8 @@
  * The sidebar containing the main widget area
  *
  * If no active widgets are in the sidebar, there will also show few fixed sidebar contents.
- * @package Thirteenmag
- * @since Thirteenmag 1.0
+ * @package Mountaviary
+ * @since Mountaviary 1.0.0
  */
 ?>
 

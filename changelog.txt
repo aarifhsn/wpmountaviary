@@ -1,0 +1,12 @@
+v1.0.1
+- Fixed: Creative Commons Zero (CC0) license
+- Fixed: WP Default Menu Issue, if menu not saved.
+- Added: Changelog.txt file.
+- Removed: changelog from readme.txt
+
+
+== Changelog ==
+
+Version: 1.0.0
+------------------------------------------
+Initial release.

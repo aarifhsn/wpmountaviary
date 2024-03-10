@@ -9,7 +9,7 @@
  *
  * @package Mountaviary
  * 
- * @since Mountaviary 1.0
+ * @since Mountaviary 1.0.0
  */
 
 get_header();
