@@ -37,7 +37,7 @@ add_filter('nav_menu_link_attributes', 'nav_menu_anchor_class', 1, 3);
 
 function mountaviary_nav_description( $item_output, $item, $depth, $args ) {
     if ( !empty( $item->description ) ) {
-        $item_output = str_replace( $args->link_after . '</a>', '<span class="font-sm text-slate-500 ml-2 lowercase block">' . $item->description . '</span>' . $args->link_after . '</a>', $item_output );
+        $item_output = str_replace( $args->link_after . '</a>', '<span class="text-xs text-slate-400 ml-2 lowercase block">' . $item->description . '</span>' . $args->link_after . '</a>', $item_output );
     }
  
     return $item_output;

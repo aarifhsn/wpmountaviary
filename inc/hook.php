@@ -1,14 +1,5 @@
 <?php
 
-// Practice filter hook
-// add a content(as domain name) in all pages title and posts title
-// add_filter('the_title', 'replace_title_function');
-
-// function replace_title_function($default) {
-//     return $default . '<div class="text-xs block">Mountaviary</div>';
-// }
-
-
 // excerpt length
 function mpuntaviary_excerpt_length( $length ) {
     return 20;
