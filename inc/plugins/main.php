@@ -62,8 +62,8 @@ function mountaviary_register_required_plugins() {
 		array(
 			'name'               => 'Mountaviary Custom Post Type', // The plugin name.
 			'slug'               => 'mountaviary-posttype-plugin', // The plugin slug (typically the folder name).
-			'source'             => 'https://mountaviary.com/wp-content/uploads/2024/02/mountaviary-posttype-plugin.zip', // The plugin source.
-			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+			'source'             => 'https://mountaviary.com/wp-content/uploads/2024/03/mountaviary-posttype-plugin.zip', // The plugin source.
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
 			'version'            => '1.0.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
@@ -96,77 +96,77 @@ function mountaviary_register_required_plugins() {
 
 		/*
 		'strings'      => array(
-			'page_title'                      => __( 'Install Required Plugins', 'symbol' ),
-			'menu_title'                      => __( 'Install Plugins', 'symbol' ),
-			'installing'                      => __( 'Installing Plugin: %s', 'symbol' ), // %s = plugin name.
-			'oops'                            => __( 'Something went wrong with the plugin API.', 'symbol' ),
+			'page_title'                      => __( 'Install Required Plugins', 'mountaviary' ),
+			'menu_title'                      => __( 'Install Plugins', 'mountaviary' ),
+			'installing'                      => __( 'Installing Plugin: %s', 'mountaviary' ), // %s = plugin name.
+			'oops'                            => __( 'Something went wrong with the plugin API.', 'mountaviary' ),
 			'notice_can_install_required'     => _n_noop(
-				'This theme requires the following plugin: %1$s.',
-				'This theme requires the following plugins: %1$s.',
-				'symbol'
+				'This theme requires the following plugin to use custom posts type and category posts shortcode: %1$s.',
+				'This theme requires the following plugins  to use custom posts type and category posts shortcode: %1$s.',
+				'mountaviary'
 			), // %1$s = plugin name(s).
 			'notice_can_install_recommended'  => _n_noop(
-				'This theme recommends the following plugin: %1$s.',
-				'This theme recommends the following plugins: %1$s.',
-				'symbol'
+				'This theme recommends the following plugin  to use custom posts type and category posts shortcode: %1$s.',
+				'This theme recommends the following plugins  to use custom posts type and category posts shortcode: %1$s.',
+				'mountaviary'
 			), // %1$s = plugin name(s).
 			'notice_cannot_install'           => _n_noop(
 				'Sorry, but you do not have the correct permissions to install the %1$s plugin.',
 				'Sorry, but you do not have the correct permissions to install the %1$s plugins.',
-				'symbol'
+				'mountaviary'
 			), // %1$s = plugin name(s).
 			'notice_ask_to_update'            => _n_noop(
 				'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
 				'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
-				'symbol'
+				'mountaviary'
 			), // %1$s = plugin name(s).
 			'notice_ask_to_update_maybe'      => _n_noop(
 				'There is an update available for: %1$s.',
 				'There are updates available for the following plugins: %1$s.',
-				'symbol'
+				'mountaviary'
 			), // %1$s = plugin name(s).
 			'notice_cannot_update'            => _n_noop(
 				'Sorry, but you do not have the correct permissions to update the %1$s plugin.',
 				'Sorry, but you do not have the correct permissions to update the %1$s plugins.',
-				'symbol'
+				'mountaviary'
 			), // %1$s = plugin name(s).
 			'notice_can_activate_required'    => _n_noop(
 				'The following required plugin is currently inactive: %1$s.',
 				'The following required plugins are currently inactive: %1$s.',
-				'symbol'
+				'mountaviary'
 			), // %1$s = plugin name(s).
 			'notice_can_activate_recommended' => _n_noop(
 				'The following recommended plugin is currently inactive: %1$s.',
 				'The following recommended plugins are currently inactive: %1$s.',
-				'symbol'
+				'mountaviary'
 			), // %1$s = plugin name(s).
 			'notice_cannot_activate'          => _n_noop(
 				'Sorry, but you do not have the correct permissions to activate the %1$s plugin.',
 				'Sorry, but you do not have the correct permissions to activate the %1$s plugins.',
-				'symbol'
+				'mountaviary'
 			), // %1$s = plugin name(s).
 			'install_link'                    => _n_noop(
 				'Begin installing plugin',
 				'Begin installing plugins',
-				'symbol'
+				'mountaviary'
 			),
 			'update_link' 					  => _n_noop(
 				'Begin updating plugin',
 				'Begin updating plugins',
-				'symbol'
+				'mountaviary'
 			),
 			'activate_link'                   => _n_noop(
 				'Begin activating plugin',
 				'Begin activating plugins',
-				'symbol'
+				'mountaviary'
 			),
-			'return'                          => __( 'Return to Required Plugins Installer', 'symbol' ),
-			'plugin_activated'                => __( 'Plugin activated successfully.', 'symbol' ),
-			'activated_successfully'          => __( 'The following plugin was activated successfully:', 'symbol' ),
-			'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'symbol' ),  // %1$s = plugin name(s).
-			'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'symbol' ),  // %1$s = plugin name(s).
-			'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'symbol' ), // %s = dashboard link.
-			'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'symbol' ),
+			'return'                          => __( 'Return to Required Plugins Installer', 'mountaviary' ),
+			'plugin_activated'                => __( 'Plugin activated successfully.', 'mountaviary' ),
+			'activated_successfully'          => __( 'The following plugin was activated successfully:', 'mountaviary' ),
+			'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'mountaviary' ),  // %1$s = plugin name(s).
+			'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'mountaviary' ),  // %1$s = plugin name(s).
+			'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'mountaviary' ), // %s = dashboard link.
+			'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'mountaviary' ),
 
 			'nag_type'                        => 'updated', // Determines admin notice type - can only be one of the typical WP notice classes, such as 'updated', 'update-nag', 'notice-warning', 'notice-info' or 'error'. Some of which may not work as expected in older WP versions.
 		),

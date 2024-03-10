@@ -1,13 +1,35 @@
 === Mountaviary ===
-Author: Aarif Hassan
+Author: Arif Hassan
 Author URI: http://mountaviary.com/
-Tags: custom-menu, custom-logo, entertainment, featured-images, full-width-template, one-column, two-columns, left-sidebar, custom-colors, editor-style, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, blog.
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, walker nav menu, block-patterns, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, theme-options, threaded-comments, full-width-template style-variations, accessibility-ready, blog, custom posts, portfolio, services. category, responsive, shortcode, microformats, post-formats.
 Description: Mountaviary is a modern, user-friendly and stylish theme. It has a list of customizable features allowing you to make different kind of changes in layout, style, colors and fonts. Mountaviary theme is easy to use. It has fully responsive design layout.
 Tested up to: 6.5
-Requires PHP: 5.3
+Requires PHP: 7.0
 
-License: GNU General Public License v3 or later
+== License ==
+Mountaviary WordPress Theme, Copyright 2023 Mountaviary.
+Mountaviary is distributed under the terms of the GNU GPL.
 License URI: license.txt
+
+== Features ==
+
+= Appearance > Widgets =
+Mountaviary has single widget area, arrived in left sidebar.
+
+= Appearance > Customize =
+	- Site Identity: Select your own Logo, Hide your site title or tagline and replace with your own.
+    - Colors & background: Choose your default background color, body color, theme color and link color.
+    - Menus: Choose your menu options. Saving the menu is our top priority, ensuring you'll access the default design theme. Also you have a options to add walker nav menu.
+    - Widget: Choose your option to use WordPress Default Widgets.
+    - Custom Front Page Tempalte: When utilizing the custom front page template, you'll encounter a plethora of options to craft your own theme template, essentially creating a portfolio theme design.
+	- Footer Area: Choose your footer text option.
+    - Sidebar Section: Select your preference for utilizing a sidebar or not.
+
+= CSS, Fonts and Icons License
+
+Tailwindcss license are under MIT License
+Copyright (c) Tailwind Labs, Inc.
+License URI: https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE
 
 fontawesome-web-fonts are from https://fontawesome.com/
 License: SIL OFL 1.1 License
@@ -21,17 +43,12 @@ glyphicons-halflings-regular fonts are from http://glyphicons.com/
 License: Creative Commons Attribution 3.0 Unported (CC BY 3.0).
 url: http://creativecommons.org/licenses/by/3.0/
 
-Images are from https://www.iconfinder.com/
-Copyright: https://www.iconfinder.com/designmodo
-Licensed as Creative Commons (Attribution 3.0 Unported)
-
-Screenshot.png image made by Md. Arif Hassan
-Copyright: devswave.com
+Screenshot.png image and home_bg background image is  made by Md. Arif Hassan
+Copyright: https://mountaviary.com/
 licensed as GPLv3
 
-Lobster,Lato, Source Sans Pro, Playfair Display SC, Gilda Display, The Girl Next Door, Tienne,Cutive Mono, PT Sans, 
-Open Sans,Droid Sansand Caesar Dressing fonts license : SIL Open Font License, 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
-
+Kanit, Montserrat, Poppins fonts License: Open Font License.
+https://openfontlicense.org/
 
 == Installation ==
 You can install the theme through the WordPress installer under Themes-Install themes by searching for it.
@@ -54,4 +71,4 @@ Initial release.
  
 Have a fun with your theme. happy Blogging.
 
-Thanks for downloading the thirteenmag theme.
+Thanks for downloading the Mountaviary theme.

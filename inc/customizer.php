@@ -10,7 +10,6 @@ function mountaviary_customizer_register ($wp_customize) {
     $wp_customize->add_panel('front_page_theme_option', array(
         'title' => __(' Custom Front Page Template', 'mountaviary'),
         'description' => __('User Front Page Template description', 'mountaviary'),
-        'priority' => 100,
     ));
     $wp_customize->add_section('mountaviary_front_area', array(
         'title'    => __('Front Page User Info', 'mountaviary'),
@@ -648,9 +647,6 @@ function mountaviary_customizer_register ($wp_customize) {
         'type'=> 'text'
     ));
 
-
-
-
     // add colors on wp default color section
 
     $wp_customize->add_setting('site_title_color_setting', array(
@@ -726,8 +722,6 @@ function mountaviary_customizer_register ($wp_customize) {
 
     $wp_customize->add_section('mountaviary_sidebar_show_hide', array(
         'title'    => __('Sidebar Section', 'mountaviary'),
-        'priority' => 95,
-
     ));
 
     $wp_customize->add_setting( 'show_sidebar_area',
