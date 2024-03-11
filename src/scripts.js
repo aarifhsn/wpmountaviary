@@ -17,9 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // add an icon when menu has children or sub menu
   // all pages except custom front page (for header)
-  let menuItems = document.querySelectorAll(
-    ".left_nav ul li.menu-item-has-children"
-  );
+  let menuItems = document.querySelectorAll("ul li.menu-item-has-children");
+  console.log(menuItems);
 
   menuItems.forEach(function (menu_list) {
     let menu_icon_page = document.createElement("i");

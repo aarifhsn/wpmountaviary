@@ -46,38 +46,39 @@ get_header('part'); ?>
     <?php } ?>
 
     <!-- FRONT-PAGE SOCIAL ICONS  -->
+      <div class="front_page_social w-2/3">
+        <ul class="social-icons flex flex-wrap gap-x-4 gap-y-6 justify-start text-lg text-slate-600">
+          <?php
+            $social_platforms = array(
+                'facebook' => 'fa-brands fa-facebook-f',
+                'github' => 'fa-brands fa-github',
+                'instagram' => 'fab fa-instagram',
+                'linkedin' => 'fa-brands fa-linkedin-in',
+                'youtube' => 'fa-brands fa-youtube',
+                'whatsapp' => 'fa-brands fa-whatsapp',
+                'telegram' => 'fa-brands fa-telegram',
+                'twitter' => 'fa-brands fa-x-twitter',
+                'discord' => 'fa-brands fa-discord',
+                'email' => 'fa-regular fa-envelope',
+                // Add more social platforms as needed
+            );
 
-    <ul class="social-icons flex flex-row justify-start space-x-4 text-lg text-slate-600">
-      <?php
-        $social_platforms = array(
-            'facebook' => 'fa-brands fa-facebook-f',
-            'github' => 'fa-brands fa-github',
-            'instagram' => 'fab fa-instagram',
-            'linkedin' => 'fa-brands fa-linkedin-in',
-            'youtube' => 'fa-brands fa-youtube',
-            'whatsapp' => 'fa-brands fa-whatsapp',
-            'telegram' => 'fa-brands fa-telegram',
-            'twitter' => 'fa-brands fa-x-twitter',
-            'discord' => 'fa-brands fa-discord',
-            'email' => 'fa-regular fa-envelope',
-            // Add more social platforms as needed
-        );
-
-        foreach ($social_platforms as $platform => $icon_class) {
-            $url = get_theme_mod("{$platform}_url");
-            if($platform !== 'email') {
-              if ($url) {
-                  echo "<li><a class='px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid' href='" . esc_url($url) . "' target='_blank'><i class='$icon_class'></i></a></li>";
+            foreach ($social_platforms as $platform => $icon_class) {
+                $url = get_theme_mod("{$platform}_url");
+                if($platform !== 'email') {
+                  if ($url) {
+                      echo "<li><a class='px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid' href='" . esc_url($url) . "' target='_blank'><i class='$icon_class'></i></a></li>";
+                  }
+                }
+                else {
+                  if ($url) {
+                      echo "<li><a class='px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid' href='mailto:" . esc_attr($url) . "'' target='_blank'><i class='$icon_class'></i></a></li>";
+                  }
+                }
               }
-            }
-            else {
-              if ($url) {
-                  echo "<li><a class='px-2 md:px-3 py-1 md:py-1.5 rounded border border-slate-200 hover:border-slate-400 border-solid' href='mailto:" . esc_attr($url) . "'' target='_blank'><i class='$icon_class'></i></a></li>";
-              }
-            }
-          }
-      ?>
-    </ul>
+          ?>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
